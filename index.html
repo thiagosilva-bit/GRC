@@ -3,599 +3,599 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Lei 10.303/2001 — Reforma do Mercado de Capitais Brasileiro</title>
-<meta name="description" content="Apresentação completa da Lei 10.303/2001 — proteção ao minoritário, tipificação de crimes de mercado, impactos na auditoria, FCD e governança corporativa." />
+<title>Lei 10.303/2001, Reforma do Mercado de Capitais Brasileiro</title>
+<meta name="description" content="Apresentação completa da Lei 10.303/2001, proteção ao minoritário, tipificação de crimes de mercado, impactos na auditoria, FCD e governança corporativa." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#05080f;
-  --bg-2:#0a1020;
-  --surface:rgba(255,255,255,0.03);
-  --surface-2:rgba(255,255,255,0.05);
-  --border:rgba(255,255,255,0.08);
-  --border-strong:rgba(255,255,255,0.14);
-  --text:#e7ecf3;
-  --text-dim:rgba(231,236,243,0.65);
-  --text-faint:rgba(231,236,243,0.45);
-  --accent:#22d3ee;
-  --accent-2:#34d399;
-  --accent-glow:rgba(34,211,238,0.45);
-  --danger:#f87171;
-  --warning:#fbbf24;
-  --radius:16px;
-  --ease:cubic-bezier(.22,.61,.36,1);
-  --ease-bounce:cubic-bezier(.34,1.56,.64,1);
-  --nav-h:72px;
+ --bg:#05080f;
+ --bg-2:#0a1020;
+ --surface:rgba(255,255,255,0.03);
+ --surface-2:rgba(255,255,255,0.05);
+ --border:rgba(255,255,255,0.08);
+ --border-strong:rgba(255,255,255,0.14);
+ --text:#e7ecf3;
+ --text-dim:rgba(231,236,243,0.65);
+ --text-faint:rgba(231,236,243,0.45);
+ --accent:#22d3ee;
+ --accent-2:#34d399;
+ --accent-glow:rgba(34,211,238,0.45);
+ --danger:#f87171;
+ --warning:#fbbf24;
+ --radius:16px;
+ --ease:cubic-bezier(.22.61.36,1);
+ --ease-bounce:cubic-bezier(.34,1.56.64,1);
+ --nav-h:72px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 32px)}
 @media (max-width:880px){
-  html{scroll-padding-top:calc(var(--nav-h) + 16px)}
+ html{scroll-padding-top:calc(var(--nav-h) + 16px)}
 }
 body{
-  font-family:'Inter',system-ui,-apple-system,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+ font-family:'Inter',system-ui,-apple-system,sans-serif;
+ background:var(--bg);
+ color:var(--text);
+ line-height:1.6;
+ overflow-x:hidden;
+ -webkit-font-smoothing:antialiased;
+ text-rendering:optimizeLegibility;
 }
 ::selection{background:var(--accent);color:#000}
 
 /* === Scroll progress bar === */
 .scroll-progress{
-  position:fixed;
-  top:var(--nav-h);left:0;
-  height:2px;width:0%;
-  background:linear-gradient(90deg,var(--accent),var(--accent-2));
-  z-index:101;
-  box-shadow:0 0 12px var(--accent-glow);
-  transition:width .08s linear;
+ position:fixed;
+ top:var(--nav-h);left:0;
+ height:2px;width:0%;
+ background:linear-gradient(90deg,var(--accent),var(--accent-2));
+ z-index:101;
+ box-shadow:0 0 12px var(--accent-glow);
+ transition:width .08s linear;
 }
 
 /* === Background ambient layers === */
 .bg-grid{
-  position:fixed;inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
-  background-size:64px 64px;
-  mask-image:radial-gradient(ellipse 80% 50% at 50% 40%,#000 30%,transparent 80%);
-  pointer-events:none;
-  z-index:0;
+ position:fixed;inset:0;
+ background-image:
+ linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+ background-size:64px 64px;
+ mask-image:radial-gradient(ellipse 80% 50% at 50% 40%,#000 30%,transparent 80%);
+ pointer-events:none;
+ z-index:0;
 }
 .bg-glow{
-  position:fixed;inset:0;
-  pointer-events:none;
-  z-index:0;
-  background:
-    radial-gradient(circle 800px at 15% 10%, rgba(34,211,238,0.10), transparent 50%),
-    radial-gradient(circle 700px at 85% 80%, rgba(52,211,153,0.08), transparent 50%),
-    radial-gradient(circle 600px at 50% 50%, rgba(34,211,238,0.05), transparent 50%);
+ position:fixed;inset:0;
+ pointer-events:none;
+ z-index:0;
+ background:
+ radial-gradient(circle 800px at 15% 10%, rgba(34,211,238,0.10), transparent 50%),
+ radial-gradient(circle 700px at 85% 80%, rgba(52,211,153,0.08), transparent 50%),
+ radial-gradient(circle 600px at 50% 50%, rgba(34,211,238,0.05), transparent 50%);
 }
 
 /* === Navigation === */
 nav.topnav{
-  position:fixed;top:0;left:0;right:0;
-  z-index:100;
-  height:var(--nav-h);
-  padding:0 24px;
-  display:flex;justify-content:space-between;align-items:center;gap:16px;
-  background:rgba(5,8,15,0.78);
-  backdrop-filter:saturate(180%) blur(20px);
-  -webkit-backdrop-filter:saturate(180%) blur(20px);
-  border-bottom:1px solid var(--border);
-  transition:all .3s ease;
+ position:fixed;top:0;left:0;right:0;
+ z-index:100;
+ height:var(--nav-h);
+ padding:0 24px;
+ display:flex;justify-content:space-between;align-items:center;gap:16px;
+ background:rgba(5,8,15,0.78);
+ backdrop-filter:saturate(180%) blur(20px);
+ -webkit-backdrop-filter:saturate(180%) blur(20px);
+ border-bottom:1px solid var(--border);
+ transition:all .3s ease;
 }
 nav.topnav .brand{
-  display:flex;align-items:center;gap:10px;
-  font-weight:700;font-size:14.5px;letter-spacing:-.01em;
-  flex-shrink:0;
+ display:flex;align-items:center;gap:10px;
+ font-weight:700;font-size:14.5px;letter-spacing:-.01em;
+ flex-shrink:0;
 }
 nav.topnav .brand .dot{
-  width:9px;height:9px;border-radius:50%;
-  background:var(--accent);
-  box-shadow:0 0 12px var(--accent-glow);
+ width:9px;height:9px;border-radius:50%;
+ background:var(--accent);
+ box-shadow:0 0 12px var(--accent-glow);
 }
 nav.topnav .links{
-  display:flex;gap:2px;align-items:center;
-  overflow-x:auto;
-  scrollbar-width:none;
-  -ms-overflow-style:none;
-  flex:1;justify-content:center;
-  max-width:calc(100% - 320px);
+ display:flex;gap:2px;align-items:center;
+ overflow-x:auto;
+ scrollbar-width:none;
+ -ms-overflow-style:none;
+ flex:1;justify-content:center;
+ max-width:calc(100% - 320px);
 }
 nav.topnav .links::-webkit-scrollbar{display:none}
 nav.topnav .links a{
-  font-size:12.5px;color:var(--text-dim);text-decoration:none;
-  padding:7px 11px;border-radius:8px;
-  transition:all .2s ease;font-weight:500;
-  white-space:nowrap;flex-shrink:0;
+ font-size:12.5px;color:var(--text-dim);text-decoration:none;
+ padding:7px 11px;border-radius:8px;
+ transition:all .2s ease;font-weight:500;
+ white-space:nowrap;flex-shrink:0;
 }
 nav.topnav .links a:hover{color:var(--text);background:rgba(255,255,255,0.05)}
 nav.topnav .links a.active{
-  color:var(--accent);
-  background:rgba(34,211,238,0.08);
+ color:var(--accent);
+ background:rgba(34,211,238,0.08);
 }
 nav.topnav .cta{
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  color:#021018;padding:8px 14px;border-radius:999px;
-  font-size:12.5px;font-weight:600;text-decoration:none;
-  box-shadow:0 8px 24px -8px var(--accent-glow);
-  transition:all .25s ease;flex-shrink:0;
+ background:linear-gradient(135deg,var(--accent),var(--accent-2));
+ color:#021018;padding:8px 14px;border-radius:999px;
+ font-size:12.5px;font-weight:600;text-decoration:none;
+ box-shadow:0 8px 24px -8px var(--accent-glow);
+ transition:all .25s ease;flex-shrink:0;
 }
 nav.topnav .cta:hover{transform:translateY(-1px);box-shadow:0 12px 30px -8px var(--accent-glow)}
 .menu-toggle{display:none;background:none;border:none;color:var(--text);cursor:pointer;font-size:22px;padding:6px 10px}
 
 /* === Hero === */
 .hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;flex-direction:column;justify-content:center;align-items:center;
-  padding:120px 24px 80px;
-  text-align:center;
-  z-index:1;
+ position:relative;
+ min-height:100vh;
+ display:flex;flex-direction:column;justify-content:center;align-items:center;
+ padding:120px 24px 80px;
+ text-align:center;
+ z-index:1;
 }
 .hero .pill{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:6px 14px;border-radius:999px;
-  background:var(--surface-2);
-  border:1px solid var(--border-strong);
-  font-size:12px;color:var(--text-dim);font-weight:500;letter-spacing:.02em;
-  margin-bottom:32px;
-  animation:fadeUp .7s ease both;
+ display:inline-flex;align-items:center;gap:8px;
+ padding:6px 14px;border-radius:999px;
+ background:var(--surface-2);
+ border:1px solid var(--border-strong);
+ font-size:12px;color:var(--text-dim);font-weight:500;letter-spacing:.02em;
+ margin-bottom:32px;
+ animation:fadeUp .7s ease both;
 }
 .hero .pill .pulse{
-  width:6px;height:6px;border-radius:50%;background:var(--accent);
-  box-shadow:0 0 0 0 var(--accent-glow);
-  animation:pulse 2s infinite;
+ width:6px;height:6px;border-radius:50%;background:var(--accent);
+ box-shadow:0 0 0 0 var(--accent-glow);
+ animation:pulse 2s infinite;
 }
 @keyframes pulse{
-  0%{box-shadow:0 0 0 0 var(--accent-glow)}
-  100%{box-shadow:0 0 0 12px transparent}
+ 0%{box-shadow:0 0 0 0 var(--accent-glow)}
+ 100%{box-shadow:0 0 0 12px transparent}
 }
 .hero h1{
-  font-size:clamp(40px,7vw,88px);
-  font-weight:800;
-  letter-spacing:-.03em;
-  line-height:1.02;
-  margin-bottom:24px;
-  animation:fadeUp .8s .1s ease both;
-  background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,0.55) 100%);
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;
+ font-size:clamp(40px,7vw,88px);
+ font-weight:800;
+ letter-spacing:-.03em;
+ line-height:1.02;
+ margin-bottom:24px;
+ animation:fadeUp .8s .1s ease both;
+ background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,0.55) 100%);
+ -webkit-background-clip:text;background-clip:text;
+ -webkit-text-fill-color:transparent;
 }
 .hero h1 .accent{
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;
-  display:inline-block;
+ background:linear-gradient(135deg,var(--accent),var(--accent-2));
+ -webkit-background-clip:text;background-clip:text;
+ -webkit-text-fill-color:transparent;
+ display:inline-block;
 }
 .hero .subtitle{
-  font-size:clamp(15px,1.6vw,18px);
-  color:var(--text-dim);
-  max-width:680px;
-  margin:0 auto 36px;
-  animation:fadeUp .8s .2s ease both;
+ font-size:clamp(15px,1.6vw,18px);
+ color:var(--text-dim);
+ max-width:680px;
+ margin:0 auto 36px;
+ animation:fadeUp .8s .2s ease both;
 }
 .hero .lawcode{
-  display:inline-block;
-  font-family:'JetBrains Mono',monospace;
-  font-size:13px;
-  letter-spacing:.08em;
-  color:var(--accent);
-  padding:6px 14px;
-  border:1px solid rgba(34,211,238,0.3);
-  border-radius:6px;
-  background:rgba(34,211,238,0.05);
-  margin-bottom:28px;
-  animation:fadeUp .8s .15s ease both;
+ display:inline-block;
+ font-family:'JetBrains Mono',monospace;
+ font-size:13px;
+ letter-spacing:.08em;
+ color:var(--accent);
+ padding:6px 14px;
+ border:1px solid rgba(34,211,238,0.3);
+ border-radius:6px;
+ background:rgba(34,211,238,0.05);
+ margin-bottom:28px;
+ animation:fadeUp .8s .15s ease both;
 }
 .hero .actions{
-  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
-  animation:fadeUp .8s .3s ease both;
+ display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+ animation:fadeUp .8s .3s ease both;
 }
 .btn-primary{
-  display:inline-flex;align-items:center;gap:8px;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  color:#021018;padding:14px 26px;border-radius:999px;
-  font-size:15px;font-weight:600;text-decoration:none;
-  box-shadow:0 10px 40px -10px var(--accent-glow);
-  transition:all .25s ease;
+ display:inline-flex;align-items:center;gap:8px;
+ background:linear-gradient(135deg,var(--accent),var(--accent-2));
+ color:#021018;padding:14px 26px;border-radius:999px;
+ font-size:15px;font-weight:600;text-decoration:none;
+ box-shadow:0 10px 40px -10px var(--accent-glow);
+ transition:all .25s ease;
 }
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 50px -8px var(--accent-glow)}
 .btn-ghost{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--surface-2);
-  color:var(--text);padding:14px 26px;border-radius:999px;
-  font-size:15px;font-weight:500;text-decoration:none;
-  border:1px solid var(--border-strong);
-  transition:all .25s ease;
+ display:inline-flex;align-items:center;gap:8px;
+ background:var(--surface-2);
+ color:var(--text);padding:14px 26px;border-radius:999px;
+ font-size:15px;font-weight:500;text-decoration:none;
+ border:1px solid var(--border-strong);
+ transition:all .25s ease;
 }
 .btn-ghost:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2)}
 
 .team-strip{
-  margin-top:80px;
-  display:flex;justify-content:center;align-items:center;gap:32px;flex-wrap:wrap;
-  font-size:13px;color:var(--text-faint);
-  animation:fadeUp 1s .5s ease both;
+ margin-top:80px;
+ display:flex;justify-content:center;align-items:center;gap:32px;flex-wrap:wrap;
+ font-size:13px;color:var(--text-faint);
+ animation:fadeUp 1s .5s ease both;
 }
 .team-strip .label{
-  text-transform:uppercase;letter-spacing:.15em;font-size:11px;
+ text-transform:uppercase;letter-spacing:.15em;font-size:11px;
 }
 .team-strip .names{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
 .team-strip .names span{color:var(--text-dim)}
 
 .scroll-indicator{
-  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
-  font-size:11px;color:var(--text-faint);
-  text-transform:uppercase;letter-spacing:.2em;
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  animation:fadeUp 1s .7s ease both;
+ position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+ font-size:11px;color:var(--text-faint);
+ text-transform:uppercase;letter-spacing:.2em;
+ display:flex;flex-direction:column;align-items:center;gap:8px;
+ animation:fadeUp 1s .7s ease both;
 }
 .scroll-indicator .line{
-  width:1px;height:32px;
-  background:linear-gradient(180deg,var(--accent),transparent);
-  animation:scrollLine 2s infinite;
+ width:1px;height:32px;
+ background:linear-gradient(180deg,var(--accent),transparent);
+ animation:scrollLine 2s infinite;
 }
 @keyframes scrollLine{
-  0%{transform:scaleY(0);transform-origin:top}
-  50%{transform:scaleY(1);transform-origin:top}
-  51%{transform:scaleY(1);transform-origin:bottom}
-  100%{transform:scaleY(0);transform-origin:bottom}
+ 0%{transform:scaleY(0);transform-origin:top}
+ 50%{transform:scaleY(1);transform-origin:top}
+ 51%{transform:scaleY(1);transform-origin:bottom}
+ 100%{transform:scaleY(0);transform-origin:bottom}
 }
 
 /* === Sections === */
 section{
-  position:relative;
-  padding:100px 24px 80px;
-  max-width:1280px;
-  margin:0 auto;
-  z-index:1;
-  scroll-margin-top:calc(var(--nav-h) + 24px);
+ position:relative;
+ padding:100px 24px 80px;
+ max-width:1280px;
+ margin:0 auto;
+ z-index:1;
+ scroll-margin-top:calc(var(--nav-h) + 24px);
 }
 section:first-of-type{padding-top:120px}
 .section-tag{
-  display:inline-flex;align-items:center;gap:8px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:12px;color:var(--accent);
-  margin-bottom:16px;letter-spacing:.06em;
+ display:inline-flex;align-items:center;gap:8px;
+ font-family:'JetBrains Mono',monospace;
+ font-size:12px;color:var(--accent);
+ margin-bottom:16px;letter-spacing:.06em;
 }
 .section-tag::before{
-  content:'';width:24px;height:1px;background:var(--accent);
+ content:'';width:24px;height:1px;background:var(--accent);
 }
 .section-title{
-  font-size:clamp(30px,4vw,52px);
-  font-weight:700;letter-spacing:-.02em;
-  line-height:1.1;
-  margin-bottom:20px;
-  max-width:900px;
+ font-size:clamp(30px,4vw,52px);
+ font-weight:700;letter-spacing:-.02em;
+ line-height:1.1;
+ margin-bottom:20px;
+ max-width:900px;
 }
 .section-title .accent{
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;
+ background:linear-gradient(135deg,var(--accent),var(--accent-2));
+ -webkit-background-clip:text;background-clip:text;
+ -webkit-text-fill-color:transparent;
 }
 .section-lead{
-  font-size:17px;color:var(--text-dim);
-  max-width:760px;margin-bottom:56px;
+ font-size:17px;color:var(--text-dim);
+ max-width:760px;margin-bottom:56px;
 }
 
 /* === Cards === */
 .card-grid{
-  display:grid;gap:20px;
+ display:grid;gap:20px;
 }
 .card-grid.cols-2{grid-template-columns:repeat(2,1fr)}
 .card-grid.cols-3{grid-template-columns:repeat(3,1fr)}
 .card-grid.cols-4{grid-template-columns:repeat(4,1fr)}
 @media (max-width:880px){
-  .card-grid.cols-2,.card-grid.cols-3,.card-grid.cols-4{grid-template-columns:1fr}
+ .card-grid.cols-2.card-grid.cols-3.card-grid.cols-4{grid-template-columns:1fr}
 }
 
 .card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:28px;
-  position:relative;
-  transition:all .3s ease;
-  overflow:hidden;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:var(--radius);
+ padding:28px;
+ position:relative;
+ transition:all .3s ease;
+ overflow:hidden;
 }
 .card::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(circle 280px at var(--mx,50%) var(--my,0%),rgba(34,211,238,0.08),transparent 70%);
-  opacity:0;transition:opacity .3s ease;
-  pointer-events:none;
+ content:'';position:absolute;inset:0;
+ background:radial-gradient(circle 280px at var(--mx,50%) var(--my,0%),rgba(34,211,238,0.08),transparent 70%);
+ opacity:0;transition:opacity .3s ease;
+ pointer-events:none;
 }
 .card:hover{
-  border-color:var(--border-strong);
-  transform:translateY(-2px);
-  background:var(--surface-2);
+ border-color:var(--border-strong);
+ transform:translateY(-2px);
+ background:var(--surface-2);
 }
 .card:hover::before{opacity:1}
 .card .num{
-  font-family:'JetBrains Mono',monospace;
-  font-size:13px;color:var(--accent);
-  margin-bottom:14px;letter-spacing:.04em;
+ font-family:'JetBrains Mono',monospace;
+ font-size:13px;color:var(--accent);
+ margin-bottom:14px;letter-spacing:.04em;
 }
 .card h3{
-  font-size:18px;font-weight:600;letter-spacing:-.01em;
-  margin-bottom:12px;
+ font-size:18px;font-weight:600;letter-spacing:-.01em;
+ margin-bottom:12px;
 }
 .card p{
-  font-size:14.5px;color:var(--text-dim);line-height:1.65;
+ font-size:14.5px;color:var(--text-dim);line-height:1.65;
 }
 .card p + p{margin-top:10px}
 .card .example{
-  margin-top:14px;padding:12px 14px;
-  background:rgba(34,211,238,0.04);
-  border-left:2px solid var(--accent);
-  border-radius:6px;
-  font-size:13px;color:var(--text-dim);
+ margin-top:14px;padding:12px 14px;
+ background:rgba(34,211,238,0.04);
+ border-left:2px solid var(--accent);
+ border-radius:6px;
+ font-size:13px;color:var(--text-dim);
 }
 .card .example b{color:var(--accent);font-weight:600}
 
 /* Stat callouts */
 .stats{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
-  margin:48px 0;
+ display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+ margin:48px 0;
 }
 @media(max-width:880px){.stats{grid-template-columns:repeat(2,1fr)}}
 .stat{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:24px;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:var(--radius);
+ padding:24px;
 }
 .stat .value{
-  font-size:clamp(28px,4vw,42px);
-  font-weight:700;letter-spacing:-.02em;
-  line-height:1;
-  background:linear-gradient(135deg,#fff,var(--accent));
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;
+ font-size:clamp(28px,4vw,42px);
+ font-weight:700;letter-spacing:-.02em;
+ line-height:1;
+ background:linear-gradient(135deg,#fff,var(--accent));
+ -webkit-background-clip:text;background-clip:text;
+ -webkit-text-fill-color:transparent;
 }
 .stat .label{
-  font-size:12.5px;color:var(--text-dim);
-  margin-top:8px;text-transform:uppercase;letter-spacing:.08em;
+ font-size:12.5px;color:var(--text-dim);
+ margin-top:8px;text-transform:uppercase;letter-spacing:.08em;
 }
 .stat .desc{
-  font-size:13px;color:var(--text-faint);margin-top:8px;
+ font-size:13px;color:var(--text-faint);margin-top:8px;
 }
 
 /* Tables */
 .table-wrap{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:6px;
-  overflow-x:auto;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:var(--radius);
+ padding:6px;
+ overflow-x:auto;
 }
 table.modern{
-  width:100%;
-  border-collapse:collapse;
-  font-size:14px;
+ width:100%;
+ border-collapse:collapse;
+ font-size:14px;
 }
 table.modern thead th{
-  text-align:left;
-  padding:14px 18px;
-  font-size:11.5px;font-weight:600;
-  color:var(--text-faint);
-  text-transform:uppercase;letter-spacing:.1em;
-  border-bottom:1px solid var(--border);
+ text-align:left;
+ padding:14px 18px;
+ font-size:11.5px;font-weight:600;
+ color:var(--text-faint);
+ text-transform:uppercase;letter-spacing:.1em;
+ border-bottom:1px solid var(--border);
 }
 table.modern tbody td{
-  padding:14px 18px;
-  border-bottom:1px solid var(--border);
-  color:var(--text-dim);
+ padding:14px 18px;
+ border-bottom:1px solid var(--border);
+ color:var(--text-dim);
 }
 table.modern tbody tr:last-child td{border-bottom:none}
 table.modern tbody tr:hover td{background:rgba(255,255,255,0.02);color:var(--text)}
 table.modern .highlight{
-  background:rgba(34,211,238,0.06)!important;
-  color:var(--accent)!important;font-weight:600;
+ background:rgba(34,211,238,0.06)!important;
+ color:var(--accent)!important;font-weight:600;
 }
 table.modern td b, table.modern td strong{color:var(--text);font-weight:600}
 
 /* Article spec block (Art. xxx) */
 .article-block{
-  display:grid;grid-template-columns:240px 1fr;gap:32px;
-  padding:32px;
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  margin-bottom:16px;
-  transition:all .3s ease;
+ display:grid;grid-template-columns:240px 1fr;gap:32px;
+ padding:32px;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:var(--radius);
+ margin-bottom:16px;
+ transition:all .3s ease;
 }
 .article-block:hover{border-color:var(--border-strong);background:var(--surface-2)}
 .article-block .left .code{
-  font-family:'JetBrains Mono',monospace;
-  font-size:28px;font-weight:600;
-  color:var(--accent);letter-spacing:-.01em;
+ font-family:'JetBrains Mono',monospace;
+ font-size:28px;font-weight:600;
+ color:var(--accent);letter-spacing:-.01em;
 }
 .article-block .left .meta{
-  font-size:12px;color:var(--text-faint);
-  text-transform:uppercase;letter-spacing:.1em;
-  margin-top:6px;
+ font-size:12px;color:var(--text-faint);
+ text-transform:uppercase;letter-spacing:.1em;
+ margin-top:6px;
 }
 .article-block ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
 .article-block li{
-  font-size:14.5px;color:var(--text-dim);
-  padding-left:22px;position:relative;line-height:1.55;
+ font-size:14.5px;color:var(--text-dim);
+ padding-left:22px;position:relative;line-height:1.55;
 }
 .article-block li::before{
-  content:'';position:absolute;left:0;top:8px;
-  width:10px;height:10px;
-  border-left:1px solid var(--accent);border-bottom:1px solid var(--accent);
-  transform:rotate(-45deg);
+ content:'';position:absolute;left:0;top:8px;
+ width:10px;height:10px;
+ border-left:1px solid var(--accent);border-bottom:1px solid var(--accent);
+ transform:rotate(-45deg);
 }
 @media(max-width:880px){.article-block{grid-template-columns:1fr;gap:16px}}
 
 /* Case study block */
 .case{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:28px;
-  margin-bottom:16px;
-  position:relative;
-  overflow:hidden;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:var(--radius);
+ padding:28px;
+ margin-bottom:16px;
+ position:relative;
+ overflow:hidden;
 }
 .case::after{
-  content:'';position:absolute;top:0;right:0;
-  width:140px;height:140px;
-  background:radial-gradient(circle,rgba(34,211,238,0.10),transparent 70%);
-  pointer-events:none;
+ content:'';position:absolute;top:0;right:0;
+ width:140px;height:140px;
+ background:radial-gradient(circle,rgba(34,211,238,0.10),transparent 70%);
+ pointer-events:none;
 }
 .case .case-tag{
-  display:inline-block;
-  font-family:'JetBrains Mono',monospace;font-size:11px;
-  color:var(--accent);
-  padding:4px 10px;border-radius:4px;
-  background:rgba(34,211,238,0.08);
-  border:1px solid rgba(34,211,238,0.2);
-  margin-bottom:14px;
+ display:inline-block;
+ font-family:'JetBrains Mono',monospace;font-size:11px;
+ color:var(--accent);
+ padding:4px 10px;border-radius:4px;
+ background:rgba(34,211,238,0.08);
+ border:1px solid rgba(34,211,238,0.2);
+ margin-bottom:14px;
 }
 .case h4{font-size:18px;font-weight:600;margin-bottom:10px}
 .case p{font-size:14.5px;color:var(--text-dim);line-height:1.65;margin-bottom:10px}
 .case .impact{
-  margin-top:14px;padding:14px;
-  background:rgba(248,113,113,0.06);
-  border-left:2px solid var(--danger);
-  border-radius:6px;
-  font-size:13.5px;color:var(--text);
+ margin-top:14px;padding:14px;
+ background:rgba(248,113,113,0.06);
+ border-left:2px solid var(--danger);
+ border-radius:6px;
+ font-size:13.5px;color:var(--text);
 }
 .case .outcome{
-  margin-top:10px;padding:14px;
-  background:rgba(52,211,153,0.06);
-  border-left:2px solid var(--accent-2);
-  border-radius:6px;
-  font-size:13.5px;color:var(--text);
+ margin-top:10px;padding:14px;
+ background:rgba(52,211,153,0.06);
+ border-left:2px solid var(--accent-2);
+ border-radius:6px;
+ font-size:13.5px;color:var(--text);
 }
 
 /* Comparison row */
 .compare-row{
-  display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;
-  padding:18px 0;
-  border-bottom:1px solid var(--border);
+ display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;
+ padding:18px 0;
+ border-bottom:1px solid var(--border);
 }
 .compare-row:last-child{border-bottom:none}
 .compare-row .col{padding:0 18px}
 .compare-row .col:first-child{
-  font-weight:600;color:var(--text);font-size:14px;
+ font-weight:600;color:var(--text);font-size:14px;
 }
 .compare-row .col:nth-child(2){
-  color:var(--text-faint);font-size:13.5px;
-  position:relative;
+ color:var(--text-faint);font-size:13.5px;
+ position:relative;
 }
 .compare-row .col:nth-child(2)::before{
-  content:'antes';
-  position:absolute;top:-14px;left:18px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;color:var(--danger);
-  letter-spacing:.1em;
+ content:'antes';
+ position:absolute;top:-14px;left:18px;
+ font-family:'JetBrains Mono',monospace;
+ font-size:10px;color:var(--danger);
+ letter-spacing:.1em;
 }
 .compare-row .col:nth-child(3){
-  color:var(--text);font-size:13.5px;
-  position:relative;
+ color:var(--text);font-size:13.5px;
+ position:relative;
 }
 .compare-row .col:nth-child(3)::before{
-  content:'depois';
-  position:absolute;top:-14px;left:18px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;color:var(--accent-2);
-  letter-spacing:.1em;
+ content:'depois';
+ position:absolute;top:-14px;left:18px;
+ font-family:'JetBrains Mono',monospace;
+ font-size:10px;color:var(--accent-2);
+ letter-spacing:.1em;
 }
 @media(max-width:880px){.compare-row{grid-template-columns:1fr;gap:8px}}
 
 /* Tier cards (B3 segments) */
 .tier-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+ display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
 }
 @media(max-width:880px){.tier-grid{grid-template-columns:1fr}}
 .tier{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:24px;
-  position:relative;
-  transition:all .3s ease;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:var(--radius);
+ padding:24px;
+ position:relative;
+ transition:all .3s ease;
 }
 .tier.featured{
-  border-color:rgba(34,211,238,0.4);
-  background:linear-gradient(180deg,rgba(34,211,238,0.06),var(--surface));
+ border-color:rgba(34,211,238,0.4);
+ background:linear-gradient(180deg,rgba(34,211,238,0.06),var(--surface));
 }
 .tier.featured::after{
-  content:'PREMIUM';
-  position:absolute;top:16px;right:16px;
-  font-family:'JetBrains Mono',monospace;font-size:9px;
-  color:var(--accent);letter-spacing:.15em;
-  padding:3px 8px;border-radius:4px;
-  background:rgba(34,211,238,0.1);
-  border:1px solid rgba(34,211,238,0.3);
+ content:'PREMIUM';
+ position:absolute;top:16px;right:16px;
+ font-family:'JetBrains Mono',monospace;font-size:9px;
+ color:var(--accent);letter-spacing:.15em;
+ padding:3px 8px;border-radius:4px;
+ background:rgba(34,211,238,0.1);
+ border:1px solid rgba(34,211,238,0.3);
 }
 .tier h4{
-  font-size:17px;font-weight:700;margin-bottom:14px;
-  letter-spacing:-.01em;
+ font-size:17px;font-weight:700;margin-bottom:14px;
+ letter-spacing:-.01em;
 }
 .tier.featured h4{color:var(--accent)}
 .tier ul{list-style:none;padding:0}
 .tier li{
-  font-size:13.5px;color:var(--text-dim);
-  padding:8px 0;padding-left:20px;
-  border-bottom:1px solid var(--border);
-  position:relative;
+ font-size:13.5px;color:var(--text-dim);
+ padding:8px 0;padding-left:20px;
+ border-bottom:1px solid var(--border);
+ position:relative;
 }
 .tier li:last-child{border-bottom:none}
 .tier li::before{
-  content:'';position:absolute;left:0;top:14px;
-  width:4px;height:4px;border-radius:50%;
-  background:var(--accent);
+ content:'';position:absolute;left:0;top:14px;
+ width:4px;height:4px;border-radius:50%;
+ background:var(--accent);
 }
 
 /* Quote */
 .quote{
-  background:linear-gradient(135deg,rgba(34,211,238,0.06),rgba(52,211,153,0.04));
-  border:1px solid rgba(34,211,238,0.2);
-  border-radius:24px;
-  padding:48px;
-  margin:48px 0;
-  position:relative;
+ background:linear-gradient(135deg,rgba(34,211,238,0.06),rgba(52,211,153,0.04));
+ border:1px solid rgba(34,211,238,0.2);
+ border-radius:24px;
+ padding:48px;
+ margin:48px 0;
+ position:relative;
 }
 .quote::before{
-  content:'\201C';
-  position:absolute;top:0;left:30px;
-  font-family:Georgia,serif;
-  font-size:120px;line-height:1;
-  color:var(--accent);opacity:.4;
+ content:'\201C';
+ position:absolute;top:0;left:30px;
+ font-family:Georgia,serif;
+ font-size:120px;line-height:1;
+ color:var(--accent);opacity:.4;
 }
 .quote p{
-  font-size:clamp(18px,2.2vw,24px);
-  line-height:1.5;font-weight:500;
-  color:var(--text);font-style:italic;
-  padding-left:60px;
+ font-size:clamp(18px,2.2vw,24px);
+ line-height:1.5;font-weight:500;
+ color:var(--text);font-style:italic;
+ padding-left:60px;
 }
 @media(max-width:760px){.quote{padding:32px 24px}.quote p{padding-left:0;padding-top:30px}.quote::before{left:24px;top:-10px}}
 
 /* Process steps (compliance) */
 .steps{display:flex;flex-direction:column;gap:14px;counter-reset:step}
 .step{
-  display:grid;grid-template-columns:60px 1fr;gap:20px;
-  padding:24px;
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  transition:all .3s ease;
+ display:grid;grid-template-columns:60px 1fr;gap:20px;
+ padding:24px;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:var(--radius);
+ transition:all .3s ease;
 }
 .step:hover{background:var(--surface-2);border-color:var(--border-strong)}
 .step .step-num{
-  font-family:'JetBrains Mono',monospace;
-  font-size:32px;font-weight:600;
-  color:var(--accent);
-  line-height:1;
+ font-family:'JetBrains Mono',monospace;
+ font-size:32px;font-weight:600;
+ color:var(--accent);
+ line-height:1;
 }
 .step h4{font-size:17px;font-weight:600;margin-bottom:8px}
 .step p{font-size:14px;color:var(--text-dim);line-height:1.6}
@@ -604,39 +604,39 @@ table.modern td b, table.modern td strong{color:var(--text);font-weight:600}
 .ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media(max-width:880px){.ref-grid{grid-template-columns:1fr}}
 .ref-block{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:24px;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:var(--radius);
+ padding:24px;
 }
 .ref-block h4{
-  font-family:'JetBrains Mono',monospace;
-  font-size:11.5px;letter-spacing:.1em;
-  color:var(--accent);text-transform:uppercase;
-  margin-bottom:16px;
+ font-family:'JetBrains Mono',monospace;
+ font-size:11.5px;letter-spacing:.1em;
+ color:var(--accent);text-transform:uppercase;
+ margin-bottom:16px;
 }
 .ref-block ul{list-style:none}
 .ref-block li{
-  font-size:13px;color:var(--text-dim);
-  padding:8px 0;
-  border-bottom:1px solid var(--border);
-  line-height:1.5;
+ font-size:13px;color:var(--text-dim);
+ padding:8px 0;
+ border-bottom:1px solid var(--border);
+ line-height:1.5;
 }
 .ref-block li:last-child{border-bottom:none}
 
 /* Footer */
 footer{
-  border-top:1px solid var(--border);
-  padding:40px 24px;
-  margin-top:80px;
-  text-align:center;
-  color:var(--text-faint);
-  font-size:13px;
-  z-index:1;position:relative;
+ border-top:1px solid var(--border);
+ padding:40px 24px;
+ margin-top:80px;
+ text-align:center;
+ color:var(--text-faint);
+ font-size:13px;
+ z-index:1;position:relative;
 }
 footer .footer-grid{
-  max-width:1280px;margin:0 auto;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+ max-width:1280px;margin:0 auto;
+ display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
 }
 
 /* Reveal animation */
@@ -647,186 +647,186 @@ footer .footer-grid{
 
 /* Big arrow */
 .arrow-conclude{
-  text-align:center;font-size:14px;color:var(--accent);
-  font-weight:600;margin-top:24px;
+ text-align:center;font-size:14px;color:var(--accent);
+ font-weight:600;margin-top:24px;
 }
 
 /* Highlights inline */
 .kbd{
-  font-family:'JetBrains Mono',monospace;font-size:12px;
-  padding:2px 6px;border-radius:4px;
-  background:rgba(34,211,238,0.08);color:var(--accent);
-  border:1px solid rgba(34,211,238,0.2);
+ font-family:'JetBrains Mono',monospace;font-size:12px;
+ padding:2px 6px;border-radius:4px;
+ background:rgba(34,211,238,0.08);color:var(--accent);
+ border:1px solid rgba(34,211,238,0.2);
 }
 .warn-icon{color:var(--warning);margin-right:4px}
 
 /* Mobile nav */
 @media(max-width:980px){
-  nav.topnav{padding:0 16px}
-  nav.topnav .links{
-    display:none;
-  }
-  nav.topnav .links.open{
-    display:flex;flex-direction:column;
-    position:fixed;top:var(--nav-h);left:0;right:0;
-    max-height:calc(100vh - var(--nav-h));
-    overflow-y:auto;
-    background:rgba(5,8,15,0.97);
-    backdrop-filter:blur(20px);
-    padding:16px;border-bottom:1px solid var(--border);
-    align-items:stretch;
-    max-width:100%;
-  }
-  nav.topnav .links.open a{
-    padding:12px 16px;font-size:14px;
-    text-align:left;
-  }
-  .menu-toggle{display:block}
-  nav.topnav .cta{display:none}
-  section{padding:72px 20px 56px}
-  .hero{padding:100px 20px 60px}
-  .article-block{padding:24px}
-  .card{padding:22px}
+ nav.topnav{padding:0 16px}
+ nav.topnav .links{
+ display:none;
+ }
+ nav.topnav .links.open{
+ display:flex;flex-direction:column;
+ position:fixed;top:var(--nav-h);left:0;right:0;
+ max-height:calc(100vh - var(--nav-h));
+ overflow-y:auto;
+ background:rgba(5,8,15,0.97);
+ backdrop-filter:blur(20px);
+ padding:16px;border-bottom:1px solid var(--border);
+ align-items:stretch;
+ max-width:100%;
+ }
+ nav.topnav .links.open a{
+ padding:12px 16px;font-size:14px;
+ text-align:left;
+ }
+ .menu-toggle{display:block}
+ nav.topnav .cta{display:none}
+ section{padding:72px 20px 56px}
+ .hero{padding:100px 20px 60px}
+ .article-block{padding:24px}
+ .card{padding:22px}
 }
 
 /* Formula display */
 .formula{
-  background:#0d1322;
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:18px 24px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:15px;
-  color:var(--accent);
-  text-align:center;
-  margin:16px 0;
-  overflow-x:auto;
+ background:#0d1322;
+ border:1px solid var(--border);
+ border-radius:8px;
+ padding:18px 24px;
+ font-family:'JetBrains Mono',monospace;
+ font-size:15px;
+ color:var(--accent);
+ text-align:center;
+ margin:16px 0;
+ overflow-x:auto;
 }
 
 /* FAE Logo */
 .fae-logo{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:6px 4px;
-  margin-bottom:36px;
-  animation:fadeUp .7s ease both;
+ display:inline-flex;align-items:center;justify-content:center;
+ padding:6px 4px;
+ margin-bottom:36px;
+ animation:fadeUp .7s ease both;
 }
 .fae-logo img{
-  display:block;
-  height:120px;
-  width:auto;
-  filter:brightness(0) invert(1);
-  opacity:0.96;
-  transition:opacity .25s ease, transform .25s ease;
+ display:block;
+ height:120px;
+ width:auto;
+ filter:brightness(0) invert(1);
+ opacity:0.96;
+ transition:opacity .25s ease, transform .25s ease;
 }
 @media (max-width:880px){
-  .fae-logo img{height:84px}
+ .fae-logo img{height:84px}
 }
 .fae-logo:hover img{opacity:1;transform:scale(1.02)}
 .fae-logo.footer-logo{
-  padding:0;
-  margin-bottom:0;
+ padding:0;
+ margin-bottom:0;
 }
 .fae-logo.footer-logo img{height:56px}
 @media (max-width:880px){
-  .fae-logo.footer-logo img{height:44px}
+ .fae-logo.footer-logo img{height:44px}
 }
 
 /* Timeline */
 .timeline{
-  position:relative;
-  padding-left:32px;
+ position:relative;
+ padding-left:32px;
 }
 .timeline::before{
-  content:'';position:absolute;
-  left:8px;top:8px;bottom:8px;width:2px;
-  background:linear-gradient(180deg,var(--accent),var(--accent-2),transparent);
-  border-radius:2px;
+ content:'';position:absolute;
+ left:8px;top:8px;bottom:8px;width:2px;
+ background:linear-gradient(180deg,var(--accent),var(--accent-2),transparent);
+ border-radius:2px;
 }
 .timeline-item{
-  position:relative;
-  padding:18px 0 18px 24px;
-  border-bottom:1px solid var(--border);
+ position:relative;
+ padding:18px 0 18px 24px;
+ border-bottom:1px solid var(--border);
 }
 .timeline-item:last-child{border-bottom:none}
 .timeline-item::before{
-  content:'';position:absolute;
-  left:-31px;top:24px;
-  width:14px;height:14px;border-radius:50%;
-  background:var(--accent);
-  box-shadow:0 0 0 4px rgba(34,211,238,0.15), 0 0 12px var(--accent-glow);
+ content:'';position:absolute;
+ left:-31px;top:24px;
+ width:14px;height:14px;border-radius:50%;
+ background:var(--accent);
+ box-shadow:0 0 0 4px rgba(34,211,238,0.15), 0 0 12px var(--accent-glow);
 }
 .timeline-item .year{
-  font-family:'JetBrains Mono',monospace;
-  font-size:13px;color:var(--accent);
-  letter-spacing:.05em;
-  margin-bottom:6px;
+ font-family:'JetBrains Mono',monospace;
+ font-size:13px;color:var(--accent);
+ letter-spacing:.05em;
+ margin-bottom:6px;
 }
 .timeline-item h4{
-  font-size:16px;font-weight:600;letter-spacing:-.01em;
-  margin-bottom:6px;
+ font-size:16px;font-weight:600;letter-spacing:-.01em;
+ margin-bottom:6px;
 }
 .timeline-item p{
-  font-size:14px;color:var(--text-dim);line-height:1.6;
+ font-size:14px;color:var(--text-dim);line-height:1.6;
 }
 
 /* Glossary */
 .glossary-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+ display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
 }
 @media(max-width:880px){.glossary-grid{grid-template-columns:1fr}}
 .glossary-item{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:18px 20px;
-  transition:all .25s ease;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:12px;
+ padding:18px 20px;
+ transition:all .25s ease;
 }
 .glossary-item:hover{
-  border-color:rgba(34,211,238,0.25);
-  background:var(--surface-2);
+ border-color:rgba(34,211,238,0.25);
+ background:var(--surface-2);
 }
 .glossary-item .term{
-  font-family:'JetBrains Mono',monospace;
-  font-size:13px;color:var(--accent);
-  margin-bottom:8px;letter-spacing:.04em;
-  font-weight:600;
+ font-family:'JetBrains Mono',monospace;
+ font-size:13px;color:var(--accent);
+ margin-bottom:8px;letter-spacing:.04em;
+ font-weight:600;
 }
 .glossary-item .definition{
-  font-size:13.5px;color:var(--text-dim);line-height:1.55;
+ font-size:13.5px;color:var(--text-dim);line-height:1.55;
 }
 
 /* FAQ */
 .faq-item{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:12px;
-  margin-bottom:10px;
-  overflow:hidden;
-  transition:all .25s ease;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:12px;
+ margin-bottom:10px;
+ overflow:hidden;
+ transition:all .25s ease;
 }
 .faq-item:hover{border-color:var(--border-strong)}
 .faq-item summary{
-  padding:18px 22px;
-  cursor:pointer;
-  font-size:15px;font-weight:600;
-  display:flex;justify-content:space-between;align-items:center;gap:14px;
-  list-style:none;
-  user-select:none;
+ padding:18px 22px;
+ cursor:pointer;
+ font-size:15px;font-weight:600;
+ display:flex;justify-content:space-between;align-items:center;gap:14px;
+ list-style:none;
+ user-select:none;
 }
 .faq-item summary::-webkit-details-marker{display:none}
 .faq-item summary::after{
-  content:'+';
-  font-family:'JetBrains Mono',monospace;
-  font-size:22px;color:var(--accent);
-  transition:transform .25s ease;
-  font-weight:300;
-  flex-shrink:0;
+ content:'+';
+ font-family:'JetBrains Mono',monospace;
+ font-size:22px;color:var(--accent);
+ transition:transform .25s ease;
+ font-weight:300;
+ flex-shrink:0;
 }
 .faq-item[open] summary::after{transform:rotate(45deg)}
 .faq-item[open] summary{border-bottom:1px solid var(--border)}
 .faq-item .faq-body{
-  padding:18px 22px 22px;
-  font-size:14px;color:var(--text-dim);line-height:1.7;
+ padding:18px 22px 22px;
+ font-size:14px;color:var(--text-dim);line-height:1.7;
 }
 .faq-item .faq-body p + p{margin-top:10px}
 
@@ -835,25 +835,25 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
 
 /* Back to top */
 .back-top{
-  position:fixed;
-  bottom:24px;right:24px;
-  width:44px;height:44px;border-radius:50%;
-  background:var(--surface-2);
-  border:1px solid var(--border-strong);
-  color:var(--text);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;
-  z-index:99;
-  opacity:0;pointer-events:none;
-  transform:translateY(12px);
-  transition:all .3s ease;
-  backdrop-filter:blur(12px);
+ position:fixed;
+ bottom:24px;right:24px;
+ width:44px;height:44px;border-radius:50%;
+ background:var(--surface-2);
+ border:1px solid var(--border-strong);
+ color:var(--text);
+ display:flex;align-items:center;justify-content:center;
+ cursor:pointer;
+ z-index:99;
+ opacity:0;pointer-events:none;
+ transform:translateY(12px);
+ transition:all .3s ease;
+ backdrop-filter:blur(12px);
 }
 .back-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
 .back-top:hover{
-  background:rgba(34,211,238,0.12);
-  border-color:var(--accent);
-  color:var(--accent);
+ background:rgba(34,211,238,0.12);
+ border-color:var(--accent);
+ color:var(--accent);
 }
 </style>
 </head>
@@ -864,1342 +864,1343 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
 <div class="scroll-progress" aria-hidden="true"></div>
 
 <nav class="topnav">
-  <div class="brand">
-    <span class="dot"></span>
-    <span>Lei 10.303/2001</span>
-  </div>
-  <div class="links" id="navLinks">
-    <a href="#resumo">Resumo</a>
-    <a href="#contexto">Contexto</a>
-    <a href="#linha-tempo">Linha do Tempo</a>
-    <a href="#lei">A Lei</a>
-    <a href="#tagalong">Tag Along</a>
-    <a href="#crimes">Crimes</a>
-    <a href="#governanca">Governança</a>
-    <a href="#auditoria">Auditoria</a>
-    <a href="#fcd">FCD</a>
-    <a href="#case">Case</a>
-    <a href="#fpa">FP&amp;A</a>
-    <a href="#legado">Legado</a>
-    <a href="#glossario">Glossário</a>
-    <a href="#faq">FAQ</a>
-    <a href="#conclusao">Conclusão</a>
-    <a href="#referencias">Referências</a>
-  </div>
-  <a href="#resumo" class="cta">Começar →</a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+ <div class="brand">
+ <span class="dot"></span>
+ <span>Lei 10.303/2001</span>
+ </div>
+ <div class="links" id="navLinks">
+ <a href="#resumo">Resumo</a>
+ <a href="#contexto">Contexto</a>
+ <a href="#linha-tempo">Linha do Tempo</a>
+ <a href="#lei">A Lei</a>
+ <a href="#tagalong">Tag Along</a>
+ <a href="#crimes">Crimes</a>
+ <a href="#governanca">Governança</a>
+ <a href="#auditoria">Auditoria</a>
+ <a href="#fcd">FCD</a>
+ <a href="#case">Case</a>
+ <a href="#fpa">FP&amp;A</a>
+ <a href="#legado">Legado</a>
+ <a href="#antes-depois">Antes vs Depois</a>
+ <a href="#conclusao">Conclusão</a>
+ <a href="#glossario">Glossário</a>
+ <a href="#faq">FAQ</a>
+ <a href="#referencias">Referências</a>
+ </div>
+ <a href="#resumo" class="cta">Começar →</a>
+ <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
 </nav>
 
 <!-- HERO -->
 <header class="hero">
-  <div class="fae-logo" aria-label="FAE Centro Universitário">
-    <img src="LOGO%20FAE.png" alt="FAE" />
-  </div>
-  <h1>
-    Lei <span class="accent">10.303/2001</span><br/>
-    A Reforma do Mercado de Capitais.
-  </h1>
-  <span class="lawcode">LEI Nº 10.303 · 31 DE OUTUBRO DE 2001</span>
-  <p class="subtitle">
-    A modernização do direito societário brasileiro que redefiniu a proteção ao acionista minoritário, tipificou crimes de mercado e transformou a prática contábil, da auditoria ao FP&amp;A.
-  </p>
-  <div class="actions">
-    <a href="#resumo" class="btn-primary">Explorar apresentação →</a>
-    <a href="#referencias" class="btn-ghost">Ver referências</a>
-  </div>
+ <div class="fae-logo" aria-label="FAE Centro Universitário">
+ <img src="LOGO%20FAE.png" alt="FAE" />
+ </div>
+ <h1>
+ Lei <span class="accent">10.303/2001</span><br/>
+ A Reforma do Mercado de Capitais.
+ </h1>
+ <span class="lawcode">LEI Nº 10.303 · 31 DE OUTUBRO DE 2001</span>
+ <p class="subtitle">
+ A modernização do direito societário brasileiro que redefiniu a proteção ao acionista minoritário, tipificou crimes de mercado e transformou a prática contábil, da auditoria ao FP&amp;A.
+ </p>
+ <div class="actions">
+ <a href="#resumo" class="btn-primary">Explorar apresentação →</a>
+ <a href="#referencias" class="btn-ghost">Ver referências</a>
+ </div>
 
-  <div class="team-strip">
-    <span class="label">Professor</span>
-    <span style="color:var(--text)">Eduardo Negrão</span>
-    <span style="opacity:.3">·</span>
-    <span class="label">Alunos</span>
-    <div class="names">
-      <span>Thiago Henrique</span>
-      <span>Rodrigo Miccos</span>
-      <span>Evelyn Betto</span>
-      <span>Gabrielly Paiva</span>
-    </div>
-  </div>
+ <div class="team-strip">
+ <span class="label">Professor</span>
+ <span style="color:var(--text)">Eduardo Negrão</span>
+ <span style="opacity:.3">·</span>
+ <span class="label">Alunos</span>
+ <div class="names">
+ <span>Thiago Henrique</span>
+ <span>Rodrigo Miccos</span>
+ <span>Evelyn Betto</span>
+ <span>Gabrielly Paiva</span>
+ </div>
+ </div>
 
-  <div class="scroll-indicator">
-    <span>Scroll</span>
-    <div class="line"></div>
-  </div>
+ <div class="scroll-indicator">
+ <span>Scroll</span>
+ <div class="line"></div>
+ </div>
 </header>
 
 <!-- RESUMO EXECUTIVO -->
 <section id="resumo" style="padding-top:60px">
-  <div class="reveal">
-    <div class="section-tag">RESUMO EXECUTIVO</div>
-    <h2 class="section-title">A Lei 10.303 em <span class="accent">cinco eixos</span></h2>
-    <p class="section-lead">Antes de mergulhar nos detalhes, uma visão panorâmica do que essa lei realmente fez — e por que ela é considerada o marco que separa o "antes" e o "depois" do mercado de capitais brasileiro.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">RESUMO EXECUTIVO</div>
+ <h2 class="section-title">A Lei 10.303 em <span class="accent">cinco eixos</span></h2>
+ <p class="section-lead">Antes de mergulhar nos detalhes, uma visão panorâmica do que essa lei realmente fez, e por que ela é considerada o marco que separa o "antes" e o "depois" do mercado de capitais brasileiro.</p>
+ </div>
 
-  <div class="card-grid cols-3 reveal">
-    <div class="card">
-      <div class="num">EIXO 01</div>
-      <h3>Proteção ao Minoritário</h3>
-      <p>Tag along obrigatório de 80%, OPA com laudo independente em fechamento de capital, ampliação do direito de recesso (Arts. 254-A, 4º-A, 136–137).</p>
-    </div>
-    <div class="card">
-      <div class="num">EIXO 02</div>
-      <h3>Tipificação Penal</h3>
-      <p>Insider trading e manipulação de mercado deixam de ser meras infrações administrativas e passam a ser crimes federais com reclusão (Arts. 27-C, 27-D, 27-E).</p>
-    </div>
-    <div class="card">
-      <div class="num">EIXO 03</div>
-      <h3>Fortalecimento da CVM</h3>
-      <p>Autonomia funcional e orçamentária, criação do Termo de Compromisso, poder de afastar administradores e ampliar o conceito de valor mobiliário.</p>
-    </div>
-    <div class="card">
-      <div class="num">EIXO 04</div>
-      <h3>Governança Corporativa</h3>
-      <p>Limite de 50% para PN, deveres do controlador (Art. 116-A), conselho fiscal independente e regime rigoroso de divulgação de fatos relevantes.</p>
-    </div>
-    <div class="card">
-      <div class="num">EIXO 05</div>
-      <h3>Nova Responsabilidade do Contador</h3>
-      <p>Auditor passa a ter obrigação legal de reportar à CVM, rodízio de 5 anos, vedações de independência. FCD se torna obrigatório em laudos OPA.</p>
-    </div>
-    <div class="card" style="background:linear-gradient(135deg,rgba(34,211,238,0.08),rgba(52,211,153,0.04));border-color:rgba(34,211,238,0.25)">
-      <div class="num" style="color:var(--accent-2)">RESULTADO</div>
-      <h3>O Mercado Moderno</h3>
-      <p>Sem essa lei, não existiriam Novo Mercado, 5M+ investidores PF, volume diário de R$ 28 bi e IFRS-IPOs brasileiros. É a fundação do mercado atual.</p>
-    </div>
-  </div>
+ <div class="card-grid cols-3 reveal">
+ <div class="card">
+ <div class="num">EIXO 01</div>
+ <h3>Proteção ao Minoritário</h3>
+ <p>Tag along obrigatório de 80%, OPA com laudo independente em fechamento de capital, ampliação do direito de recesso (Arts. 254-A, 4º-A, 136 a 137).</p>
+ </div>
+ <div class="card">
+ <div class="num">EIXO 02</div>
+ <h3>Tipificação Penal</h3>
+ <p>Insider trading e manipulação de mercado deixam de ser meras infrações administrativas e passam a ser crimes federais com reclusão (Arts. 27-C, 27-D, 27-E).</p>
+ </div>
+ <div class="card">
+ <div class="num">EIXO 03</div>
+ <h3>Fortalecimento da CVM</h3>
+ <p>Autonomia funcional e orçamentária, criação do Termo de Compromisso, poder de afastar administradores e ampliar o conceito de valor mobiliário.</p>
+ </div>
+ <div class="card">
+ <div class="num">EIXO 04</div>
+ <h3>Governança Corporativa</h3>
+ <p>Limite de 50% para PN, deveres do controlador (Art. 116-A), conselho fiscal independente e regime rigoroso de divulgação de fatos relevantes.</p>
+ </div>
+ <div class="card">
+ <div class="num">EIXO 05</div>
+ <h3>Nova Responsabilidade do Contador</h3>
+ <p>Auditor passa a ter obrigação legal de reportar à CVM, rodízio de 5 anos, vedações de independência. FCD se torna obrigatório em laudos OPA.</p>
+ </div>
+ <div class="card" style="background:linear-gradient(135deg,rgba(34,211,238,0.08),rgba(52,211,153,0.04));border-color:rgba(34,211,238,0.25)">
+ <div class="num" style="color:var(--accent-2)">RESULTADO</div>
+ <h3>O Mercado Moderno</h3>
+ <p>Sem essa lei, não existiriam Novo Mercado, 5M+ investidores PF, volume diário de R$ 28 bi e IFRS-IPOs brasileiros. É a fundação do mercado atual.</p>
+ </div>
+ </div>
 
-  <div class="stats reveal" style="margin-top:36px">
-    <div class="stat">
-      <div class="value">29 + 19</div>
-      <div class="label">Artigos alterados</div>
-      <div class="desc">Leis 6.404 e 6.385</div>
-    </div>
-    <div class="stat">
-      <div class="value">3</div>
-      <div class="label">Crimes tipificados</div>
-      <div class="desc">Capítulo VII-B novo</div>
-    </div>
-    <div class="stat">
-      <div class="value">80%</div>
-      <div class="label">Tag Along mínimo</div>
-      <div class="desc">100% no Novo Mercado</div>
-    </div>
-    <div class="stat">
-      <div class="value">120 dias</div>
-      <div class="label">Vacatio legis</div>
-      <div class="desc">Vigência: 1º mar 2002</div>
-    </div>
-  </div>
+ <div class="stats reveal" style="margin-top:36px">
+ <div class="stat">
+ <div class="value">29 + 19</div>
+ <div class="label">Artigos alterados</div>
+ <div class="desc">Leis 6.404 e 6.385</div>
+ </div>
+ <div class="stat">
+ <div class="value">3</div>
+ <div class="label">Crimes tipificados</div>
+ <div class="desc">Capítulo VII-B novo</div>
+ </div>
+ <div class="stat">
+ <div class="value">80%</div>
+ <div class="label">Tag Along mínimo</div>
+ <div class="desc">100% no Novo Mercado</div>
+ </div>
+ <div class="stat">
+ <div class="value">120 dias</div>
+ <div class="label">Vacatio legis</div>
+ <div class="desc">Vigência: 1º mar 2002</div>
+ </div>
+ </div>
 </section>
 
 <!-- SUMÁRIO / CONTEXTO -->
 <section id="contexto">
-  <div class="reveal">
-    <div class="section-tag">01 — CONTEXTO E DIAGNÓSTICO</div>
-    <h2 class="section-title">O Brasil dos anos 1990 e a <span class="accent">necessidade de reforma</span></h2>
-    <p class="section-lead">A estabilização pós-Plano Real, a pressão de fundos internacionais e o esvaziamento da Bovespa criaram o ambiente que tornou a reforma inevitável.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">01 · CONTEXTO E DIAGNÓSTICO</div>
+ <h2 class="section-title">O Brasil dos anos 1990 e a <span class="accent">necessidade de reforma</span></h2>
+ <p class="section-lead">A estabilização pós-Plano Real, a pressão de fundos internacionais e o esvaziamento da Bovespa criaram o ambiente que tornou a reforma inevitável.</p>
+ </div>
 
-  <div class="card-grid cols-2 reveal">
-    <div class="card">
-      <div class="num">1994</div>
-      <h3>Pós-Plano Real</h3>
-      <p>A estabilização monetária integrou o Brasil ao fluxo global de capitais. Empresas brasileiras passaram a ser avaliadas por investidores internacionais sob critérios de governança que a lei local não garantia.</p>
-    </div>
-    <div class="card">
-      <div class="num">1996–2001</div>
-      <h3>Pressão de Fundos Internacionais</h3>
-      <p>Fundos de pensão globais como CalPERS e APG exigiam padrões mínimos de proteção ao minoritário. O Brasil perdia capital para México, Chile e Argentina, que já tinham legislações mais protetivas.</p>
-    </div>
-    <div class="card">
-      <div class="num">−23%</div>
-      <h3>Esvaziamento da Bovespa</h3>
-      <p>O número de companhias listadas caiu cerca de 23% entre 1996 e 2001. Empresas preferiam captar via ADRs na NYSE/NASDAQ, onde as regras de GC eram mais rígidas e o valuation mais elevado.</p>
-    </div>
-    <div class="card">
-      <div class="num">1999</div>
-      <h3>Crise Cambial</h3>
-      <p>A desvalorização do Real acelerou a fuga de capitais. O custo de capital no Brasil explodiu — ficou evidente que sem reforma societária o país não atrairia investimento de longo prazo.</p>
-    </div>
-  </div>
+ <div class="card-grid cols-2 reveal">
+ <div class="card">
+ <div class="num">1994</div>
+ <h3>Pós-Plano Real</h3>
+ <p>A estabilização monetária integrou o Brasil ao fluxo global de capitais. Empresas brasileiras passaram a ser avaliadas por investidores internacionais sob critérios de governança que a lei local não garantia.</p>
+ </div>
+ <div class="card">
+ <div class="num">1996 a 2001</div>
+ <h3>Pressão de Fundos Internacionais</h3>
+ <p>Fundos de pensão globais como CalPERS e APG exigiam padrões mínimos de proteção ao minoritário. O Brasil perdia capital para México, Chile e Argentina, que já tinham legislações mais protetivas.</p>
+ </div>
+ <div class="card">
+ <div class="num">−23%</div>
+ <h3>Esvaziamento da Bovespa</h3>
+ <p>O número de companhias listadas caiu cerca de 23% entre 1996 e 2001. Empresas preferiam captar via ADRs na NYSE/NASDAQ, onde as regras de GC eram mais rígidas e o valuation mais elevado.</p>
+ </div>
+ <div class="card">
+ <div class="num">1999</div>
+ <h3>Crise Cambial</h3>
+ <p>A desvalorização do Real acelerou a fuga de capitais. O custo de capital no Brasil explodiu, ficou evidente que sem reforma societária o país não atrairia investimento de longo prazo.</p>
+ </div>
+ </div>
 
-  <div class="stats reveal">
-    <div class="stat">
-      <div class="value">551 → 425</div>
-      <div class="label">Empresas listadas (1996 → 2001)</div>
-      <div class="desc">Queda estrutural de listagens</div>
-    </div>
-    <div class="stat">
-      <div class="value">14 → 1</div>
-      <div class="label">IPOs no período</div>
-      <div class="desc">1996 vs. 2001</div>
-    </div>
-    <div class="stat">
-      <div class="value">28% → 16%</div>
-      <div class="label">Participação PF (%)</div>
-      <div class="desc">Pessoa física fugindo do mercado</div>
-    </div>
-    <div class="stat">
-      <div class="value">34%</div>
-      <div class="label">Capital controlador</div>
-      <div class="desc">…detinha 100% do poder decisório</div>
-    </div>
-  </div>
+ <div class="stats reveal">
+ <div class="stat">
+ <div class="value">551 → 425</div>
+ <div class="label">Empresas listadas (1996 → 2001)</div>
+ <div class="desc">Queda estrutural de listagens</div>
+ </div>
+ <div class="stat">
+ <div class="value">14 → 1</div>
+ <div class="label">IPOs no período</div>
+ <div class="desc">1996 vs. 2001</div>
+ </div>
+ <div class="stat">
+ <div class="value">28% → 16%</div>
+ <div class="label">Participação PF (%)</div>
+ <div class="desc">Pessoa física fugindo do mercado</div>
+ </div>
+ <div class="stat">
+ <div class="value">34%</div>
+ <div class="label">Capital controlador</div>
+ <div class="desc">…detinha 100% do poder decisório</div>
+ </div>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:48px 0 20px;letter-spacing:-.01em">Comparativo Internacional (2000)</h3>
-  <div class="table-wrap reveal">
-    <table class="modern">
-      <thead>
-        <tr><th>País</th><th>Tag Along</th><th>Mín. Ações c/ Voto</th><th>Insider Trading</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><b>Brasil (pré-2001)</b></td><td>Não obrigatório</td><td>33%</td><td>Adm. apenas</td></tr>
-        <tr><td>EUA</td><td>Sim — 100%</td><td>50%+</td><td>Crime federal</td></tr>
-        <tr><td>Reino Unido</td><td>Sim — 100%</td><td>50%+</td><td>Crime</td></tr>
-        <tr><td>Chile</td><td>Sim — 75%</td><td>50%+</td><td>Crime</td></tr>
-        <tr class="highlight"><td><b>Brasil (pós-2001)</b></td><td>Obrigatório 80%</td><td>50%</td><td>Crime federal</td></tr>
-      </tbody>
-    </table>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:48px 0 20px;letter-spacing:-.01em">Comparativo Internacional (2000)</h3>
+ <div class="table-wrap reveal">
+ <table class="modern">
+ <thead>
+ <tr><th>País</th><th>Tag Along</th><th>Mín. Ações c/ Voto</th><th>Insider Trading</th></tr>
+ </thead>
+ <tbody>
+ <tr><td><b>Brasil (pré-2001)</b></td><td>Não obrigatório</td><td>33%</td><td>Adm. apenas</td></tr>
+ <tr><td>EUA</td><td>Sim, 100%</td><td>50%+</td><td>Crime federal</td></tr>
+ <tr><td>Reino Unido</td><td>Sim, 100%</td><td>50%+</td><td>Crime</td></tr>
+ <tr><td>Chile</td><td>Sim, 75%</td><td>50%+</td><td>Crime</td></tr>
+ <tr class="highlight"><td><b>Brasil (pós-2001)</b></td><td>Obrigatório 80%</td><td>50%</td><td>Crime federal</td></tr>
+ </tbody>
+ </table>
+ </div>
 </section>
 
 <!-- DIAGNÓSTICO -->
 <section id="diagnostico">
-  <div class="reveal">
-    <div class="section-tag">DIAGNÓSTICO</div>
-    <h2 class="section-title">Falhas estruturais das <span class="accent">Leis 6.404 e 6.385/1976</span></h2>
-    <p class="section-lead">Seis brechas sistêmicas que permitiram concentração de poder, opacidade e impunidade — todas atacadas pela Lei 10.303.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">DIAGNÓSTICO</div>
+ <h2 class="section-title">Falhas estruturais das <span class="accent">Leis 6.404 e 6.385/1976</span></h2>
+ <p class="section-lead">Seis brechas sistêmicas que permitiram concentração de poder, opacidade e impunidade, todas atacadas pela Lei 10.303.</p>
+ </div>
 
-  <div class="card-grid cols-3 reveal">
-    <div class="card">
-      <div class="num">01 · Lei 6.404</div>
-      <h3>Concentração de Poder no Controlador</h3>
-      <p>O controlador tomava decisões praticamente sozinho, elegia a maioria da administração e direcionava a companhia conforme seus interesses.</p>
-      <div class="example">Controlador com <b>34%</b> das ações detinha <b>100%</b> do poder de voto (via ON+PN). Minoritários com 66% do capital não tinham voz.</div>
-    </div>
-    <div class="card">
-      <div class="num">02 · Lei 6.404</div>
-      <h3>Proteção Fraca ao Minoritário</h3>
-      <p>Sem tag along efetivo, minoritários eram prejudicados na venda de controle. Decisões prejudiciais eram aprovadas sem resistência.</p>
-      <div class="example">Controlador vendia por <b>R$ 40/ação</b> (100% de ágio); minoritário ficava preso a <b>R$ 20</b> — sem direito ao mesmo preço.</div>
-    </div>
-    <div class="card">
-      <div class="num">03 · Lei 6.404</div>
-      <h3>Falta de Transparência</h3>
-      <p>Não havia exigência de divulgação clara e rápida de informações relevantes, nem padronização rigorosa de relatórios.</p>
-      <div class="example">Assimetria de informação: insiders sabiam de resultados, fusões e contratos materiais antes do mercado — e negociavam livremente.</div>
-    </div>
-    <div class="card">
-      <div class="num">04 · Lei 6.404</div>
-      <h3>Governança Pouco Desenvolvida</h3>
-      <p>Conselhos pouco independentes, fiscalização interna fraca e ausência de cultura de compliance. Difícil responsabilizar administradores.</p>
-      <div class="example">Conselheiros indicados pelo controlador aprovavam transações com partes relacionadas <b>acima do mercado</b> — sem contestação.</div>
-    </div>
-    <div class="card">
-      <div class="num">05 · Lei 6.385</div>
-      <h3>CVM com Poder Limitado</h3>
-      <p>A CVM tinha pouca autonomia e instrumentos limitados de investigação. Punições eram baixas e não acompanhavam os ganhos das fraudes.</p>
-      <div class="example">O custo de cometer irregularidades era <b>calculável</b> — a multa era menor que o lucro da infração.</div>
-    </div>
-    <div class="card">
-      <div class="num">06 · Lei 6.385</div>
-      <h3>Insider Trading sem Tipificação</h3>
-      <p>A lei original tratava o uso de informação privilegiada como mera infração administrativa, com lacunas na definição e punição.</p>
-      <div class="example">Sem crime, o processo durava anos e multas eram irrelevantes diante dos lucros obtidos com informação privilegiada.</div>
-    </div>
-  </div>
+ <div class="card-grid cols-3 reveal">
+ <div class="card">
+ <div class="num">01 · Lei 6.404</div>
+ <h3>Concentração de Poder no Controlador</h3>
+ <p>O controlador tomava decisões praticamente sozinho, elegia a maioria da administração e direcionava a companhia conforme seus interesses.</p>
+ <div class="example">Controlador com <b>34%</b> das ações detinha <b>100%</b> do poder de voto (via ON+PN). Minoritários com 66% do capital não tinham voz.</div>
+ </div>
+ <div class="card">
+ <div class="num">02 · Lei 6.404</div>
+ <h3>Proteção Fraca ao Minoritário</h3>
+ <p>Sem tag along efetivo, minoritários eram prejudicados na venda de controle. Decisões prejudiciais eram aprovadas sem resistência.</p>
+ <div class="example">Controlador vendia por <b>R$ 40/ação</b> (100% de ágio); minoritário ficava preso a <b>R$ 20</b>, sem direito ao mesmo preço.</div>
+ </div>
+ <div class="card">
+ <div class="num">03 · Lei 6.404</div>
+ <h3>Falta de Transparência</h3>
+ <p>Não havia exigência de divulgação clara e rápida de informações relevantes, nem padronização rigorosa de relatórios.</p>
+ <div class="example">Assimetria de informação: insiders sabiam de resultados, fusões e contratos materiais antes do mercado, e negociavam livremente.</div>
+ </div>
+ <div class="card">
+ <div class="num">04 · Lei 6.404</div>
+ <h3>Governança Pouco Desenvolvida</h3>
+ <p>Conselhos pouco independentes, fiscalização interna fraca e ausência de cultura de compliance. Difícil responsabilizar administradores.</p>
+ <div class="example">Conselheiros indicados pelo controlador aprovavam transações com partes relacionadas <b>acima do mercado</b>, sem contestação.</div>
+ </div>
+ <div class="card">
+ <div class="num">05 · Lei 6.385</div>
+ <h3>CVM com Poder Limitado</h3>
+ <p>A CVM tinha pouca autonomia e instrumentos limitados de investigação. Punições eram baixas e não acompanhavam os ganhos das fraudes.</p>
+ <div class="example">O custo de cometer irregularidades era <b>calculável</b>, a multa era menor que o lucro da infração.</div>
+ </div>
+ <div class="card">
+ <div class="num">06 · Lei 6.385</div>
+ <h3>Insider Trading sem Tipificação</h3>
+ <p>A lei original tratava o uso de informação privilegiada como mera infração administrativa, com lacunas na definição e punição.</p>
+ <div class="example">Sem crime, o processo durava anos e multas eram irrelevantes diante dos lucros obtidos com informação privilegiada.</div>
+ </div>
+ </div>
 
-  <div class="quote reveal" style="margin-top:64px">
-    <p>As falhas geravam três problemas sistêmicos — assimetria de informação, conflito controlador/minoritário e baixa confiança — que justificaram a reforma.</p>
-  </div>
+ <div class="quote reveal" style="margin-top:64px">
+ <p>As falhas geravam três problemas sistêmicos, assimetria de informação, conflito controlador/minoritário e baixa confiança, que justificaram a reforma.</p>
+ </div>
 </section>
 
 <!-- LINHA DO TEMPO -->
 <section id="linha-tempo">
-  <div class="reveal">
-    <div class="section-tag">LINHA DO TEMPO</div>
-    <h2 class="section-title">Da gestação ao <span class="accent">marco regulatório</span></h2>
-    <p class="section-lead">Mais de duas décadas separam as primeiras discussões sobre proteção ao minoritário no Brasil da promulgação da Lei 10.303 — e os anos seguintes consolidaram seus efeitos no Novo Mercado e na atuação da CVM.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">LINHA DO TEMPO</div>
+ <h2 class="section-title">Da gestação ao <span class="accent">marco regulatório</span></h2>
+ <p class="section-lead">Mais de duas décadas separam as primeiras discussões sobre proteção ao minoritário no Brasil da promulgação da Lei 10.303, e os anos seguintes consolidaram seus efeitos no Novo Mercado e na atuação da CVM.</p>
+ </div>
 
-  <div class="timeline reveal">
-    <div class="timeline-item">
-      <div class="year">1976</div>
-      <h4>Lei 6.404 — Lei das S.A.</h4>
-      <p>Estrutura básica das sociedades por ações, mas com proteção limitada ao minoritário. Permitia até 2/3 (67%) do capital em ações preferenciais sem voto.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">1976</div>
-      <h4>Lei 6.385 — Criação da CVM</h4>
-      <p>Comissão de Valores Mobiliários é criada, mas com poderes limitados de investigação e sanção. Insider trading é tratado apenas como infração administrativa.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">1994</div>
-      <h4>Plano Real e integração ao fluxo global</h4>
-      <p>Estabilização monetária abre o mercado brasileiro a investidores internacionais que exigem padrões mínimos de governança.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">1997</div>
-      <h4>Lei 9.457 — primeira reforma</h4>
-      <p>Reforma de 1997 retira o tag along para viabilizar privatizações. Decisão controversa que aumentou a fuga de investidores PF.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">1999</div>
-      <h4>Crise cambial</h4>
-      <p>Desvalorização do Real acelera fuga de capitais. Custo de capital no Brasil dispara — sem reforma, não haveria investimento de longo prazo.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">2000</div>
-      <h4>Tramitação no Congresso</h4>
-      <p>O Projeto de Lei 3.115/1997 (depois 10.303) avança com forte pressão de IBGC, ANBIMA e fundos de pensão. Debate central: tag along, OPA e tipificação penal.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">31 OUT 2001</div>
-      <h4>Sanção da Lei 10.303</h4>
-      <p>Presidente FHC sanciona a lei. Altera as Leis 6.404/76 e 6.385/76. Vacatio legis de 120 dias — entrada em vigor em 1º de março de 2002.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">2002</div>
-      <h4>Lançamento do Novo Mercado B3</h4>
-      <p>Bovespa cria os segmentos diferenciados (N1, N2, Novo Mercado) com regras ainda mais rígidas — tag along 100%, somente ON, arbitragem.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">2002</div>
-      <h4>Instruções CVM 358 e 361</h4>
-      <p>CVM regulamenta a divulgação de fatos relevantes (358) e o procedimento de OPA com laudo independente (361). Operacionaliza a lei.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">2007</div>
-      <h4>Ciclo dourado de IPOs</h4>
-      <p>64 IPOs em 2007, recorde histórico. A confiança restaurada pela governança permite a maior captação da história da Bovespa.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">2013</div>
-      <h4>Caso Sadia–Perdigão: 1ª condenação criminal</h4>
-      <p>Primeira condenação penal por insider trading no Brasil. Marca a operacionalidade dos arts. 27-C e 27-D — antes apenas teóricos.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">2022</div>
-      <h4>Resolução CVM 80 e modernização</h4>
-      <p>Substitui a IN 308/1999, moderniza vedações de auditores, rodízio e independência. Reforça o pilar legado pela Lei 10.303.</p>
-    </div>
-    <div class="timeline-item">
-      <div class="year">2023</div>
-      <h4>5+ milhões de investidores PF</h4>
-      <p>De 500 mil em 2001 para mais de 5 milhões. Volume diário cresce 30×. O legado da lei é o mercado que existe hoje.</p>
-    </div>
-  </div>
+ <div class="timeline reveal">
+ <div class="timeline-item">
+ <div class="year">1976</div>
+ <h4>Lei 6.404: Lei das S.A.</h4>
+ <p>Estrutura básica das sociedades por ações, mas com proteção limitada ao minoritário. Permitia até 2/3 (67%) do capital em ações preferenciais sem voto.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">1976</div>
+ <h4>Lei 6.385: Criação da CVM</h4>
+ <p>Comissão de Valores Mobiliários é criada, mas com poderes limitados de investigação e sanção. Insider trading é tratado apenas como infração administrativa.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">1994</div>
+ <h4>Plano Real e integração ao fluxo global</h4>
+ <p>Estabilização monetária abre o mercado brasileiro a investidores internacionais que exigem padrões mínimos de governança.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">1997</div>
+ <h4>Lei 9.457: primeira reforma</h4>
+ <p>Reforma de 1997 retira o tag along para viabilizar privatizações. Decisão controversa que aumentou a fuga de investidores PF.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">1999</div>
+ <h4>Crise cambial</h4>
+ <p>Desvalorização do Real acelera fuga de capitais. Custo de capital no Brasil dispara, sem reforma, não haveria investimento de longo prazo.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">2000</div>
+ <h4>Tramitação no Congresso</h4>
+ <p>O Projeto de Lei 3.115/1997 (depois 10.303) avança com forte pressão de IBGC, ANBIMA e fundos de pensão. Debate central: tag along, OPA e tipificação penal.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">31 OUT 2001</div>
+ <h4>Sanção da Lei 10.303</h4>
+ <p>Presidente FHC sanciona a lei. Altera as Leis 6.404/76 e 6.385/76. Vacatio legis de 120 dias, entrada em vigor em 1º de março de 2002.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">2002</div>
+ <h4>Lançamento do Novo Mercado B3</h4>
+ <p>Bovespa cria os segmentos diferenciados (N1, N2, Novo Mercado) com regras ainda mais rígidas, tag along 100%, somente ON, arbitragem.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">2002</div>
+ <h4>Instruções CVM 358 e 361</h4>
+ <p>CVM regulamenta a divulgação de fatos relevantes (358) e o procedimento de OPA com laudo independente (361). Operacionaliza a lei.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">2007</div>
+ <h4>Ciclo dourado de IPOs</h4>
+ <p>64 IPOs em 2007, recorde histórico. A confiança restaurada pela governança permite a maior captação da história da Bovespa.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">2013</div>
+ <h4>Caso Sadia vs Perdigão: 1ª condenação criminal</h4>
+ <p>Primeira condenação penal por insider trading no Brasil. Marca a operacionalidade dos arts. 27-C e 27-D, antes apenas teóricos.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">2022</div>
+ <h4>Resolução CVM 80 e modernização</h4>
+ <p>Substitui a IN 308/1999, moderniza vedações de auditores, rodízio e independência. Reforça o pilar legado pela Lei 10.303.</p>
+ </div>
+ <div class="timeline-item">
+ <div class="year">2023</div>
+ <h4>5+ milhões de investidores PF</h4>
+ <p>De 500 mil em 2001 para mais de 5 milhões. Volume diário cresce 30×. O legado da lei é o mercado que existe hoje.</p>
+ </div>
+ </div>
 </section>
 
 <!-- A LEI -->
 <section id="lei">
-  <div class="reveal">
-    <div class="section-tag">02 — A LEI 10.303/2001</div>
-    <h2 class="section-title">Estrutura legislativa e <span class="accent">artigos-chave</span></h2>
-    <p class="section-lead"><b style="color:var(--text)">LEI Nº 10.303, DE 31 DE OUTUBRO DE 2001</b> — Altera as Leis nº 6.404/1976 (S.A.) e 6.385/1976 (Mercado de Capitais). Buscou equilibrar a relação controlador/minoritário, fortalecer a CVM e criar responsabilização penal.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">02 · A LEI 10.303/2001</div>
+ <h2 class="section-title">Estrutura legislativa e <span class="accent">artigos-chave</span></h2>
+ <p class="section-lead"><b style="color:var(--text)">LEI Nº 10.303, DE 31 DE OUTUBRO DE 2001</b>. Altera as Leis nº 6.404/1976 (S.A.) e 6.385/1976 (Mercado de Capitais). Buscou equilibrar a relação controlador/minoritário, fortalecer a CVM e criar responsabilização penal.</p>
+ </div>
 
-  <div class="reveal">
-    <div class="article-block">
-      <div class="left">
-        <div class="code">Art. 2º</div>
-        <div class="meta">29 alterações · Lei 6.404</div>
-      </div>
-      <ul>
-        <li><b>Art. 15:</b> Limite de 50% para ações preferenciais (antes 2/3 = 67%)</li>
-        <li><b>Art. 4º-A (novo):</b> OPA para cancelamento de registro de cia. aberta</li>
-        <li><b>Art. 116-A (novo):</b> Deveres e responsabilidades do acionista controlador</li>
-        <li><b>Art. 254-A (novo):</b> Tag Along — mínimo 80% do valor pago ao controlador</li>
-        <li><b>Arts. 136 e 137:</b> Ampliação das hipóteses de direito de recesso</li>
-      </ul>
-    </div>
-    <div class="article-block">
-      <div class="left">
-        <div class="code">Art. 4º</div>
-        <div class="meta">19 alterações · Lei 6.385</div>
-      </div>
-      <ul>
-        <li>Ampliação do conceito de "valores mobiliários" (derivativos, FII, CRI, CRA)</li>
-        <li>Maior autonomia orçamentária e funcional da CVM</li>
-        <li>Poder de afastar administradores durante investigação</li>
-        <li>Criação do Termo de Compromisso (encerramento adm. sem admissão de culpa)</li>
-        <li>Responsabilização de controladores em processos de manipulação</li>
-      </ul>
-    </div>
-    <div class="article-block">
-      <div class="left">
-        <div class="code">Art. 5º</div>
-        <div class="meta">Capítulo VII-B · Lei 6.385</div>
-      </div>
-      <ul>
-        <li><b>Art. 27-C:</b> Manipulação de mercado — reclusão 1 a 8 anos + multa</li>
-        <li><b>Art. 27-D:</b> Insider trading — reclusão 1 a 5 anos + multa</li>
-        <li><b>Art. 27-E:</b> Exercício irregular de função — reclusão 1 a 3 anos</li>
-        <li>Multa: até <b>R$ 500 mil OU 3× o valor da vantagem ilícita</b> (o que for maior)</li>
-        <li>Criminalização foi o maior avanço — antes era só infração administrativa</li>
-      </ul>
-    </div>
-    <div class="article-block">
-      <div class="left">
-        <div class="code">Arts. 6–10</div>
-        <div class="meta">Disposições finais · Transitório</div>
-      </div>
-      <ul>
-        <li><b>Art. 6º:</b> Prazo de 1 ano para adequação dos estatutos sociais</li>
-        <li><b>Art. 7º:</b> Empresas listadas antes mantêm estrutura PN existente</li>
-        <li><b>Art. 9º:</b> Vacatio legis de 120 dias para absorção das novas regras</li>
-        <li>Novo Mercado B3 (2002) surgiu como resposta — exigências ainda maiores</li>
-        <li>Tag Along 100% e somente ON (Novo Mercado) — além do mínimo legal</li>
-      </ul>
-    </div>
-  </div>
+ <div class="reveal">
+ <div class="article-block">
+ <div class="left">
+ <div class="code">Art. 2º</div>
+ <div class="meta">29 alterações · Lei 6.404</div>
+ </div>
+ <ul>
+ <li><b>Art. 15:</b> Limite de 50% para ações preferenciais (antes 2/3 = 67%)</li>
+ <li><b>Art. 4º-A (novo):</b> OPA para cancelamento de registro de cia. aberta</li>
+ <li><b>Art. 116-A (novo):</b> Deveres e responsabilidades do acionista controlador</li>
+ <li><b>Art. 254-A (novo):</b> Tag Along, mínimo 80% do valor pago ao controlador</li>
+ <li><b>Arts. 136 e 137:</b> Ampliação das hipóteses de direito de recesso</li>
+ </ul>
+ </div>
+ <div class="article-block">
+ <div class="left">
+ <div class="code">Art. 4º</div>
+ <div class="meta">19 alterações · Lei 6.385</div>
+ </div>
+ <ul>
+ <li>Ampliação do conceito de "valores mobiliários" (derivativos, FII, CRI, CRA)</li>
+ <li>Maior autonomia orçamentária e funcional da CVM</li>
+ <li>Poder de afastar administradores durante investigação</li>
+ <li>Criação do Termo de Compromisso (encerramento adm. sem admissão de culpa)</li>
+ <li>Responsabilização de controladores em processos de manipulação</li>
+ </ul>
+ </div>
+ <div class="article-block">
+ <div class="left">
+ <div class="code">Art. 5º</div>
+ <div class="meta">Capítulo VII-B · Lei 6.385</div>
+ </div>
+ <ul>
+ <li><b>Art. 27-C:</b> Manipulação de mercado, reclusão 1 a 8 anos + multa</li>
+ <li><b>Art. 27-D:</b> Insider trading, reclusão 1 a 5 anos + multa</li>
+ <li><b>Art. 27-E:</b> Exercício irregular de função, reclusão 1 a 3 anos</li>
+ <li>Multa: até <b>R$ 500 mil OU 3× o valor da vantagem ilícita</b> (o que for maior)</li>
+ <li>Criminalização foi o maior avanço, antes era só infração administrativa</li>
+ </ul>
+ </div>
+ <div class="article-block">
+ <div class="left">
+ <div class="code">Arts. 6 a 10</div>
+ <div class="meta">Disposições finais · Transitório</div>
+ </div>
+ <ul>
+ <li><b>Art. 6º:</b> Prazo de 1 ano para adequação dos estatutos sociais</li>
+ <li><b>Art. 7º:</b> Empresas listadas antes mantêm estrutura PN existente</li>
+ <li><b>Art. 9º:</b> Vacatio legis de 120 dias para absorção das novas regras</li>
+ <li>Novo Mercado B3 (2002) surgiu como resposta, exigências ainda maiores</li>
+ <li>Tag Along 100% e somente ON (Novo Mercado), além do mínimo legal</li>
+ </ul>
+ </div>
+ </div>
 </section>
 
 <!-- TAG ALONG / OPA -->
 <section id="tagalong">
-  <div class="reveal">
-    <div class="section-tag">TAG ALONG · OPA · DIREITO DE RECESSO</div>
-    <h2 class="section-title">Proteção real ao <span class="accent">minoritário</span></h2>
-    <p class="section-lead">O Art. 254-A inaugurou o mecanismo central de saída justa do minoritário, complementado pela OPA (Art. 4º-A) e pela ampliação do recesso (Arts. 136–137).</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">TAG ALONG · OPA · DIREITO DE RECESSO</div>
+ <h2 class="section-title">Proteção real ao <span class="accent">minoritário</span></h2>
+ <p class="section-lead">O Art. 254-A inaugurou o mecanismo central de saída justa do minoritário, complementado pela OPA (Art. 4º-A) e pela ampliação do recesso (Arts. 136 a 137).</p>
+ </div>
 
-  <div class="card-grid cols-2 reveal">
-    <div class="card">
-      <div class="num">Gatilho</div>
-      <h3>Alienação do bloco de controle</h3>
-      <p>Quando a companhia aberta tem seu controle alienado a terceiros, o tag along é acionado automaticamente.</p>
-    </div>
-    <div class="card">
-      <div class="num">Obrigação</div>
-      <h3>OPA obrigatória aos demais ON</h3>
-      <p>O adquirente é obrigado a realizar oferta pública aos demais acionistas com direito a voto.</p>
-    </div>
-    <div class="card">
-      <div class="num">Preço Mínimo</div>
-      <h3>80% (lei) · 100% (Novo Mercado)</h3>
-      <p>Mínimo de 80% do valor pago ao controlador. No Novo Mercado da B3, o tag along é integral — 100%.</p>
-    </div>
-    <div class="card">
-      <div class="num">Prazo</div>
-      <h3>30 dias após edital</h3>
-      <p>A OPA deve ser lançada em até 30 dias após a publicação do edital de alienação.</p>
-    </div>
-  </div>
+ <div class="card-grid cols-2 reveal">
+ <div class="card">
+ <div class="num">Gatilho</div>
+ <h3>Alienação do bloco de controle</h3>
+ <p>Quando a companhia aberta tem seu controle alienado a terceiros, o tag along é acionado automaticamente.</p>
+ </div>
+ <div class="card">
+ <div class="num">Obrigação</div>
+ <h3>OPA obrigatória aos demais ON</h3>
+ <p>O adquirente é obrigado a realizar oferta pública aos demais acionistas com direito a voto.</p>
+ </div>
+ <div class="card">
+ <div class="num">Preço Mínimo</div>
+ <h3>80% (lei) · 100% (Novo Mercado)</h3>
+ <p>Mínimo de 80% do valor pago ao controlador. No Novo Mercado da B3, o tag along é integral, 100%.</p>
+ </div>
+ <div class="card">
+ <div class="num">Prazo</div>
+ <h3>30 dias após edital</h3>
+ <p>A OPA deve ser lançada em até 30 dias após a publicação do edital de alienação.</p>
+ </div>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Exemplo Numérico — Cálculo da OPA</h3>
-  <div class="table-wrap reveal">
-    <table class="modern">
-      <thead><tr><th>Cálculo</th><th>Valor</th><th>Base</th></tr></thead>
-      <tbody>
-        <tr><td>Preço pago ao controlador / ação ON</td><td><b>R$ 50,00</b></td><td>Contrato de compra</td></tr>
-        <tr><td>Preço mínimo OPA (80% × R$ 50)</td><td><b>R$ 40,00</b></td><td>Art. 254-A</td></tr>
-        <tr><td>Ações ON em circulação (minoritários)</td><td>20.000.000</td><td>—</td></tr>
-        <tr><td>Valor total mínimo da OPA</td><td><b>R$ 800.000.000</b></td><td>Obrigação legal</td></tr>
-        <tr class="highlight"><td>Se Novo Mercado (100% tag along)</td><td><b>R$ 1.000.000.000</b></td><td>Regulamento B3</td></tr>
-      </tbody>
-    </table>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Exemplo Numérico, Cálculo da OPA</h3>
+ <div class="table-wrap reveal">
+ <table class="modern">
+ <thead><tr><th>Cálculo</th><th>Valor</th><th>Base</th></tr></thead>
+ <tbody>
+ <tr><td>Preço pago ao controlador / ação ON</td><td><b>R$ 50,00</b></td><td>Contrato de compra</td></tr>
+ <tr><td>Preço mínimo OPA (80% × R$ 50)</td><td><b>R$ 40,00</b></td><td>Art. 254-A</td></tr>
+ <tr><td>Ações ON em circulação (minoritários)</td><td>20.000.000</td><td></td></tr>
+ <tr><td>Valor total mínimo da OPA</td><td><b>R$ 800.000.000</b></td><td>Obrigação legal</td></tr>
+ <tr class="highlight"><td>Se Novo Mercado (100% tag along)</td><td><b>R$ 1.000.000.000</b></td><td>Regulamento B3</td></tr>
+ </tbody>
+ </table>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">OPA (Art. 4º-A) — Tipos Principais</h3>
-  <div class="card-grid cols-3 reveal">
-    <div class="card">
-      <div class="num">Tipo I</div>
-      <h3>Fechamento de Capital</h3>
-      <p>Cancelamento do registro perante CVM. Laudo de avaliação obrigatório (FCD + múltiplos). Acionistas com 10%+ do free float podem pedir nova avaliação às custas da empresa.</p>
-    </div>
-    <div class="card">
-      <div class="num">Tipo II · mais comum</div>
-      <h3>Alienação de Controle</h3>
-      <p>Adquirente oferta 80% do preço pago ao controlador para demais acionistas ON. Nos segmentos especiais B3: 100%.</p>
-    </div>
-    <div class="card">
-      <div class="num">Tipo III</div>
-      <h3>Por Aumento de Participação</h3>
-      <p>Acionista que supera limiar de mudança de controle é obrigado a realizar OPA. Previne aquisição rastejante (<i>creeping acquisition</i>).</p>
-    </div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">OPA (Art. 4º-A), Tipos Principais</h3>
+ <div class="card-grid cols-3 reveal">
+ <div class="card">
+ <div class="num">Tipo I</div>
+ <h3>Fechamento de Capital</h3>
+ <p>Cancelamento do registro perante CVM. Laudo de avaliação obrigatório (FCD + múltiplos). Acionistas com 10%+ do free float podem pedir nova avaliação às custas da empresa.</p>
+ </div>
+ <div class="card">
+ <div class="num">Tipo II · mais comum</div>
+ <h3>Alienação de Controle</h3>
+ <p>Adquirente oferta 80% do preço pago ao controlador para demais acionistas ON. Nos segmentos especiais B3: 100%.</p>
+ </div>
+ <div class="card">
+ <div class="num">Tipo III</div>
+ <h3>Por Aumento de Participação</h3>
+ <p>Acionista que supera limiar de mudança de controle é obrigado a realizar OPA. Previne aquisição rastejante (<i>creeping acquisition</i>).</p>
+ </div>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Direito de Recesso — Ampliação e Cálculo</h3>
-  <div class="card reveal">
-    <h3>Hipóteses (Arts. 136–137)</h3>
-    <p style="color:var(--text);margin:14px 0">Fusão ou incorporação · Participação em grupo de sociedades · Mudança do objeto social · Cisão com mudança de objeto ou redução de dividendos · Transformação societária · Redução do dividendo obrigatório</p>
-    <div class="example" style="margin-top:18px">
-      <b>Cálculo:</b> maior valor entre (i) PL contábil, (ii) PL econômico (FCD), (iii) cotação média 12 meses. <b>Prazo:</b> 30 dias após publicação da ata.
-    </div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Direito de Recesso, Ampliação e Cálculo</h3>
+ <div class="card reveal">
+ <h3>Hipóteses (Arts. 136 a 137)</h3>
+ <p style="color:var(--text);margin:14px 0">Fusão ou incorporação · Participação em grupo de sociedades · Mudança do objeto social · Cisão com mudança de objeto ou redução de dividendos · Transformação societária · Redução do dividendo obrigatório</p>
+ <div class="example" style="margin-top:18px">
+ <b>Cálculo:</b> maior valor entre (i) PL contábil, (ii) PL econômico (FCD), (iii) cotação média 12 meses. <b>Prazo:</b> 30 dias após publicação da ata.
+ </div>
+ </div>
 </section>
 
 <!-- CRIMES -->
 <section id="crimes">
-  <div class="reveal">
-    <div class="section-tag">03 — CRIMES E RESPONSABILIZAÇÃO</div>
-    <h2 class="section-title">Insider trading agora é <span class="accent">crime federal</span></h2>
-    <p class="section-lead">A Lei 10.303 transformou a manipulação de mercado e o uso de informação privilegiada — antes meras infrações administrativas — em crimes federais com reclusão e multas que escalam com o lucro ilícito.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">03 · CRIMES E RESPONSABILIZAÇÃO</div>
+ <h2 class="section-title">Insider trading agora é <span class="accent">crime federal</span></h2>
+ <p class="section-lead">A Lei 10.303 transformou a manipulação de mercado e o uso de informação privilegiada, antes meras infrações administrativas, em crimes federais com reclusão e multas que escalam com o lucro ilícito.</p>
+ </div>
 
-  <div class="reveal">
-    <div class="article-block">
-      <div class="left">
-        <div class="code">Art. 27-D</div>
-        <div class="meta">Insider Trading</div>
-      </div>
-      <div>
-        <p style="color:var(--text-dim);font-size:15px;margin-bottom:18px">Usar informação relevante ainda não divulgada ao mercado, da qual deva manter sigilo, para obter vantagem em negociações com valores mobiliários.</p>
-        <div class="table-wrap" style="margin-top:8px">
-          <table class="modern">
-            <thead><tr><th>Elemento</th><th>Significado na prática contábil</th></tr></thead>
-            <tbody>
-              <tr><td><b>Informação relevante</b></td><td>Fatos que influenciam preço ou decisão de investimento</td></tr>
-              <tr><td><b>Ainda não divulgada</b></td><td>Antes da publicação do Fato Relevante ou do resultado</td></tr>
-              <tr><td><b>Dever de sigilo</b></td><td>Administradores, auditores, advogados, consultores em M&amp;A</td></tr>
-              <tr><td><b>Vantagem indevida</b></td><td>Comprar antes de resultado positivo OU vender antes de negativo</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="example" style="margin-top:18px;background:rgba(251,191,36,0.06);border-left-color:var(--warning)">
-          <span class="warn-icon">⚠</span><b>Atenção:</b> O contador/auditor que acessa DFs antes da divulgação pública <b>É insider primário</b> e está sujeito às mesmas penas.
-        </div>
-      </div>
-    </div>
-  </div>
+ <div class="reveal">
+ <div class="article-block">
+ <div class="left">
+ <div class="code">Art. 27-D</div>
+ <div class="meta">Insider Trading</div>
+ </div>
+ <div>
+ <p style="color:var(--text-dim);font-size:15px;margin-bottom:18px">Usar informação relevante ainda não divulgada ao mercado, da qual deva manter sigilo, para obter vantagem em negociações com valores mobiliários.</p>
+ <div class="table-wrap" style="margin-top:8px">
+ <table class="modern">
+ <thead><tr><th>Elemento</th><th>Significado na prática contábil</th></tr></thead>
+ <tbody>
+ <tr><td><b>Informação relevante</b></td><td>Fatos que influenciam preço ou decisão de investimento</td></tr>
+ <tr><td><b>Ainda não divulgada</b></td><td>Antes da publicação do Fato Relevante ou do resultado</td></tr>
+ <tr><td><b>Dever de sigilo</b></td><td>Administradores, auditores, advogados, consultores em M&amp;A</td></tr>
+ <tr><td><b>Vantagem indevida</b></td><td>Comprar antes de resultado positivo OU vender antes de negativo</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="example" style="margin-top:18px;background:rgba(251,191,36,0.06);border-left-color:var(--warning)">
+ <span class="warn-icon">⚠</span><b>Atenção:</b> O contador/auditor que acessa DFs antes da divulgação pública <b>É insider primário</b> e está sujeito às mesmas penas.
+ </div>
+ </div>
+ </div>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Sanções Cumulativas</h3>
-  <div class="card-grid cols-3 reveal">
-    <div class="card">
-      <div class="num">Penal</div>
-      <h3>Reclusão</h3>
-      <p>1 a 5 anos (insider) · 1 a 8 anos (manipulação)</p>
-    </div>
-    <div class="card">
-      <div class="num">Penal</div>
-      <h3>Multa Criminal</h3>
-      <p>Até <b style="color:var(--accent)">R$ 500 mil OU 3× o valor da vantagem</b> — o que for maior.</p>
-    </div>
-    <div class="card">
-      <div class="num">Administrativa</div>
-      <h3>Sanção CVM (paralela)</h3>
-      <p>Vedação ao mercado + multa adicional + inabilitação.</p>
-    </div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Sanções Cumulativas</h3>
+ <div class="card-grid cols-3 reveal">
+ <div class="card">
+ <div class="num">Penal</div>
+ <h3>Reclusão</h3>
+ <p>1 a 5 anos (insider) · 1 a 8 anos (manipulação)</p>
+ </div>
+ <div class="card">
+ <div class="num">Penal</div>
+ <h3>Multa Criminal</h3>
+ <p>Até <b style="color:var(--accent)">R$ 500 mil OU 3× o valor da vantagem</b>, o que for maior.</p>
+ </div>
+ <div class="card">
+ <div class="num">Administrativa</div>
+ <h3>Sanção CVM (paralela)</h3>
+ <p>Vedação ao mercado + multa adicional + inabilitação.</p>
+ </div>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:64px 0 20px;letter-spacing:-.01em">Casos Reais Julgados no Brasil</h3>
+ <h3 style="font-size:22px;font-weight:600;margin:64px 0 20px;letter-spacing:-.01em">Casos Reais Julgados no Brasil</h3>
 
-  <div class="reveal">
-    <div class="case">
-      <span class="case-tag">2006 – 2013 · INSIDER TRADING</span>
-      <h4>Caso Sadia – Perdigão</h4>
-      <p>Ao saberem da iminente OPA hostil da Sadia sobre a Perdigão, dois executivos compraram opções de ações da Perdigão dias antes do anúncio. Após o anúncio, as ações valorizaram ~35%.</p>
-      <div class="impact"><b>📊 Lucro ilícito estimado:</b> ~USD 8,1 milhões. Primeira condenação criminal por insider trading no Brasil.</div>
-      <div class="outcome"><b>→ Resultado:</b> Condenação criminal (2013): 2 anos e 4 meses + multa administrativa CVM de R$ 11 mi. Precedente histórico.</div>
-    </div>
+ <div class="reveal">
+ <div class="case">
+ <span class="case-tag">2006 a 2013 · INSIDER TRADING</span>
+ <h4>Caso Sadia vs Perdigão</h4>
+ <p>Ao saberem da iminente OPA hostil da Sadia sobre a Perdigão, dois executivos compraram opções de ações da Perdigão dias antes do anúncio. Após o anúncio, as ações valorizaram ~35%.</p>
+ <div class="impact"><b>📊 Lucro ilícito estimado:</b> ~USD 8,1 milhões. Primeira condenação criminal por insider trading no Brasil.</div>
+ <div class="outcome"><b>→ Resultado:</b> Condenação criminal (2013): 2 anos e 4 meses + multa administrativa CVM de R$ 11 mi. Precedente histórico.</div>
+ </div>
 
-    <div class="case">
-      <span class="case-tag">2012 · TAG ALONG / OPA</span>
-      <h4>Caso NET Serviços / Telmex</h4>
-      <p>Embrapar/Globo alienou o controle da NET para a Telmex. OPA de tag along lançada a R$ 2,93/ação (80% de R$ 3,66). Minoritários contestaram a base de cálculo do preço de controle perante a CVM.</p>
-      <div class="impact"><b>📊 Diferença em disputa:</b> ~R$ 120 milhões para os minoritários. Ação negociada a R$ 3,42 no mercado.</div>
-      <div class="outcome"><b>→ Resultado:</b> CVM emitiu Nota Orientativa fixando método de cálculo do preço de controle. Caso-referência.</div>
-    </div>
+ <div class="case">
+ <span class="case-tag">2012 · TAG ALONG / OPA</span>
+ <h4>Caso NET Serviços / Telmex</h4>
+ <p>Embrapar/Globo alienou o controle da NET para a Telmex. OPA de tag along lançada a R$ 2,93/ação (80% de R$ 3,66). Minoritários contestaram a base de cálculo do preço de controle perante a CVM.</p>
+ <div class="impact"><b>📊 Diferença em disputa:</b> ~R$ 120 milhões para os minoritários. Ação negociada a R$ 3,42 no mercado.</div>
+ <div class="outcome"><b>→ Resultado:</b> CVM emitiu Nota Orientativa fixando método de cálculo do preço de controle. Caso-referência.</div>
+ </div>
 
-    <div class="case">
-      <span class="case-tag">2014 · INSIDER + MANIPULAÇÃO</span>
-      <h4>Caso Tractebel Energia</h4>
-      <p>Antes do anúncio da OPA da GDF Suez para fechamento da Tractebel, padrão atípico de negociações foi detectado nos 10 dias anteriores por funcionários de banco assessor.</p>
-      <div class="impact"><b>📊 Volume:</b> 4× acima da média histórica. Valorização no dia do anúncio: 28%.</div>
-      <div class="outcome"><b>→ Resultado:</b> Processo penal e administrativo simultâneos. Demonstrou que a CVM monitora padrões algorítmicos.</div>
-    </div>
-  </div>
+ <div class="case">
+ <span class="case-tag">2014 · INSIDER + MANIPULAÇÃO</span>
+ <h4>Caso Tractebel Energia</h4>
+ <p>Antes do anúncio da OPA da GDF Suez para fechamento da Tractebel, padrão atípico de negociações foi detectado nos 10 dias anteriores por funcionários de banco assessor.</p>
+ <div class="impact"><b>📊 Volume:</b> 4× acima da média histórica. Valorização no dia do anúncio: 28%.</div>
+ <div class="outcome"><b>→ Resultado:</b> Processo penal e administrativo simultâneos. Demonstrou que a CVM monitora padrões algorítmicos.</div>
+ </div>
+ </div>
 </section>
 
 <!-- GOVERNANÇA -->
 <section id="governanca">
-  <div class="reveal">
-    <div class="section-tag">04 — GOVERNANÇA CORPORATIVA</div>
-    <h2 class="section-title">Órgãos, disclosure e <span class="accent">novos poderes da CVM</span></h2>
-    <p class="section-lead">A lei redesenhou o conselho de administração, criou regimes rigorosos de transparência e armou a CVM com instrumentos efetivos de fiscalização.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">04 · GOVERNANÇA CORPORATIVA</div>
+ <h2 class="section-title">Órgãos, disclosure e <span class="accent">novos poderes da CVM</span></h2>
+ <p class="section-lead">A lei redesenhou o conselho de administração, criou regimes rigorosos de transparência e armou a CVM com instrumentos efetivos de fiscalização.</p>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">Conselho de Administração</h3>
-  <div class="card-grid cols-2 reveal">
-    <div class="card">
-      <div class="num">Requisito</div>
-      <h3>Reputação Ilibada</h3>
-      <p>Vedação a condenados por crimes contra a ordem econômica, fé pública ou administração pública. Verificação formal em ata de posse.</p>
-    </div>
-    <div class="card">
-      <div class="num">Conflito</div>
-      <h3>Vedação a Concorrentes</h3>
-      <p>Conselheiro não pode exercer cargo em empresa concorrente. Conflito de interesse deve ser declarado — veda participação na deliberação.</p>
-    </div>
-    <div class="card">
-      <div class="num">Art. 161, §4º</div>
-      <h3>Conselho Fiscal Independente</h3>
-      <p>Minoritários com ≥10% das ON ou ≥5% das PN podem eleger membro do Conselho Fiscal em separado.</p>
-    </div>
-    <div class="card">
-      <div class="num">Responsabilidade</div>
-      <h3>Dever de Diligência</h3>
-      <p>Conselheiro responde solidariamente por danos causados por decisão negligente. Protege-se pela Business Judgment Rule se demonstrar diligência.</p>
-    </div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">Conselho de Administração</h3>
+ <div class="card-grid cols-2 reveal">
+ <div class="card">
+ <div class="num">Requisito</div>
+ <h3>Reputação Ilibada</h3>
+ <p>Vedação a condenados por crimes contra a ordem econômica, fé pública ou administração pública. Verificação formal em ata de posse.</p>
+ </div>
+ <div class="card">
+ <div class="num">Conflito</div>
+ <h3>Vedação a Concorrentes</h3>
+ <p>Conselheiro não pode exercer cargo em empresa concorrente. Conflito de interesse deve ser declarado, veda participação na deliberação.</p>
+ </div>
+ <div class="card">
+ <div class="num">Art. 161, §4º</div>
+ <h3>Conselho Fiscal Independente</h3>
+ <p>Minoritários com ≥10% das ON ou ≥5% das PN podem eleger membro do Conselho Fiscal em separado.</p>
+ </div>
+ <div class="card">
+ <div class="num">Responsabilidade</div>
+ <h3>Dever de Diligência</h3>
+ <p>Conselheiro responde solidariamente por danos causados por decisão negligente. Protege-se pela Business Judgment Rule se demonstrar diligência.</p>
+ </div>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Transparência e Fatos Relevantes</h3>
-  <div class="card-grid cols-2 reveal">
-    <div class="card">
-      <div class="num">Inst. CVM 358</div>
-      <h3>O que é Fato Relevante</h3>
-      <p>Ato ou fato capaz de influenciar a cotação dos valores mobiliários ou a decisão de investidores de comprar, vender ou manter.</p>
-    </div>
-    <div class="card">
-      <div class="num">Exemplos</div>
-      <h3>Obrigatórios</h3>
-      <p>Fusões/aquisições, lucro/prejuízo relevante, mudança de CEO/CFO, proposta de OPA, contratos materiais com partes relacionadas, início de litígio relevante.</p>
-    </div>
-    <div class="card">
-      <div class="num">Prazo</div>
-      <h3>Imediato — responsabilidade tripla</h3>
-      <p>Divulgação imediata após a decisão. Responsabilidade solidária: <b>CEO, CFO e DRI</b> perante a CVM.</p>
-    </div>
-    <div class="card">
-      <div class="num">Quiet Period</div>
-      <h3>Período de Silêncio</h3>
-      <p>Vedação a divulgação seletiva. Nos 15 dias antes de resultados, insiders primários não devem dar entrevistas sobre perspectivas financeiras.</p>
-    </div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Transparência e Fatos Relevantes</h3>
+ <div class="card-grid cols-2 reveal">
+ <div class="card">
+ <div class="num">Inst. CVM 358</div>
+ <h3>O que é Fato Relevante</h3>
+ <p>Ato ou fato capaz de influenciar a cotação dos valores mobiliários ou a decisão de investidores de comprar, vender ou manter.</p>
+ </div>
+ <div class="card">
+ <div class="num">Exemplos</div>
+ <h3>Obrigatórios</h3>
+ <p>Fusões/aquisições, lucro/prejuízo relevante, mudança de CEO/CFO, proposta de OPA, contratos materiais com partes relacionadas, início de litígio relevante.</p>
+ </div>
+ <div class="card">
+ <div class="num">Prazo</div>
+ <h3>Imediato, responsabilidade tripla</h3>
+ <p>Divulgação imediata após a decisão. Responsabilidade solidária: <b>CEO, CFO e DRI</b> perante a CVM.</p>
+ </div>
+ <div class="card">
+ <div class="num">Quiet Period</div>
+ <h3>Período de Silêncio</h3>
+ <p>Vedação a divulgação seletiva. Nos 15 dias antes de resultados, insiders primários não devem dar entrevistas sobre perspectivas financeiras.</p>
+ </div>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">CVM — Novos Poderes</h3>
-  <div class="card-grid cols-4 reveal">
-    <div class="card">
-      <h3>Investigação Ampliada</h3>
-      <p>Requisita documentos, ouve testemunhos, afasta administradores e solicita quebra de sigilo bancário ao Judiciário.</p>
-    </div>
-    <div class="card">
-      <h3>Termo de Compromisso</h3>
-      <p>Equivalente ao <i>consent decree</i> americano: investigado cessa a prática e paga contribuição sem admitir culpa — encerra processo.</p>
-    </div>
-    <div class="card">
-      <h3>Sancionador</h3>
-      <p>CVM julga infrações internamente. Penalidades: advertência, multa até R$ 50 mi, inabilitação, suspensão. Recurso ao CRSFN.</p>
-    </div>
-    <div class="card">
-      <h3>Poder Normativo</h3>
-      <p>Emite instruções com força regulamentar (Inst. 358, 361, 480). Pode suspender negociação e decretar indisponibilidade de ativos.</p>
-    </div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">CVM, Novos Poderes</h3>
+ <div class="card-grid cols-4 reveal">
+ <div class="card">
+ <h3>Investigação Ampliada</h3>
+ <p>Requisita documentos, ouve testemunhos, afasta administradores e solicita quebra de sigilo bancário ao Judiciário.</p>
+ </div>
+ <div class="card">
+ <h3>Termo de Compromisso</h3>
+ <p>Equivalente ao <i>consent decree</i> americano: investigado cessa a prática e paga contribuição sem admitir culpa, encerra processo.</p>
+ </div>
+ <div class="card">
+ <h3>Sancionador</h3>
+ <p>CVM julga infrações internamente. Penalidades: advertência, multa até R$ 50 mi, inabilitação, suspensão. Recurso ao CRSFN.</p>
+ </div>
+ <div class="card">
+ <h3>Poder Normativo</h3>
+ <p>Emite instruções com força regulamentar (Inst. 358, 361, 480). Pode suspender negociação e decretar indisponibilidade de ativos.</p>
+ </div>
+ </div>
 </section>
 
 <!-- AUDITORIA -->
 <section id="auditoria">
-  <div class="reveal">
-    <div class="section-tag">05 — IMPACTOS NA AUDITORIA</div>
-    <h2 class="section-title">Novos deveres, <span class="accent">red flags</span> e CPCs conexos</h2>
-    <p class="section-lead">A lei reposicionou o auditor como garantidor da integridade do mercado — com obrigações legais de reportar à CVM, vedações de independência e rodízio obrigatório.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">05 · IMPACTOS NA AUDITORIA</div>
+ <h2 class="section-title">Novos deveres<span class="accent">red flags</span> e CPCs conexos</h2>
+ <p class="section-lead">A lei reposicionou o auditor como garantidor da integridade do mercado, com obrigações legais de reportar à CVM, vedações de independência e rodízio obrigatório.</p>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">Auditoria Externa — Novos Deveres (NBC TA / CVM)</h3>
-  <div class="card-grid cols-3 reveal">
-    <div class="card">
-      <div class="num">Art. 26, Lei 6.385</div>
-      <h3>Obrigação de Reportar</h3>
-      <p>Auditor deve comunicar ao Conselho Fiscal e à CVM qualquer ato ou fato relevante que deva ser comunicado ao mercado. A omissão pode configurar crime de cumplicidade.</p>
-    </div>
-    <div class="card">
-      <div class="num">Res. CVM 80/2022</div>
-      <h3>Independência — Vedações</h3>
-      <p>Vedado prestar ao mesmo cliente: contabilidade, consultoria jurídica, avaliação de ativos, RH e serviços atuariais. Independência é o pilar do parecer.</p>
-    </div>
-    <div class="card">
-      <div class="num">5 anos</div>
-      <h3>Rodízio Obrigatório</h3>
-      <p>A cada 5 anos consecutivos, o sócio signatário deve ser substituído. A firma permanece — evita relacionamento excessivo.</p>
-    </div>
-    <div class="card">
-      <div class="num">Formal</div>
-      <h3>Carta de Representação</h3>
-      <p>Declaração do CEO/CFO sobre: divulgação completa de fatos relevantes, ausência de passivos ocultos e conformidade com CPCs.</p>
-    </div>
-    <div class="card">
-      <div class="num">Reporte</div>
-      <h3>Comunicação com o CA</h3>
-      <p>Auditor reporta ao CA / Comitê de Auditoria: fragilidades de controle interno, imprecisões e disputas contábeis. Nomeação pelo CA — não pela diretoria.</p>
-    </div>
-    <div class="card">
-      <div class="num">Trimestral</div>
-      <h3>Revisão das ITRs</h3>
-      <p>Revisão trimestral limitada das ITRs. Inconsistências entre ITR e DFP anual são red flag que o auditor deve comunicar formalmente.</p>
-    </div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">Auditoria Externa, Novos Deveres (NBC TA / CVM)</h3>
+ <div class="card-grid cols-3 reveal">
+ <div class="card">
+ <div class="num">Art. 26, Lei 6.385</div>
+ <h3>Obrigação de Reportar</h3>
+ <p>Auditor deve comunicar ao Conselho Fiscal e à CVM qualquer ato ou fato relevante que deva ser comunicado ao mercado. A omissão pode configurar crime de cumplicidade.</p>
+ </div>
+ <div class="card">
+ <div class="num">Res. CVM 80/2022</div>
+ <h3>Independência, Vedações</h3>
+ <p>Vedado prestar ao mesmo cliente: contabilidade, consultoria jurídica, avaliação de ativos, RH e serviços atuariais. Independência é o pilar do parecer.</p>
+ </div>
+ <div class="card">
+ <div class="num">5 anos</div>
+ <h3>Rodízio Obrigatório</h3>
+ <p>A cada 5 anos consecutivos, o sócio signatário deve ser substituído. A firma permanece, evita relacionamento excessivo.</p>
+ </div>
+ <div class="card">
+ <div class="num">Formal</div>
+ <h3>Carta de Representação</h3>
+ <p>Declaração do CEO/CFO sobre: divulgação completa de fatos relevantes, ausência de passivos ocultos e conformidade com CPCs.</p>
+ </div>
+ <div class="card">
+ <div class="num">Reporte</div>
+ <h3>Comunicação com o CA</h3>
+ <p>Auditor reporta ao CA / Comitê de Auditoria: fragilidades de controle interno, imprecisões e disputas contábeis. Nomeação pelo CA, não pela diretoria.</p>
+ </div>
+ <div class="card">
+ <div class="num">Trimestral</div>
+ <h3>Revisão das ITRs</h3>
+ <p>Revisão trimestral limitada das ITRs. Inconsistências entre ITR e DFP anual são red flag que o auditor deve comunicar formalmente.</p>
+ </div>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Red Flags — Alertas Críticos</h3>
-  <div class="card-grid cols-2 reveal">
-    <div class="card" style="border-left:3px solid var(--danger)"><p>Fato relevante divulgado <b>após</b> negociação atípica detectada no mercado</p></div>
-    <div class="card" style="border-left:3px solid var(--danger)"><p>Transações com partes relacionadas fora do padrão <i>arm's length</i></p></div>
-    <div class="card" style="border-left:3px solid var(--danger)"><p>Divergência entre guidance público e orçamento interno da companhia</p></div>
-    <div class="card" style="border-left:3px solid var(--danger)"><p>Receita reconhecida na ITR que não se sustenta na DFP anual</p></div>
-    <div class="card" style="border-left:3px solid var(--danger)"><p>Auditor anterior destituído pela diretoria (sem aprovação do CA)</p></div>
-    <div class="card" style="border-left:3px solid var(--danger)"><p>Ausência de política formal de insider trading / trading window</p></div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Red Flags, Alertas Críticos</h3>
+ <div class="card-grid cols-2 reveal">
+ <div class="card" style="border-left:3px solid var(--danger)"><p>Fato relevante divulgado <b>após</b> negociação atípica detectada no mercado</p></div>
+ <div class="card" style="border-left:3px solid var(--danger)"><p>Transações com partes relacionadas fora do padrão <i>arm's length</i></p></div>
+ <div class="card" style="border-left:3px solid var(--danger)"><p>Divergência entre guidance público e orçamento interno da companhia</p></div>
+ <div class="card" style="border-left:3px solid var(--danger)"><p>Receita reconhecida na ITR que não se sustenta na DFP anual</p></div>
+ <div class="card" style="border-left:3px solid var(--danger)"><p>Auditor anterior destituído pela diretoria (sem aprovação do CA)</p></div>
+ <div class="card" style="border-left:3px solid var(--danger)"><p>Ausência de política formal de insider trading / trading window</p></div>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">CPCs e NBC TAs Conexos à Lei 10.303</h3>
-  <div class="table-wrap reveal">
-    <table class="modern">
-      <thead><tr><th>Norma</th><th>Tema</th><th>Conexão com a Lei</th></tr></thead>
-      <tbody>
-        <tr><td><b>CPC 01 (R1)</b></td><td>Impairment — Valor Recuperável</td><td>FCD obrigatório no teste de recuperabilidade; mesmas premissas do laudo OPA</td></tr>
-        <tr><td><b>CPC 15 (R1)</b></td><td>Combinações de Negócios</td><td>Fusões e incorporações disparam tag along e recesso — avaliação a valor justo</td></tr>
-        <tr><td><b>CPC 18 (R2)</b></td><td>Partes Relacionadas</td><td>Transações com controlador devem ser divulgadas; arm's length exigido</td></tr>
-        <tr><td><b>CPC 36 (R3)</b></td><td>Demonstrações Consolidadas</td><td>Controlador deve consolidar; define limites de controle para fins de OPA</td></tr>
-        <tr><td><b>NBC TA 570</b></td><td>Going Concern</td><td>Dúvida sobre continuidade pode disparar obrigações de divulgação e OPA</td></tr>
-        <tr><td><b>NBC TA 240</b></td><td>Fraude nas DFs</td><td>Manipulação de resultados pode configurar manipulação de mercado (Art. 27-C)</td></tr>
-      </tbody>
-    </table>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">CPCs e NBC TAs Conexos à Lei 10.303</h3>
+ <div class="table-wrap reveal">
+ <table class="modern">
+ <thead><tr><th>Norma</th><th>Tema</th><th>Conexão com a Lei</th></tr></thead>
+ <tbody>
+ <tr><td><b>CPC 01 (R1)</b></td><td>Impairment, Valor Recuperável</td><td>FCD obrigatório no teste de recuperabilidade; mesmas premissas do laudo OPA</td></tr>
+ <tr><td><b>CPC 15 (R1)</b></td><td>Combinações de Negócios</td><td>Fusões e incorporações disparam tag along e recesso, avaliação a valor justo</td></tr>
+ <tr><td><b>CPC 18 (R2)</b></td><td>Partes Relacionadas</td><td>Transações com controlador devem ser divulgadas; arm's length exigido</td></tr>
+ <tr><td><b>CPC 36 (R3)</b></td><td>Demonstrações Consolidadas</td><td>Controlador deve consolidar; define limites de controle para fins de OPA</td></tr>
+ <tr><td><b>NBC TA 570</b></td><td>Going Concern</td><td>Dúvida sobre continuidade pode disparar obrigações de divulgação e OPA</td></tr>
+ <tr><td><b>NBC TA 240</b></td><td>Fraude nas DFs</td><td>Manipulação de resultados pode configurar manipulação de mercado (Art. 27-C)</td></tr>
+ </tbody>
+ </table>
+ </div>
 </section>
 
 <!-- FCD / WACC -->
 <section id="fcd">
-  <div class="reveal">
-    <div class="section-tag">06 — LAUDO FCD E OPA</div>
-    <h2 class="section-title">Metodologia FCD e WACC <span class="accent">(Inst. CVM 361)</span></h2>
-    <p class="section-lead">A Instrução CVM 361 elegeu o Fluxo de Caixa Descontado como base obrigatória do laudo de avaliação. Aqui está a construção do FCL, do WACC e do valor terminal — passo a passo.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">06 · LAUDO FCD E OPA</div>
+ <h2 class="section-title">Metodologia FCD e WACC <span class="accent">(Inst. CVM 361)</span></h2>
+ <p class="section-lead">A Instrução CVM 361 elegeu o Fluxo de Caixa Descontado como base obrigatória do laudo de avaliação. Aqui está a construção do FCL, do WACC e do valor terminal, passo a passo.</p>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">Construção do Fluxo de Caixa Livre (FCL)</h3>
-  <div class="table-wrap reveal">
-    <table class="modern">
-      <thead><tr><th>Componente</th><th>Conta nas DFs</th><th>Observação</th></tr></thead>
-      <tbody>
-        <tr><td><b>(+) EBIT — Resultado Operacional</b></td><td>DRE — antes de juros e IR</td><td>Normalizar não-recorrentes</td></tr>
-        <tr><td>(-) IR/CS sobre o EBIT</td><td>34% sobre o EBIT</td><td>Tax shield capturado no WACC</td></tr>
-        <tr><td><b>(=) NOPAT</b></td><td>Net Operating Profit After Tax</td><td>Resultado operacional pós-IR</td></tr>
-        <tr><td>(+) Depreciação e Amortização</td><td>DFC método indireto — adição</td><td>Despesa não-caixa — reverter</td></tr>
-        <tr><td>(-) CAPEX</td><td>Fluxo de Caixa de Investimento</td><td>Manutenção + expansão do ativo</td></tr>
-        <tr><td>(±) Variação do Capital de Giro</td><td>Δ AC operacional − Δ PC operacional</td><td>Excluir caixa e dívida financeira</td></tr>
-        <tr class="highlight"><td><b>(=) FCL — Free Cash Flow to Firm</b></td><td>Disponível a credores e acionistas</td><td>Base do FCD</td></tr>
-      </tbody>
-    </table>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">Construção do Fluxo de Caixa Livre (FCL)</h3>
+ <div class="table-wrap reveal">
+ <table class="modern">
+ <thead><tr><th>Componente</th><th>Conta nas DFs</th><th>Observação</th></tr></thead>
+ <tbody>
+ <tr><td><b>(+) EBIT, Resultado Operacional</b></td><td>DRE, antes de juros e IR</td><td>Normalizar não-recorrentes</td></tr>
+ <tr><td>(-) IR/CS sobre o EBIT</td><td>34% sobre o EBIT</td><td>Tax shield capturado no WACC</td></tr>
+ <tr><td><b>(=) NOPAT</b></td><td>Net Operating Profit After Tax</td><td>Resultado operacional pós-IR</td></tr>
+ <tr><td>(+) Depreciação e Amortização</td><td>DFC método indireto, adição</td><td>Despesa não-caixa, reverter</td></tr>
+ <tr><td>(-) CAPEX</td><td>Fluxo de Caixa de Investimento</td><td>Manutenção + expansão do ativo</td></tr>
+ <tr><td>(±) Variação do Capital de Giro</td><td>Δ AC operacional − Δ PC operacional</td><td>Excluir caixa e dívida financeira</td></tr>
+ <tr class="highlight"><td><b>(=) FCL, Free Cash Flow to Firm</b></td><td>Disponível a credores e acionistas</td><td>Base do FCD</td></tr>
+ </tbody>
+ </table>
+ </div>
 
-  <div class="formula reveal">
-    Valor da Empresa  =  Σ  FCLₜ / (1+WACC)ᵗ  +  [FCLₙ₊₁ / (WACC−g)] / (1+WACC)ⁿ
-  </div>
+ <div class="formula reveal">
+ Valor da Empresa = Σ FCLₜ / (1+WACC)ᵗ + [FCLₙ₊₁ / (WACC−g)] / (1+WACC)ⁿ
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Valor Terminal (Inst. CVM 361 exige ≥ 2 metodologias)</h3>
-  <div class="card-grid cols-3 reveal">
-    <div class="card">
-      <div class="num">Perpetuidade — Gordon</div>
-      <h3>FCLₙ₊₁ / (WACC − g)</h3>
-      <p>Para negócios estáveis em <i>going concern</i>. <b>g</b> usualmente limitada ao PIB nominal — 3,5–4,5% a.a. no Brasil.</p>
-    </div>
-    <div class="card">
-      <div class="num">Múltiplo de Saída</div>
-      <h3>EBITDAₙ × Múltiplo Setorial</h3>
-      <p>Para negócios cíclicos ou em contexto de M&amp;A.</p>
-    </div>
-    <div class="card">
-      <div class="num">Liquidação</div>
-      <h3>PL + Ativos a valor de mercado</h3>
-      <p>Para companhias em processo de extinção.</p>
-    </div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Valor Terminal (Inst. CVM 361 exige ≥ 2 metodologias)</h3>
+ <div class="card-grid cols-3 reveal">
+ <div class="card">
+ <div class="num">Perpetuidade, Gordon</div>
+ <h3>FCLₙ₊₁ / (WACC − g)</h3>
+ <p>Para negócios estáveis em <i>going concern</i>. <b>g</b> usualmente limitada ao PIB nominal, 3,5 a 4,5% a.a. no Brasil.</p>
+ </div>
+ <div class="card">
+ <div class="num">Múltiplo de Saída</div>
+ <h3>EBITDAₙ × Múltiplo Setorial</h3>
+ <p>Para negócios cíclicos ou em contexto de M&amp;A.</p>
+ </div>
+ <div class="card">
+ <div class="num">Liquidação</div>
+ <h3>PL + Ativos a valor de mercado</h3>
+ <p>Para companhias em processo de extinção.</p>
+ </div>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">WACC — Construção Passo a Passo (Brasil)</h3>
-  <div class="formula reveal">
-    WACC  =  Ke × [E/(D+E)]  +  Kd × (1−t) × [D/(D+E)]
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">WACC, Construção Passo a Passo (Brasil)</h3>
+ <div class="formula reveal">
+ WACC = Ke × [E/(D+E)] + Kd × (1−t) × [D/(D+E)]
+ </div>
 
-  <div class="card-grid cols-2 reveal" style="margin-top:32px">
-    <div>
-      <h4 style="font-size:15px;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:14px;letter-spacing:.05em">CUSTO DO CAPITAL PRÓPRIO (Ke) — CAPM ADAPTADO</h4>
-      <div class="table-wrap">
-        <table class="modern">
-          <thead><tr><th>Componente</th><th>Fórmula</th><th>Ref.</th></tr></thead>
-          <tbody>
-            <tr><td>Taxa livre de risco (Rf)</td><td>T-Bond 10Y USA + EMBI+ Brasil</td><td>~11,5%</td></tr>
-            <tr><td>Prêmio de risco (ERP)</td><td>Damodaran — mercado EUA</td><td>5,5–6,5%</td></tr>
-            <tr><td>Beta desalavancado (βu)</td><td>Média setorial</td><td>Por setor</td></tr>
-            <tr><td>Beta realavancado (βl)</td><td>βu × [1+(1−t)×D/E]</td><td>—</td></tr>
-            <tr><td>Prêmio de tamanho (SP)</td><td>Duff &amp; Phelps</td><td>0–4%</td></tr>
-            <tr class="highlight"><td><b>Ke (total)</b></td><td>Rf + βl × ERP + SP</td><td>~16–22%</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div>
-      <h4 style="font-size:15px;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:14px;letter-spacing:.05em">CUSTO DA DÍVIDA (Kd) E WACC FINAL</h4>
-      <div class="table-wrap">
-        <table class="modern">
-          <thead><tr><th>Item</th><th>Cálculo</th><th>Exemplo</th></tr></thead>
-          <tbody>
-            <tr><td>Kd bruto</td><td>Juros pagos / Dívida líquida média</td><td>12,8% a.a.</td></tr>
-            <tr><td>Kd líquido (após IR)</td><td>Kd × (1 − 34%)</td><td>8,4% a.a.</td></tr>
-            <tr><td>Estrutura de capital</td><td>D/(D+E)=35% | E/(D+E)=65%</td><td>—</td></tr>
-            <tr class="highlight"><td><b>WACC resultante</b></td><td>17%×65% + 8,4%×35%</td><td><b>~14,0% a.a.</b></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+ <div class="card-grid cols-2 reveal" style="margin-top:32px">
+ <div>
+ <h4 style="font-size:15px;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:14px;letter-spacing:.05em">CUSTO DO CAPITAL PRÓPRIO (Ke), CAPM ADAPTADO</h4>
+ <div class="table-wrap">
+ <table class="modern">
+ <thead><tr><th>Componente</th><th>Fórmula</th><th>Ref.</th></tr></thead>
+ <tbody>
+ <tr><td>Taxa livre de risco (Rf)</td><td>T-Bond 10Y USA + EMBI+ Brasil</td><td>~11,5%</td></tr>
+ <tr><td>Prêmio de risco (ERP)</td><td>Damodaran, mercado EUA</td><td>5,5 a 6,5%</td></tr>
+ <tr><td>Beta desalavancado (βu)</td><td>Média setorial</td><td>Por setor</td></tr>
+ <tr><td>Beta realavancado (βl)</td><td>βu × [1+(1−t)×D/E]</td><td></td></tr>
+ <tr><td>Prêmio de tamanho (SP)</td><td>Duff &amp; Phelps</td><td>0 a 4%</td></tr>
+ <tr class="highlight"><td><b>Ke (total)</b></td><td>Rf + βl × ERP + SP</td><td>~16 a 22%</td></tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+ <div>
+ <h4 style="font-size:15px;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:14px;letter-spacing:.05em">CUSTO DA DÍVIDA (Kd) E WACC FINAL</h4>
+ <div class="table-wrap">
+ <table class="modern">
+ <thead><tr><th>Item</th><th>Cálculo</th><th>Exemplo</th></tr></thead>
+ <tbody>
+ <tr><td>Kd bruto</td><td>Juros pagos / Dívida líquida média</td><td>12,8% a.a.</td></tr>
+ <tr><td>Kd líquido (após IR)</td><td>Kd × (1 − 34%)</td><td>8,4% a.a.</td></tr>
+ <tr><td>Estrutura de capital</td><td>D/(D+E)=35% | E/(D+E)=65%</td><td></td></tr>
+ <tr class="highlight"><td><b>WACC resultante</b></td><td>17%×65% + 8,4%×35%</td><td><b>~14,0% a.a.</b></td></tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- CASE NUMÉRICO -->
 <section id="case">
-  <div class="reveal">
-    <div class="section-tag">CASE NUMÉRICO — DIDÁTICO</div>
-    <h2 class="section-title">FCD completo: OPA de <span class="accent">fechamento de capital</span></h2>
-    <p class="section-lead">Cia. Beta S.A. (setor de distribuição) recebe proposta de fechamento de capital. Preço ofertado pelo controlador: <span class="kbd">R$ 18,00</span>. Minoritários contestam e a CVM exige laudo independente (Inst. 361).</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">CASE NUMÉRICO, DIDÁTICO</div>
+ <h2 class="section-title">FCD completo: OPA de <span class="accent">fechamento de capital</span></h2>
+ <p class="section-lead">Cia. Beta S.A. (setor de distribuição) recebe proposta de fechamento de capital. Preço ofertado pelo controlador: <span class="kbd">R$ 18,00</span>. Minoritários contestam e a CVM exige laudo independente (Inst. 361).</p>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">Projeções de FCL — Horizonte 5 anos (R$ milhões)</h3>
-  <div class="table-wrap reveal">
-    <table class="modern">
-      <thead>
-        <tr><th>Linha</th><th>Ano 1</th><th>Ano 2</th><th>Ano 3</th><th>Ano 4</th><th>Ano 5</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><b>Receita Líquida</b></td><td>420</td><td>458</td><td>500</td><td>545</td><td>590</td></tr>
-        <tr><td>Margem EBITDA</td><td>18,0%</td><td>18,5%</td><td>19,0%</td><td>19,5%</td><td>20,0%</td></tr>
-        <tr><td>(=) EBITDA</td><td>75,6</td><td>84,7</td><td>95,0</td><td>106,3</td><td>118,0</td></tr>
-        <tr><td>(-) D&amp;A</td><td>(22,0)</td><td>(23,5)</td><td>(25,0)</td><td>(27,0)</td><td>(29,0)</td></tr>
-        <tr><td>(=) EBIT</td><td>53,6</td><td>61,2</td><td>70,0</td><td>79,3</td><td>89,0</td></tr>
-        <tr><td>(-) IR/CS 34%</td><td>(18,2)</td><td>(20,8)</td><td>(23,8)</td><td>(27,0)</td><td>(30,3)</td></tr>
-        <tr><td>(=) NOPAT</td><td>35,4</td><td>40,4</td><td>46,2</td><td>52,3</td><td>58,7</td></tr>
-        <tr><td>(+) D&amp;A</td><td>22,0</td><td>23,5</td><td>25,0</td><td>27,0</td><td>29,0</td></tr>
-        <tr><td>(-) CAPEX</td><td>(18,5)</td><td>(20,0)</td><td>(22,0)</td><td>(24,0)</td><td>(25,5)</td></tr>
-        <tr><td>(±) Δ Capital de Giro</td><td>(4,2)</td><td>(4,6)</td><td>(5,0)</td><td>(5,5)</td><td>(5,9)</td></tr>
-        <tr class="highlight"><td><b>(=) FCL</b></td><td><b>34,7</b></td><td><b>39,3</b></td><td><b>44,2</b></td><td><b>49,8</b></td><td><b>56,3</b></td></tr>
-      </tbody>
-    </table>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">Projeções de FCL, Horizonte 5 anos (R$ milhões)</h3>
+ <div class="table-wrap reveal">
+ <table class="modern">
+ <thead>
+ <tr><th>Linha</th><th>Ano 1</th><th>Ano 2</th><th>Ano 3</th><th>Ano 4</th><th>Ano 5</th></tr>
+ </thead>
+ <tbody>
+ <tr><td><b>Receita Líquida</b></td><td>420</td><td>458</td><td>500</td><td>545</td><td>590</td></tr>
+ <tr><td>Margem EBITDA</td><td>18,0%</td><td>18,5%</td><td>19,0%</td><td>19,5%</td><td>20,0%</td></tr>
+ <tr><td>(=) EBITDA</td><td>75,6</td><td>84,7</td><td>95,0</td><td>106,3</td><td>118,0</td></tr>
+ <tr><td>(-) D&amp;A</td><td>(22,0)</td><td>(23,5)</td><td>(25,0)</td><td>(27,0)</td><td>(29,0)</td></tr>
+ <tr><td>(=) EBIT</td><td>53,6</td><td>61,2</td><td>70,0</td><td>79,3</td><td>89,0</td></tr>
+ <tr><td>(-) IR/CS 34%</td><td>(18,2)</td><td>(20,8)</td><td>(23,8)</td><td>(27,0)</td><td>(30,3)</td></tr>
+ <tr><td>(=) NOPAT</td><td>35,4</td><td>40,4</td><td>46,2</td><td>52,3</td><td>58,7</td></tr>
+ <tr><td>(+) D&amp;A</td><td>22,0</td><td>23,5</td><td>25,0</td><td>27,0</td><td>29,0</td></tr>
+ <tr><td>(-) CAPEX</td><td>(18,5)</td><td>(20,0)</td><td>(22,0)</td><td>(24,0)</td><td>(25,5)</td></tr>
+ <tr><td>(±) Δ Capital de Giro</td><td>(4,2)</td><td>(4,6)</td><td>(5,0)</td><td>(5,5)</td><td>(5,9)</td></tr>
+ <tr class="highlight"><td><b>(=) FCL</b></td><td><b>34,7</b></td><td><b>39,3</b></td><td><b>44,2</b></td><td><b>49,8</b></td><td><b>56,3</b></td></tr>
+ </tbody>
+ </table>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Apuração do Valor da Empresa e por Ação</h3>
-  <div class="table-wrap reveal">
-    <table class="modern">
-      <thead><tr><th>Item</th><th>Cálculo</th><th>Valor (R$ mi)</th></tr></thead>
-      <tbody>
-        <tr><td>VP do FCL (Anos 1–5)</td><td>Descontado a WACC = 14%</td><td>148,2</td></tr>
-        <tr><td>Valor Terminal (g = 4%)</td><td>FCL₆ / (14%−4%) = 58,6 / 10%</td><td>586,0</td></tr>
-        <tr><td>VP do Valor Terminal</td><td>586 / (1,14)⁵</td><td>304,5</td></tr>
-        <tr><td><b>Valor da Firma (EV)</b></td><td>148,2 + 304,5</td><td><b>452,7</b></td></tr>
-        <tr><td>(-) Dívida Líquida</td><td>Passivo financeiro − Caixa</td><td>(95,0)</td></tr>
-        <tr><td><b>Equity Value</b></td><td>452,7 − 95,0</td><td><b>357,7</b></td></tr>
-        <tr class="highlight"><td><b>VALOR POR AÇÃO (FCD)</b></td><td>357,7 ÷ 16,7 mi ações</td><td><b>R$ 21,42</b></td></tr>
-      </tbody>
-    </table>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Apuração do Valor da Empresa e por Ação</h3>
+ <div class="table-wrap reveal">
+ <table class="modern">
+ <thead><tr><th>Item</th><th>Cálculo</th><th>Valor (R$ mi)</th></tr></thead>
+ <tbody>
+ <tr><td>VP do FCL (Anos 1 a 5)</td><td>Descontado a WACC = 14%</td><td>148,2</td></tr>
+ <tr><td>Valor Terminal (g = 4%)</td><td>FCL₆ / (14%−4%) = 58,6 / 10%</td><td>586,0</td></tr>
+ <tr><td>VP do Valor Terminal</td><td>586 / (1,14)⁵</td><td>304,5</td></tr>
+ <tr><td><b>Valor da Firma (EV)</b></td><td>148,2 + 304,5</td><td><b>452,7</b></td></tr>
+ <tr><td>(-) Dívida Líquida</td><td>Passivo financeiro − Caixa</td><td>(95,0)</td></tr>
+ <tr><td><b>Equity Value</b></td><td>452,7 − 95,0</td><td><b>357,7</b></td></tr>
+ <tr class="highlight"><td><b>VALOR POR AÇÃO (FCD)</b></td><td>357,7 ÷ 16,7 mi ações</td><td><b>R$ 21,42</b></td></tr>
+ </tbody>
+ </table>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Análise de Sensibilidade — Valor/Ação × WACC × g</h3>
-  <div class="table-wrap reveal">
-    <table class="modern">
-      <thead><tr><th>WACC \ g</th><th>3,0%</th><th>4,0%</th><th>5,0%</th></tr></thead>
-      <tbody>
-        <tr><td>12%</td><td>R$ 25,10</td><td>R$ 27,80</td><td>R$ 31,20</td></tr>
-        <tr><td>13%</td><td>R$ 22,40</td><td>R$ 24,50</td><td>R$ 27,00</td></tr>
-        <tr><td><b>14%</b></td><td>R$ 19,80</td><td class="highlight"><b>R$ 21,42 ★</b></td><td>R$ 23,40</td></tr>
-        <tr><td>15%</td><td>R$ 17,60</td><td>R$ 18,90</td><td>R$ 20,50</td></tr>
-        <tr><td>16%</td><td>R$ 15,80</td><td>R$ 16,90</td><td>R$ 18,20</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p style="text-align:right;font-size:12px;color:var(--text-faint);margin-top:8px">★ Caso-base do laudo</p>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Análise de Sensibilidade, Valor/Ação × WACC × g</h3>
+ <div class="table-wrap reveal">
+ <table class="modern">
+ <thead><tr><th>WACC \ g</th><th>3,0%</th><th>4,0%</th><th>5,0%</th></tr></thead>
+ <tbody>
+ <tr><td>12%</td><td>R$ 25,10</td><td>R$ 27,80</td><td>R$ 31,20</td></tr>
+ <tr><td>13%</td><td>R$ 22,40</td><td>R$ 24,50</td><td>R$ 27,00</td></tr>
+ <tr><td><b>14%</b></td><td>R$ 19,80</td><td class="highlight"><b>R$ 21,42 ★</b></td><td>R$ 23,40</td></tr>
+ <tr><td>15%</td><td>R$ 17,60</td><td>R$ 18,90</td><td>R$ 20,50</td></tr>
+ <tr><td>16%</td><td>R$ 15,80</td><td>R$ 16,90</td><td>R$ 18,20</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <p style="text-align:right;font-size:12px;color:var(--text-faint);margin-top:8px">★ Caso-base do laudo</p>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Conclusão do Laudo (Inst. CVM 361)</h3>
-  <div class="table-wrap reveal">
-    <table class="modern">
-      <thead><tr><th>Metodologia</th><th>Valor / Ação</th></tr></thead>
-      <tbody>
-        <tr><td>FCD (caso-base, WACC 14%)</td><td><b>R$ 21,42</b></td></tr>
-        <tr><td>Múltiplos (EV/EBITDA 7×)</td><td>R$ 19,85</td></tr>
-        <tr><td>PL contábil (art. 45)</td><td>R$ 13,20</td></tr>
-        <tr class="highlight"><td><b>MAIOR VALOR — base CVM 361</b></td><td><b>R$ 21,42</b></td></tr>
-        <tr><td>Preço ofertado — controlador</td><td>R$ 18,00</td></tr>
-        <tr style="background:rgba(52,211,153,0.06)"><td><b>OPA deve ser ajustada em</b></td><td style="color:var(--accent-2)"><b>+ R$ 3,42 / ação</b></td></tr>
-      </tbody>
-    </table>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Conclusão do Laudo (Inst. CVM 361)</h3>
+ <div class="table-wrap reveal">
+ <table class="modern">
+ <thead><tr><th>Metodologia</th><th>Valor / Ação</th></tr></thead>
+ <tbody>
+ <tr><td>FCD (caso-base, WACC 14%)</td><td><b>R$ 21,42</b></td></tr>
+ <tr><td>Múltiplos (EV/EBITDA 7×)</td><td>R$ 19,85</td></tr>
+ <tr><td>PL contábil (art. 45)</td><td>R$ 13,20</td></tr>
+ <tr class="highlight"><td><b>MAIOR VALOR, base CVM 361</b></td><td><b>R$ 21,42</b></td></tr>
+ <tr><td>Preço ofertado, controlador</td><td>R$ 18,00</td></tr>
+ <tr style="background:rgba(52,211,153,0.06)"><td><b>OPA deve ser ajustada em</b></td><td style="color:var(--accent-2)"><b>+ R$ 3,42 / ação</b></td></tr>
+ </tbody>
+ </table>
+ </div>
 </section>
 
 <!-- FP&A E COMPLIANCE -->
 <section id="fpa">
-  <div class="reveal">
-    <div class="section-tag">07 — FP&A E COMPLIANCE</div>
-    <h2 class="section-title">Rotinas transformadas pela <span class="accent">Lei 10.303</span></h2>
-    <p class="section-lead">A lei reconfigurou planejamento financeiro, divulgação e compliance — criando estruturas mínimas que toda companhia aberta passou a manter.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">07 · FP&A E COMPLIANCE</div>
+ <h2 class="section-title">Rotinas transformadas pela <span class="accent">Lei 10.303</span></h2>
+ <p class="section-lead">A lei reconfigurou planejamento financeiro, divulgação e compliance, criando estruturas mínimas que toda companhia aberta passou a manter.</p>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">FP&amp;A — Financial Planning &amp; Analysis</h3>
-  <div class="card-grid cols-2 reveal">
-    <div class="card">
-      <div class="num">Budget × Guidance</div>
-      <h3>Consistência Obrigatória</h3>
-      <p>Premissas de crescimento e margem devem ser consistentes com guidances públicos. Desvio relevante pode configurar informação privilegiada. FP&amp;A precisa de protocolo de aprovação pelo DRI.</p>
-    </div>
-    <div class="card">
-      <div class="num">Earnings Release</div>
-      <h3>Preparação Multi-Área</h3>
-      <p>Envolve FP&amp;A, RI, Jurídico e Auditoria. Aprovado pelo CEO e CFO antes da divulgação. Guidances de receita e EBITDA são fato relevante.</p>
-    </div>
-    <div class="card">
-      <div class="num">CPC 01 (IAS 36)</div>
-      <h3>Impairment Test</h3>
-      <p>Teste de recuperabilidade usa metodologia idêntica ao FCD do laudo de OPA. Premissas inconsistentes entre budget e impairment são red flag de auditoria.</p>
-    </div>
-    <div class="card">
-      <div class="num">CPC 15</div>
-      <h3>Combinações de Negócios</h3>
-      <p>Fusões e incorporações disparam tag along e direito de recesso. FP&amp;A modela; o avaliador apura o valor justo para fins de recesso.</p>
-    </div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">FP&amp;A, Financial Planning &amp; Analysis</h3>
+ <div class="card-grid cols-2 reveal">
+ <div class="card">
+ <div class="num">Budget × Guidance</div>
+ <h3>Consistência Obrigatória</h3>
+ <p>Premissas de crescimento e margem devem ser consistentes com guidances públicos. Desvio relevante pode configurar informação privilegiada. FP&amp;A precisa de protocolo de aprovação pelo DRI.</p>
+ </div>
+ <div class="card">
+ <div class="num">Earnings Release</div>
+ <h3>Preparação Multi-Área</h3>
+ <p>Envolve FP&amp;A, RI, Jurídico e Auditoria. Aprovado pelo CEO e CFO antes da divulgação. Guidances de receita e EBITDA são fato relevante.</p>
+ </div>
+ <div class="card">
+ <div class="num">CPC 01 (IAS 36)</div>
+ <h3>Impairment Test</h3>
+ <p>Teste de recuperabilidade usa metodologia idêntica ao FCD do laudo de OPA. Premissas inconsistentes entre budget e impairment são red flag de auditoria.</p>
+ </div>
+ <div class="card">
+ <div class="num">CPC 15</div>
+ <h3>Combinações de Negócios</h3>
+ <p>Fusões e incorporações disparam tag along e direito de recesso. FP&amp;A modela; o avaliador apura o valor justo para fins de recesso.</p>
+ </div>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Compliance — Estrutura Mínima para Cia. Aberta</h3>
-  <div class="steps reveal">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div>
-        <h4>Política de Divulgação (Disclosure Policy)</h4>
-        <p>Define responsáveis por identificar fatos relevantes (DRI, CEO, CFO), canal e prazo de divulgação (SIED/CVM), e procedimento para vazamento não-intencional. Aprovada pelo CA e revisada anualmente.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div>
-        <h4>Política de Negociação — Trading Window</h4>
-        <p>Insiders <b>não podem</b> negociar nos 15 dias antes de resultados, nem durante deliberação de M&amp;A, OPA ou fato relevante. Janela aberta nos demais períodos, desde que inexista informação privilegiada em curso.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div>
-        <h4>Mapeamento e Gestão de Insiders</h4>
-        <p>Cadastro atualizado de insiders primários (administradores, controladores, CF) e secundários (auditores, advogados, bancos em M&amp;A). Todos assinam Termo de Confidencialidade — negociações monitoradas via SIED.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <div>
-        <h4>Código de Conduta e Ética</h4>
-        <p>Abrange conflito de interesses, anticorrupção (Lei 12.846/2013), vedações ao insider trading e política de presentes. Treinamento anual obrigatório para todos com acesso a informações relevantes.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">05</div>
-      <div>
-        <h4>Canal de Denúncias (Whistleblower)</h4>
-        <p>Mecanismo confidencial para reportar suspeitas de insider trading, manipulação ou irregularidades contábeis. Investigações reportadas ao <b>Comitê de Auditoria — não à diretoria</b>. Exigido pelo IBGC/B3 para Novo Mercado.</p>
-      </div>
-    </div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:56px 0 20px;letter-spacing:-.01em">Compliance, Estrutura Mínima para Cia. Aberta</h3>
+ <div class="steps reveal">
+ <div class="step">
+ <div class="step-num">01</div>
+ <div>
+ <h4>Política de Divulgação (Disclosure Policy)</h4>
+ <p>Define responsáveis por identificar fatos relevantes (DRI, CEO, CFO), canal e prazo de divulgação (SIED/CVM), e procedimento para vazamento não-intencional. Aprovada pelo CA e revisada anualmente.</p>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">02</div>
+ <div>
+ <h4>Política de Negociação, Trading Window</h4>
+ <p>Insiders <b>não podem</b> negociar nos 15 dias antes de resultados, nem durante deliberação de M&amp;A, OPA ou fato relevante. Janela aberta nos demais períodos, desde que inexista informação privilegiada em curso.</p>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">03</div>
+ <div>
+ <h4>Mapeamento e Gestão de Insiders</h4>
+ <p>Cadastro atualizado de insiders primários (administradores, controladores, CF) e secundários (auditores, advogados, bancos em M&amp;A). Todos assinam Termo de Confidencialidade, negociações monitoradas via SIED.</p>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">04</div>
+ <div>
+ <h4>Código de Conduta e Ética</h4>
+ <p>Abrange conflito de interesses, anticorrupção (Lei 12.846/2013), vedações ao insider trading e política de presentes. Treinamento anual obrigatório para todos com acesso a informações relevantes.</p>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">05</div>
+ <div>
+ <h4>Canal de Denúncias (Whistleblower)</h4>
+ <p>Mecanismo confidencial para reportar suspeitas de insider trading, manipulação ou irregularidades contábeis. Investigações reportadas ao <b>Comitê de Auditoria, não à diretoria</b>. Exigido pelo IBGC/B3 para Novo Mercado.</p>
+ </div>
+ </div>
+ </div>
 </section>
 
 <!-- LEGADO -->
 <section id="legado">
-  <div class="reveal">
-    <div class="section-tag">08 — IMPACTOS E LEGADO</div>
-    <h2 class="section-title">Evolução do mercado <span class="accent">pós-2001</span></h2>
-    <p class="section-lead">Os números não deixam dúvida: a Lei 10.303 fundou as bases do mercado de capitais brasileiro moderno. O Novo Mercado da B3 é a evidência mais visível desse legado.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">08 · IMPACTOS E LEGADO</div>
+ <h2 class="section-title">Evolução do mercado <span class="accent">pós-2001</span></h2>
+ <p class="section-lead">Os números não deixam dúvida: a Lei 10.303 fundou as bases do mercado de capitais brasileiro moderno. O Novo Mercado da B3 é a evidência mais visível desse legado.</p>
+ </div>
 
-  <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">Indicadores do Mercado Brasileiro</h3>
-  <div class="table-wrap reveal">
-    <table class="modern">
-      <thead><tr><th>Indicador</th><th>2001</th><th>2007</th><th>2023</th></tr></thead>
-      <tbody>
-        <tr><td><b>Empresas listadas B3</b></td><td>425</td><td>442</td><td>316*</td></tr>
-        <tr><td>Volume diário médio (R$ bi)</td><td>0,9</td><td>4,2</td><td><b style="color:var(--accent)">28,5</b></td></tr>
-        <tr><td>Participação PF no volume</td><td>16%</td><td>22%</td><td><b style="color:var(--accent)">34%</b></td></tr>
-        <tr><td><b>Cias no Novo Mercado</b></td><td>0</td><td>99</td><td><b style="color:var(--accent)">186</b></td></tr>
-        <tr><td>Investidores PF (milhões)</td><td>0,5</td><td>0,6</td><td><b style="color:var(--accent)">5,0+</b></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <p style="font-size:12px;color:var(--text-faint);margin-top:10px">* Queda em nº absoluto reflete fechamentos voluntários, não perda de qualidade. O número de investidores PF cresceu 10×.</p>
+ <h3 style="font-size:22px;font-weight:600;margin:0 0 20px;letter-spacing:-.01em">Indicadores do Mercado Brasileiro</h3>
+ <div class="table-wrap reveal">
+ <table class="modern">
+ <thead><tr><th>Indicador</th><th>2001</th><th>2007</th><th>2023</th></tr></thead>
+ <tbody>
+ <tr><td><b>Empresas listadas B3</b></td><td>425</td><td>442</td><td>316*</td></tr>
+ <tr><td>Volume diário médio (R$ bi)</td><td>0,9</td><td>4,2</td><td><b style="color:var(--accent)">28,5</b></td></tr>
+ <tr><td>Participação PF no volume</td><td>16%</td><td>22%</td><td><b style="color:var(--accent)">34%</b></td></tr>
+ <tr><td><b>Cias no Novo Mercado</b></td><td>0</td><td>99</td><td><b style="color:var(--accent)">186</b></td></tr>
+ <tr><td>Investidores PF (milhões)</td><td>0,5</td><td>0,6</td><td><b style="color:var(--accent)">5,0+</b></td></tr>
+ </tbody>
+ </table>
+ </div>
+ <p style="font-size:12px;color:var(--text-faint);margin-top:10px">* Queda em nº absoluto reflete fechamentos voluntários, não perda de qualidade. O número de investidores PF cresceu 10×.</p>
 
-  <h3 style="font-size:22px;font-weight:600;margin:64px 0 20px;letter-spacing:-.01em">Segmentos de Listagem B3 — Escala de Governança</h3>
-  <div class="tier-grid reveal">
-    <div class="tier featured">
-      <h4>Novo Mercado</h4>
-      <ul>
-        <li>Somente ações ordinárias (ON) — sem PN</li>
-        <li>Tag Along: <b>100%</b> para ON</li>
-        <li>Free float mínimo: 25%</li>
-        <li>CA: mín. 5 membros, 20% independentes</li>
-        <li>Câmara de arbitragem para disputas</li>
-        <li>DFs em inglês (IFRS obrigatório)</li>
-      </ul>
-    </div>
-    <div class="tier">
-      <h4>Nível 2</h4>
-      <ul>
-        <li>ON e PN — PN com tag along 100%</li>
-        <li>PN com voto em decisões críticas</li>
-        <li>CA: mín. 5 membros, 20% independentes</li>
-        <li>Câmara de arbitragem</li>
-        <li>OPA de fechamento a preço justo</li>
-      </ul>
-    </div>
-    <div class="tier">
-      <h4>Nível 1</h4>
-      <ul>
-        <li>ON e PN permitidas</li>
-        <li>Tag Along: 80% (mínimo legal) para ON</li>
-        <li>Free float mínimo: 25%</li>
-        <li>Divulgação mensal de posições</li>
-        <li>Reunião pública anual (investor day)</li>
-      </ul>
-    </div>
-    <div class="tier">
-      <h4>Mercado Tradicional</h4>
-      <ul>
-        <li>Cumpre apenas mínimo da Lei 10.303</li>
-        <li>Tag Along 80% para ON (lei)</li>
-        <li>Sem exigências adicionais de CA</li>
-        <li>Sem câmara arbitral obrigatória</li>
-      </ul>
-    </div>
-  </div>
+ <h3 style="font-size:22px;font-weight:600;margin:64px 0 20px;letter-spacing:-.01em">Segmentos de Listagem B3, Escala de Governança</h3>
+ <div class="tier-grid reveal">
+ <div class="tier featured">
+ <h4>Novo Mercado</h4>
+ <ul>
+ <li>Somente ações ordinárias (ON), sem PN</li>
+ <li>Tag Along: <b>100%</b> para ON</li>
+ <li>Free float mínimo: 25%</li>
+ <li>CA: mín. 5 membros, 20% independentes</li>
+ <li>Câmara de arbitragem para disputas</li>
+ <li>DFs em inglês (IFRS obrigatório)</li>
+ </ul>
+ </div>
+ <div class="tier">
+ <h4>Nível 2</h4>
+ <ul>
+ <li>ON e PN, PN com tag along 100%</li>
+ <li>PN com voto em decisões críticas</li>
+ <li>CA: mín. 5 membros, 20% independentes</li>
+ <li>Câmara de arbitragem</li>
+ <li>OPA de fechamento a preço justo</li>
+ </ul>
+ </div>
+ <div class="tier">
+ <h4>Nível 1</h4>
+ <ul>
+ <li>ON e PN permitidas</li>
+ <li>Tag Along: 80% (mínimo legal) para ON</li>
+ <li>Free float mínimo: 25%</li>
+ <li>Divulgação mensal de posições</li>
+ <li>Reunião pública anual (investor day)</li>
+ </ul>
+ </div>
+ <div class="tier">
+ <h4>Mercado Tradicional</h4>
+ <ul>
+ <li>Cumpre apenas mínimo da Lei 10.303</li>
+ <li>Tag Along 80% para ON (lei)</li>
+ <li>Sem exigências adicionais de CA</li>
+ <li>Sem câmara arbitral obrigatória</li>
+ </ul>
+ </div>
+ </div>
 </section>
 
 <!-- ANTES vs DEPOIS -->
 <section id="antes-depois">
-  <div class="reveal">
-    <div class="section-tag">CONSOLIDAÇÃO</div>
-    <h2 class="section-title">Antes vs. depois: impacto direto na <span class="accent">prática contábil</span></h2>
-    <p class="section-lead">Um quadro síntese das mudanças mais relevantes — e do que elas exigiram do profissional contábil.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">CONSOLIDAÇÃO</div>
+ <h2 class="section-title">Antes vs. depois: impacto direto na <span class="accent">prática contábil</span></h2>
+ <p class="section-lead">Um quadro síntese das mudanças mais relevantes, e do que elas exigiram do profissional contábil.</p>
+ </div>
 
-  <div class="card reveal" style="padding:32px 18px">
-    <div class="compare-row" style="border-bottom-color:transparent;padding-top:0">
-      <div class="col" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em">Área</div>
-      <div class="col" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em">Pré-2001</div>
-      <div class="col" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em">Pós-Lei 10.303</div>
-    </div>
-    <div class="compare-row">
-      <div class="col">Ações Preferenciais</div>
-      <div class="col">Até 67% do capital sem direito a voto</div>
-      <div class="col">Máximo 50% para novas cias abertas</div>
-    </div>
-    <div class="compare-row">
-      <div class="col">Venda do Controle</div>
-      <div class="col">Minoritário sem proteção — sem tag along</div>
-      <div class="col">Tag Along: 80% (lei) / 100% (Novo Mercado)</div>
-    </div>
-    <div class="compare-row">
-      <div class="col">Fechamento de Capital</div>
-      <div class="col">Sem exigência de laudo independente</div>
-      <div class="col">Laudo FCD + múltiplos obrigatório (CVM 361)</div>
-    </div>
-    <div class="compare-row">
-      <div class="col">Direito de Recesso</div>
-      <div class="col">PL contábil — hipóteses restritas</div>
-      <div class="col">Maior dos 3 critérios — hipóteses ampliadas</div>
-    </div>
-    <div class="compare-row">
-      <div class="col">Insider Trading</div>
-      <div class="col">Infração administrativa — pena irrisória</div>
-      <div class="col">Crime federal: até 5 anos + multa 3× lucro</div>
-    </div>
-    <div class="compare-row">
-      <div class="col">Fatos Relevantes</div>
-      <div class="col">Divulgação sem prazo ou padrão definido</div>
-      <div class="col">Imediata — responsabilidade do DRI/CEO/CFO</div>
-    </div>
-    <div class="compare-row">
-      <div class="col">Auditoria</div>
-      <div class="col">Sem obrigação de comunicar CVM</div>
-      <div class="col">Obrigação legal de reportar irregularidades</div>
-    </div>
-    <div class="compare-row">
-      <div class="col">Conselho Fiscal</div>
-      <div class="col">Eleito pelo controlador</div>
-      <div class="col">Minoritários elegem membro em separado</div>
-    </div>
-    <div class="compare-row" style="border-bottom:none">
-      <div class="col">Poder da CVM</div>
-      <div class="col">Multas baixas — autonomia limitada</div>
-      <div class="col">Multas até R$ 50 mi — Termo de Compromisso</div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="reveal">
-    <div class="section-tag">PERGUNTAS FREQUENTES</div>
-    <h2 class="section-title">Dúvidas comuns sobre a <span class="accent">Lei 10.303</span></h2>
-    <p class="section-lead">Resposta direta às perguntas que mais aparecem em concursos, provas de proficiência e na prática profissional do contador em mercado de capitais.</p>
-  </div>
-
-  <div class="reveal">
-    <details class="faq-item" open>
-      <summary>O que efetivamente a Lei 10.303/2001 alterou?</summary>
-      <div class="faq-body">
-        <p>A Lei 10.303 não é uma lei autônoma — ela <b>altera</b> duas leis estruturantes do mercado de capitais brasileiro: a Lei 6.404/1976 (Lei das S.A.) e a Lei 6.385/1976 (que criou a CVM). No total, foram 29 alterações na Lei das S.A. e 19 na Lei da CVM, além da criação do Capítulo VII-B com os crimes de mercado.</p>
-        <p>Os três blocos principais: (i) proteção ao minoritário (tag along, OPA, recesso), (ii) governança e transparência (conselho fiscal, fatos relevantes, deveres do controlador) e (iii) tipificação penal (insider trading, manipulação, exercício irregular).</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>Tag Along é obrigatório para todas as companhias abertas?</summary>
-      <div class="faq-body">
-        <p>Sim, é uma obrigação legal estabelecida pelo Art. 254-A da Lei 6.404 (incluído pela Lei 10.303). Toda companhia aberta deve oferecer, em caso de alienação de controle, no mínimo <b>80% do valor pago por ação ON</b> aos demais acionistas ordinaristas.</p>
-        <p>Empresas listadas no Nível 2 e Novo Mercado da B3 oferecem tag along de <b>100%</b>, e o Nível 2 estende esse direito até às ações preferenciais (PN).</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>O contador/auditor é considerado insider primário?</summary>
-      <div class="faq-body">
-        <p>Sim. O auditor independente, ao acessar demonstrações financeiras e fatos relevantes antes da divulgação pública, é considerado <b>insider primário</b> pela CVM. Está sujeito às mesmas penas do Art. 27-D (reclusão de 1 a 5 anos + multa de até 3× a vantagem ilícita).</p>
-        <p>Por isso, escritórios de auditoria mantêm <i>blackout periods</i>, listas restritas e treinamento contínuo sobre as vedações.</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>Qual a diferença entre OPA por fechamento de capital e por alienação de controle?</summary>
-      <div class="faq-body">
-        <p><b>OPA por fechamento de capital (Art. 4º-A):</b> a companhia decide deixar de ser aberta, cancelando o registro na CVM. Exige laudo de avaliação independente (FCD + múltiplos) e direito de acionistas com 10%+ do free float pedirem nova avaliação.</p>
-        <p><b>OPA por alienação de controle (Art. 254-A):</b> tag along — quando o controlador vende seu bloco, o adquirente obrigatoriamente oferta aos demais ON pelo mínimo de 80% do preço pago ao controlador.</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>O que muda no recesso após a Lei 10.303?</summary>
-      <div class="faq-body">
-        <p>Antes, o reembolso usava apenas o <b>PL contábil</b> e o leque de hipóteses era estreito. Após a lei, o cálculo passou a ser o <b>maior valor</b> entre (i) PL contábil, (ii) PL econômico (FCD) e (iii) cotação média de 12 meses.</p>
-        <p>As hipóteses ampliaram para incluir cisão com mudança de objeto/redução de dividendos, transformação societária, redução do dividendo obrigatório, entre outras.</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>O que é o "Termo de Compromisso" da CVM?</summary>
-      <div class="faq-body">
-        <p>É um instrumento criado pela Lei 10.303 inspirado no <i>consent decree</i> americano. O investigado pode propor à CVM o encerramento do processo administrativo desde que (i) cesse a prática irregular, (ii) corrija os efeitos e (iii) pague contribuição ao mercado — <b>sem admissão de culpa</b>.</p>
-        <p>Não cabe quando os elementos do processo já indicarem condenação inevitável, nem em casos de reincidência.</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>Por que o FCD é exigido pela Instrução CVM 361?</summary>
-      <div class="faq-body">
-        <p>Porque o FCD captura o valor econômico do negócio em <i>going concern</i>: descontando fluxos futuros pelo WACC, reflete a real geração de caixa esperada — algo que múltiplos comparáveis e PL contábil não conseguem sozinhos.</p>
-        <p>A 361 exige no mínimo <b>duas metodologias</b> de valor terminal (Gordon e múltiplo de saída, por exemplo) para reduzir o erro de estimação. O laudo final escolhe o "maior valor" como referência mínima.</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>Insider trading só vale para administradores?</summary>
-      <div class="faq-body">
-        <p>Não. O Art. 27-D cobre <b>qualquer pessoa</b> que tenha o dever de manter sigilo sobre informação relevante. Inclui administradores (insiders primários), controladores, conselheiros fiscais — e também auditores, advogados, consultores em M&amp;A, bancos assessores, gráficas que imprimem prospectos, etc. (insiders secundários ou <i>tippees</i>).</p>
-        <p>A pena (1 a 5 anos + multa) é a mesma para todos.</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>O que é "quiet period" e "blackout period"?</summary>
-      <div class="faq-body">
-        <p><b>Quiet period:</b> período antes da divulgação de resultados (geralmente 15 dias) em que executivos e RI evitam comentários públicos sobre perspectivas financeiras — para não configurar divulgação seletiva.</p>
-        <p><b>Blackout period:</b> janela em que insiders <b>não podem negociar</b> ações da companhia — geralmente 15 dias antes do resultado e durante qualquer fato relevante em deliberação (M&amp;A, OPA, fusão).</p>
-      </div>
-    </details>
-
-    <details class="faq-item">
-      <summary>O Novo Mercado surgiu de quê?</summary>
-      <div class="faq-body">
-        <p>O Novo Mercado, lançado pela então Bovespa em 2002, foi a resposta privada complementar à Lei 10.303. Enquanto a lei estabelecia o mínimo legal, o Novo Mercado criou um segmento <b>voluntário</b> com regras ainda mais rígidas (100% tag along, somente ON, arbitragem, free float ≥25%).</p>
-        <p>Empresas que aderiam sinalizavam compromisso adicional com governança e, em troca, captavam a múltiplos de valuation mais altos.</p>
-      </div>
-    </details>
-  </div>
+ <div class="card reveal" style="padding:32px 18px">
+ <div class="compare-row" style="border-bottom-color:transparent;padding-top:0">
+ <div class="col" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em">Área</div>
+ <div class="col" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em">Pré-2001</div>
+ <div class="col" style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.1em">Pós-Lei 10.303</div>
+ </div>
+ <div class="compare-row">
+ <div class="col">Ações Preferenciais</div>
+ <div class="col">Até 67% do capital sem direito a voto</div>
+ <div class="col">Máximo 50% para novas cias abertas</div>
+ </div>
+ <div class="compare-row">
+ <div class="col">Venda do Controle</div>
+ <div class="col">Minoritário sem proteção, sem tag along</div>
+ <div class="col">Tag Along: 80% (lei) / 100% (Novo Mercado)</div>
+ </div>
+ <div class="compare-row">
+ <div class="col">Fechamento de Capital</div>
+ <div class="col">Sem exigência de laudo independente</div>
+ <div class="col">Laudo FCD + múltiplos obrigatório (CVM 361)</div>
+ </div>
+ <div class="compare-row">
+ <div class="col">Direito de Recesso</div>
+ <div class="col">PL contábil, hipóteses restritas</div>
+ <div class="col">Maior dos 3 critérios, hipóteses ampliadas</div>
+ </div>
+ <div class="compare-row">
+ <div class="col">Insider Trading</div>
+ <div class="col">Infração administrativa, pena irrisória</div>
+ <div class="col">Crime federal: até 5 anos + multa 3× lucro</div>
+ </div>
+ <div class="compare-row">
+ <div class="col">Fatos Relevantes</div>
+ <div class="col">Divulgação sem prazo ou padrão definido</div>
+ <div class="col">Imediata, responsabilidade do DRI/CEO/CFO</div>
+ </div>
+ <div class="compare-row">
+ <div class="col">Auditoria</div>
+ <div class="col">Sem obrigação de comunicar CVM</div>
+ <div class="col">Obrigação legal de reportar irregularidades</div>
+ </div>
+ <div class="compare-row">
+ <div class="col">Conselho Fiscal</div>
+ <div class="col">Eleito pelo controlador</div>
+ <div class="col">Minoritários elegem membro em separado</div>
+ </div>
+ <div class="compare-row" style="border-bottom:none">
+ <div class="col">Poder da CVM</div>
+ <div class="col">Multas baixas, autonomia limitada</div>
+ <div class="col">Multas até R$ 50 mi, Termo de Compromisso</div>
+ </div>
+ </div>
 </section>
 
 <!-- CONCLUSÃO -->
 <section id="conclusao">
-  <div class="reveal">
-    <div class="section-tag">CONCLUSÃO</div>
-    <h2 class="section-title">Legado e relevância para <span class="accent">o profissional contábil</span></h2>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">CONCLUSÃO</div>
+ <h2 class="section-title">Legado e relevância para <span class="accent">o profissional contábil</span></h2>
+ </div>
 
-  <div class="card-grid cols-2 reveal">
-    <div class="card">
-      <div class="num">Mercado</div>
-      <h3>Mais Robusto</h3>
-      <p>De 500 mil investidores PF em 2001 para mais de 5 milhões em 2023. Volume diário cresceu 30×. O Novo Mercado concentra hoje 186 empresas e mais de 70% do volume negociado na B3 — fundação construída sobre a lei.</p>
-    </div>
-    <div class="card">
-      <div class="num">Minoritário</div>
-      <h3>Proteção Real</h3>
-      <p>Tag Along, OPA com laudo independente e ampliação do recesso criaram mecanismos de saída justa. O laudo FCD passou a ser instrumento central do contador em toda operação de M&amp;A e fechamento de capital.</p>
-    </div>
-    <div class="card">
-      <div class="num">Contador</div>
-      <h3>Nova Responsabilidade</h3>
-      <p>A lei redefiniu o papel do contador: de registrador de fatos para garantidor da integridade do mercado. Auditor com obrigação de reportar à CVM, perito com FCD obrigatório, analista com trading window — transformações diretas da lei.</p>
-    </div>
-    <div class="card">
-      <div class="num">Compliance</div>
-      <h3>Como Rotina</h3>
-      <p>A estrutura de compliance (disclosure policy, trading window, whistleblower, mapeamento de insiders) não é burocracia — é exigência legal com sanção penal. Conhecer esses mecanismos agrega valor estratégico.</p>
-    </div>
-  </div>
+ <div class="card-grid cols-2 reveal">
+ <div class="card">
+ <div class="num">Mercado</div>
+ <h3>Mais Robusto</h3>
+ <p>De 500 mil investidores PF em 2001 para mais de 5 milhões em 2023. Volume diário cresceu 30×. O Novo Mercado concentra hoje 186 empresas e mais de 70% do volume negociado na B3, fundação construída sobre a lei.</p>
+ </div>
+ <div class="card">
+ <div class="num">Minoritário</div>
+ <h3>Proteção Real</h3>
+ <p>Tag Along, OPA com laudo independente e ampliação do recesso criaram mecanismos de saída justa. O laudo FCD passou a ser instrumento central do contador em toda operação de M&amp;A e fechamento de capital.</p>
+ </div>
+ <div class="card">
+ <div class="num">Contador</div>
+ <h3>Nova Responsabilidade</h3>
+ <p>A lei redefiniu o papel do contador: de registrador de fatos para garantidor da integridade do mercado. Auditor com obrigação de reportar à CVM, perito com FCD obrigatório, analista com trading window, transformações diretas da lei.</p>
+ </div>
+ <div class="card">
+ <div class="num">Compliance</div>
+ <h3>Como Rotina</h3>
+ <p>A estrutura de compliance (disclosure policy, trading window, whistleblower, mapeamento de insiders) não é burocracia, é exigência legal com sanção penal. Conhecer esses mecanismos agrega valor estratégico.</p>
+ </div>
+ </div>
 
-  <div class="quote reveal">
-    <p>A Lei 10.303/2001 não criou um mercado perfeito, mas criou as fundações sobre as quais um mercado justo e transparente pode ser construído. Para o contador, ela transformou responsabilidades que vão muito além dos números.</p>
-  </div>
+ <div class="quote reveal">
+ <p>A Lei 10.303/2001 não criou um mercado perfeito, mas criou as fundações sobre as quais um mercado justo e transparente pode ser construído. Para o contador, ela transformou responsabilidades que vão muito além dos números.</p>
+ </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+ <div class="reveal">
+ <div class="section-tag">PERGUNTAS FREQUENTES</div>
+ <h2 class="section-title">Dúvidas comuns sobre a <span class="accent">Lei 10.303</span></h2>
+ <p class="section-lead">Resposta direta às perguntas que mais aparecem em concursos, provas de proficiência e na prática profissional do contador em mercado de capitais.</p>
+ </div>
+
+ <div class="reveal">
+ <details class="faq-item" open>
+ <summary>O que efetivamente a Lei 10.303/2001 alterou?</summary>
+ <div class="faq-body">
+ <p>A Lei 10.303 não é uma lei autônoma, ela <b>altera</b> duas leis estruturantes do mercado de capitais brasileiro: a Lei 6.404/1976 (Lei das S.A.) e a Lei 6.385/1976 (que criou a CVM). No total, foram 29 alterações na Lei das S.A. e 19 na Lei da CVM, além da criação do Capítulo VII-B com os crimes de mercado.</p>
+ <p>Os três blocos principais: (i) proteção ao minoritário (tag along, OPA, recesso), (ii) governança e transparência (conselho fiscal, fatos relevantes, deveres do controlador) e (iii) tipificação penal (insider trading, manipulação, exercício irregular).</p>
+ </div>
+ </details>
+
+ <details class="faq-item">
+ <summary>Tag Along é obrigatório para todas as companhias abertas?</summary>
+ <div class="faq-body">
+ <p>Sim, é uma obrigação legal estabelecida pelo Art. 254-A da Lei 6.404 (incluído pela Lei 10.303). Toda companhia aberta deve oferecer, em caso de alienação de controle, no mínimo <b>80% do valor pago por ação ON</b> aos demais acionistas ordinaristas.</p>
+ <p>Empresas listadas no Nível 2 e Novo Mercado da B3 oferecem tag along de <b>100%</b>, e o Nível 2 estende esse direito até às ações preferenciais (PN).</p>
+ </div>
+ </details>
+
+ <details class="faq-item">
+ <summary>O contador/auditor é considerado insider primário?</summary>
+ <div class="faq-body">
+ <p>Sim. O auditor independente, ao acessar demonstrações financeiras e fatos relevantes antes da divulgação pública, é considerado <b>insider primário</b> pela CVM. Está sujeito às mesmas penas do Art. 27-D (reclusão de 1 a 5 anos + multa de até 3× a vantagem ilícita).</p>
+ <p>Por isso, escritórios de auditoria mantêm <i>blackout periods</i>, listas restritas e treinamento contínuo sobre as vedações.</p>
+ </div>
+ </details>
+
+ <details class="faq-item">
+ <summary>Qual a diferença entre OPA por fechamento de capital e por alienação de controle?</summary>
+ <div class="faq-body">
+ <p><b>OPA por fechamento de capital (Art. 4º-A):</b> a companhia decide deixar de ser aberta, cancelando o registro na CVM. Exige laudo de avaliação independente (FCD + múltiplos) e direito de acionistas com 10%+ do free float pedirem nova avaliação.</p>
+ <p><b>OPA por alienação de controle (Art. 254-A):</b> tag along, quando o controlador vende seu bloco, o adquirente obrigatoriamente oferta aos demais ON pelo mínimo de 80% do preço pago ao controlador.</p>
+ </div>
+ </details>
+
+ <details class="faq-item">
+ <summary>O que muda no recesso após a Lei 10.303?</summary>
+ <div class="faq-body">
+ <p>Antes, o reembolso usava apenas o <b>PL contábil</b> e o leque de hipóteses era estreito. Após a lei, o cálculo passou a ser o <b>maior valor</b> entre (i) PL contábil, (ii) PL econômico (FCD) e (iii) cotação média de 12 meses.</p>
+ <p>As hipóteses ampliaram para incluir cisão com mudança de objeto/redução de dividendos, transformação societária, redução do dividendo obrigatório, entre outras.</p>
+ </div>
+ </details>
+
+ <details class="faq-item">
+ <summary>O que é o "Termo de Compromisso" da CVM?</summary>
+ <div class="faq-body">
+ <p>É um instrumento criado pela Lei 10.303 inspirado no <i>consent decree</i> americano. O investigado pode propor à CVM o encerramento do processo administrativo desde que (i) cesse a prática irregular, (ii) corrija os efeitos e (iii) pague contribuição ao mercado<b>sem admissão de culpa</b>.</p>
+ <p>Não cabe quando os elementos do processo já indicarem condenação inevitável, nem em casos de reincidência.</p>
+ </div>
+ </details>
+
+ <details class="faq-item">
+ <summary>Por que o FCD é exigido pela Instrução CVM 361?</summary>
+ <div class="faq-body">
+ <p>Porque o FCD captura o valor econômico do negócio em <i>going concern</i>: descontando fluxos futuros pelo WACC, reflete a real geração de caixa esperada, algo que múltiplos comparáveis e PL contábil não conseguem sozinhos.</p>
+ <p>A 361 exige no mínimo <b>duas metodologias</b> de valor terminal (Gordon e múltiplo de saída, por exemplo) para reduzir o erro de estimação. O laudo final escolhe o "maior valor" como referência mínima.</p>
+ </div>
+ </details>
+
+ <details class="faq-item">
+ <summary>Insider trading só vale para administradores?</summary>
+ <div class="faq-body">
+ <p>Não. O Art. 27-D cobre <b>qualquer pessoa</b> que tenha o dever de manter sigilo sobre informação relevante. Inclui administradores (insiders primários), controladores, conselheiros fiscais, e também auditores, advogados, consultores em M&amp;A, bancos assessores, gráficas que imprimem prospectos, etc. (insiders secundários ou <i>tippees</i>).</p>
+ <p>A pena (1 a 5 anos + multa) é a mesma para todos.</p>
+ </div>
+ </details>
+
+ <details class="faq-item">
+ <summary>O que é "quiet period" e "blackout period"?</summary>
+ <div class="faq-body">
+ <p><b>Quiet period:</b> período antes da divulgação de resultados (geralmente 15 dias) em que executivos e RI evitam comentários públicos sobre perspectivas financeiras, para não configurar divulgação seletiva.</p>
+ <p><b>Blackout period:</b> janela em que insiders <b>não podem negociar</b> ações da companhia, geralmente 15 dias antes do resultado e durante qualquer fato relevante em deliberação (M&amp;A, OPA, fusão).</p>
+ </div>
+ </details>
+
+ <details class="faq-item">
+ <summary>O Novo Mercado surgiu de quê?</summary>
+ <div class="faq-body">
+ <p>O Novo Mercado, lançado pela então Bovespa em 2002, foi a resposta privada complementar à Lei 10.303. Enquanto a lei estabelecia o mínimo legal, o Novo Mercado criou um segmento <b>voluntário</b> com regras ainda mais rígidas (100% tag along, somente ON, arbitragem, free float ≥25%).</p>
+ <p>Empresas que aderiam sinalizavam compromisso adicional com governança e, em troca, captavam a múltiplos de valuation mais altos.</p>
+ </div>
+ </details>
+ </div>
 </section>
 
 <!-- GLOSSÁRIO -->
 <section id="glossario">
-  <div class="reveal">
-    <div class="section-tag">GLOSSÁRIO</div>
-    <h2 class="section-title">Termos essenciais do <span class="accent">mercado de capitais</span></h2>
-    <p class="section-lead">Vocabulário técnico que aparece em provas, laudos e na prática profissional — todos diretamente relacionados à Lei 10.303 ou às normas que a operacionalizam.</p>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">GLOSSÁRIO</div>
+ <h2 class="section-title">Termos essenciais do <span class="accent">mercado de capitais</span></h2>
+ <p class="section-lead">Vocabulário técnico que aparece em provas, laudos e na prática profissional, todos diretamente relacionados à Lei 10.303 ou às normas que a operacionalizam.</p>
+ </div>
 
-  <div class="glossary-grid reveal">
-    <div class="glossary-item">
-      <div class="term">TAG ALONG</div>
-      <p class="definition">Direito do acionista minoritário de receber, em caso de alienação do controle, no mínimo 80% do preço pago por ação ao controlador (Art. 254-A). No Novo Mercado: 100%.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">OPA</div>
-      <p class="definition">Oferta Pública de Aquisição. Procedimento regulado pela Instrução CVM 361, obrigatório em fechamento de capital, alienação de controle e aumento relevante de participação.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">FCD / DCF</div>
-      <p class="definition">Fluxo de Caixa Descontado (<i>Discounted Cash Flow</i>). Metodologia de avaliação que projeta fluxos de caixa livres futuros e os desconta a valor presente pelo WACC.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">WACC</div>
-      <p class="definition">Custo Médio Ponderado de Capital (<i>Weighted Average Cost of Capital</i>). Combina o custo do capital próprio (Ke via CAPM) e o custo da dívida líquida de IR, ponderados pela estrutura D/E.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">FCL / FCFF</div>
-      <p class="definition">Fluxo de Caixa Livre para a Firma. Resulta de NOPAT + D&amp;A − CAPEX − Δ Capital de Giro. Disponível a credores e acionistas — base do FCD.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">INSIDER TRADING</div>
-      <p class="definition">Uso de informação relevante ainda não divulgada para obter vantagem em negociação com valores mobiliários. Crime tipificado no Art. 27-D — reclusão de 1 a 5 anos + multa.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">FATO RELEVANTE</div>
-      <p class="definition">Qualquer ato ou fato capaz de influenciar a cotação ou a decisão de investidores. Divulgação imediata e simultânea — Instrução CVM 358.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">DIREITO DE RECESSO</div>
-      <p class="definition">Direito do acionista dissidente de se retirar da companhia em decisões críticas (fusão, mudança de objeto, etc.), recebendo reembolso pelo maior valor entre PL contábil, PL econômico e cotação média.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">DRI</div>
-      <p class="definition">Diretor de Relações com Investidores. Responsável legal por divulgar fatos relevantes à CVM e ao mercado. Solidariamente responsável com CEO e CFO.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">NOVO MERCADO</div>
-      <p class="definition">Segmento premium da B3 com governança reforçada: somente ON, tag along 100%, free float ≥25%, CA com 20% independentes, câmara arbitral e IFRS.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">FREE FLOAT</div>
-      <p class="definition">Percentual de ações em circulação no mercado, excluindo aquelas do controlador, tesouraria e administradores. Mínimo de 25% nos segmentos diferenciados.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">TRADING WINDOW</div>
-      <p class="definition">Janela em que insiders podem negociar ações da companhia. Vedada nos 15 dias antes de resultados e durante deliberações de M&amp;A, OPA ou fato relevante em curso.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">TERMO DE COMPROMISSO</div>
-      <p class="definition">Instrumento de encerramento de processo sancionador da CVM, sem admissão de culpa, mediante cessação da prática e contribuição financeira. Inspirado no <i>consent decree</i> americano.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">BUSINESS JUDGMENT RULE</div>
-      <p class="definition">Princípio que protege o administrador de responsabilização por decisão de negócio, desde que tomada de boa-fé, com diligência e informação adequada — mesmo que o resultado seja prejudicial.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">PARTES RELACIONADAS</div>
-      <p class="definition">Pessoas ou entidades com influência sobre a companhia (controlador, administradores, coligadas). Transações devem ser <i>arm's length</i> e divulgadas — CPC 18 (R2).</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">ARM'S LENGTH</div>
-      <p class="definition">Princípio de que transações entre partes relacionadas devem ocorrer em condições comparáveis às que seriam pactuadas entre partes independentes em mercado livre.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">BLACKOUT PERIOD</div>
-      <p class="definition">Período em que insiders ficam impedidos de negociar ações da própria companhia. Geralmente 15 dias antes da divulgação de resultados ou durante deliberações sensíveis.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">IMPAIRMENT</div>
-      <p class="definition">Teste de recuperabilidade de ativos (CPC 01 / IAS 36). Compara valor contábil com valor recuperável (FCD ou valor justo) — quando contábil &gt; recuperável, gera perda no resultado.</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">CRSFN</div>
-      <p class="definition">Conselho de Recursos do Sistema Financeiro Nacional. Instância recursal das decisões sancionatórias da CVM e do Banco Central — antiga "Conselhinho".</p>
-    </div>
-    <div class="glossary-item">
-      <div class="term">SIED</div>
-      <p class="definition">Sistema de Informações Empresariais e de Dados da CVM. Canal oficial para divulgação de fatos relevantes, ITRs e DFPs por companhias abertas.</p>
-    </div>
-  </div>
+ <div class="glossary-grid reveal">
+ <div class="glossary-item">
+ <div class="term">TAG ALONG</div>
+ <p class="definition">Direito do acionista minoritário de receber, em caso de alienação do controle, no mínimo 80% do preço pago por ação ao controlador (Art. 254-A). No Novo Mercado: 100%.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">OPA</div>
+ <p class="definition">Oferta Pública de Aquisição. Procedimento regulado pela Instrução CVM 361, obrigatório em fechamento de capital, alienação de controle e aumento relevante de participação.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">FCD / DCF</div>
+ <p class="definition">Fluxo de Caixa Descontado (<i>Discounted Cash Flow</i>). Metodologia de avaliação que projeta fluxos de caixa livres futuros e os desconta a valor presente pelo WACC.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">WACC</div>
+ <p class="definition">Custo Médio Ponderado de Capital (<i>Weighted Average Cost of Capital</i>). Combina o custo do capital próprio (Ke via CAPM) e o custo da dívida líquida de IR, ponderados pela estrutura D/E.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">FCL / FCFF</div>
+ <p class="definition">Fluxo de Caixa Livre para a Firma. Resulta de NOPAT + D&amp;A − CAPEX − Δ Capital de Giro. Disponível a credores e acionistas, base do FCD.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">INSIDER TRADING</div>
+ <p class="definition">Uso de informação relevante ainda não divulgada para obter vantagem em negociação com valores mobiliários. Crime tipificado no Art. 27-D, reclusão de 1 a 5 anos + multa.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">FATO RELEVANTE</div>
+ <p class="definition">Qualquer ato ou fato capaz de influenciar a cotação ou a decisão de investidores. Divulgação imediata e simultânea, Instrução CVM 358.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">DIREITO DE RECESSO</div>
+ <p class="definition">Direito do acionista dissidente de se retirar da companhia em decisões críticas (fusão, mudança de objeto, etc.), recebendo reembolso pelo maior valor entre PL contábil, PL econômico e cotação média.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">DRI</div>
+ <p class="definition">Diretor de Relações com Investidores. Responsável legal por divulgar fatos relevantes à CVM e ao mercado. Solidariamente responsável com CEO e CFO.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">NOVO MERCADO</div>
+ <p class="definition">Segmento premium da B3 com governança reforçada: somente ON, tag along 100%, free float ≥25%, CA com 20% independentes, câmara arbitral e IFRS.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">FREE FLOAT</div>
+ <p class="definition">Percentual de ações em circulação no mercado, excluindo aquelas do controlador, tesouraria e administradores. Mínimo de 25% nos segmentos diferenciados.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">TRADING WINDOW</div>
+ <p class="definition">Janela em que insiders podem negociar ações da companhia. Vedada nos 15 dias antes de resultados e durante deliberações de M&amp;A, OPA ou fato relevante em curso.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">TERMO DE COMPROMISSO</div>
+ <p class="definition">Instrumento de encerramento de processo sancionador da CVM, sem admissão de culpa, mediante cessação da prática e contribuição financeira. Inspirado no <i>consent decree</i> americano.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">BUSINESS JUDGMENT RULE</div>
+ <p class="definition">Princípio que protege o administrador de responsabilização por decisão de negócio, desde que tomada de boa-fé, com diligência e informação adequada, mesmo que o resultado seja prejudicial.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">PARTES RELACIONADAS</div>
+ <p class="definition">Pessoas ou entidades com influência sobre a companhia (controlador, administradores, coligadas). Transações devem ser <i>arm's length</i> e divulgadas, CPC 18 (R2).</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">ARM'S LENGTH</div>
+ <p class="definition">Princípio de que transações entre partes relacionadas devem ocorrer em condições comparáveis às que seriam pactuadas entre partes independentes em mercado livre.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">BLACKOUT PERIOD</div>
+ <p class="definition">Período em que insiders ficam impedidos de negociar ações da própria companhia. Geralmente 15 dias antes da divulgação de resultados ou durante deliberações sensíveis.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">IMPAIRMENT</div>
+ <p class="definition">Teste de recuperabilidade de ativos (CPC 01 / IAS 36). Compara valor contábil com valor recuperável (FCD ou valor justo), quando contábil &gt; recuperável, gera perda no resultado.</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">CRSFN</div>
+ <p class="definition">Conselho de Recursos do Sistema Financeiro Nacional. Instância recursal das decisões sancionatórias da CVM e do Banco Central, antiga "Conselhinho".</p>
+ </div>
+ <div class="glossary-item">
+ <div class="term">SIED</div>
+ <p class="definition">Sistema de Informações Empresariais e de Dados da CVM. Canal oficial para divulgação de fatos relevantes, ITRs e DFPs por companhias abertas.</p>
+ </div>
+ </div>
 </section>
 
 <!-- REFERÊNCIAS -->
 <section id="referencias">
-  <div class="reveal">
-    <div class="section-tag">REFERÊNCIAS</div>
-    <h2 class="section-title">Bibliografia, normativas e <span class="accent">CPCs</span></h2>
-  </div>
+ <div class="reveal">
+ <div class="section-tag">REFERÊNCIAS</div>
+ <h2 class="section-title">Bibliografia, normativas e <span class="accent">CPCs</span></h2>
+ </div>
 
-  <div class="ref-grid reveal">
-    <div class="ref-block">
-      <h4>Legislação</h4>
-      <ul>
-        <li>BRASIL. Lei nº 10.303, de 31 de outubro de 2001. Altera as Leis nº 6.404/1976 e 6.385/1976. Brasília: DOU, 2001.</li>
-        <li>BRASIL. Lei nº 6.404, de 15 de dezembro de 1976. Lei das Sociedades por Ações (consolidada 2023).</li>
-        <li>BRASIL. Lei nº 6.385, de 7 de dezembro de 1976. Mercado de Valores Mobiliários e CVM.</li>
-        <li>BRASIL. Lei nº 12.846, de 1 de agosto de 2013. Lei Anticorrupção.</li>
-      </ul>
-    </div>
-    <div class="ref-block">
-      <h4>Normativos CVM</h4>
-      <ul>
-        <li>CVM. Instrução 358/2002 — Divulgação de informações relevantes e insider trading.</li>
-        <li>CVM. Instrução 361/2002 — OPA: procedimentos e laudo de avaliação independente.</li>
-        <li>CVM. Instrução 480/2009 — Emissores: FRE, ITR e DFP.</li>
-        <li>CVM. Resolução 80/2022 — Auditores independentes (atualiza IN 308/1999).</li>
-      </ul>
-    </div>
-    <div class="ref-block">
-      <h4>CPCs &amp; NBC TAs</h4>
-      <ul>
-        <li>CPC 01 (R1) — Redução ao Valor Recuperável de Ativos (IAS 36). Metodologia FCD.</li>
-        <li>CPC 15 (R1) — Combinações de Negócios (IFRS 3). Tag along e recesso pós-fusão.</li>
-        <li>CPC 18 (R2) — Investimento em Coligada, Controlada e Empreendimento Controlado.</li>
-        <li>NBC TA 240 — Responsabilidade do Auditor em Relação a Fraude (IAASB ISA 240).</li>
-        <li>NBC TA 570 (R1) — Continuidade Operacional (Going Concern).</li>
-      </ul>
-    </div>
-    <div class="ref-block" style="grid-column:1/-1">
-      <h4>Doutrina e Avaliação</h4>
-      <ul>
-        <li>EIZIRIK, Nelson. <i>A Lei das S.A. Comentada</i>. 3. ed. São Paulo: Quartier Latin, 2019.</li>
-        <li>IBGC. <i>Código das Melhores Práticas de Governança Corporativa</i>. 5. ed. São Paulo: IBGC, 2015.</li>
-        <li>DAMODARAN, Aswath. <i>Investment Valuation</i>. 3. ed. New York: Wiley, 2012. (dados: damodaran.com)</li>
-        <li>COPELAND, T.; KOLLER, T.; MURRIN, J. <i>Valuation: Measuring and Managing the Value of Companies</i>. 6. ed. Wiley, 2020.</li>
-      </ul>
-    </div>
-  </div>
+ <div class="ref-grid reveal">
+ <div class="ref-block">
+ <h4>Legislação</h4>
+ <ul>
+ <li>BRASIL. Lei nº 10.303, de 31 de outubro de 2001. Altera as Leis nº 6.404/1976 e 6.385/1976. Brasília: DOU, 2001.</li>
+ <li>BRASIL. Lei nº 6.404, de 15 de dezembro de 1976. Lei das Sociedades por Ações (consolidada 2023).</li>
+ <li>BRASIL. Lei nº 6.385, de 7 de dezembro de 1976. Mercado de Valores Mobiliários e CVM.</li>
+ <li>BRASIL. Lei nº 12.846, de 1 de agosto de 2013. Lei Anticorrupção.</li>
+ </ul>
+ </div>
+ <div class="ref-block">
+ <h4>Normativos CVM</h4>
+ <ul>
+ <li>CVM. Instrução 358/2002, Divulgação de informações relevantes e insider trading.</li>
+ <li>CVM. Instrução 361/2002, OPA: procedimentos e laudo de avaliação independente.</li>
+ <li>CVM. Instrução 480/2009, Emissores: FRE, ITR e DFP.</li>
+ <li>CVM. Resolução 80/2022, Auditores independentes (atualiza IN 308/1999).</li>
+ </ul>
+ </div>
+ <div class="ref-block">
+ <h4>CPCs &amp; NBC TAs</h4>
+ <ul>
+ <li>CPC 01 (R1), Redução ao Valor Recuperável de Ativos (IAS 36). Metodologia FCD.</li>
+ <li>CPC 15 (R1), Combinações de Negócios (IFRS 3). Tag along e recesso pós-fusão.</li>
+ <li>CPC 18 (R2), Investimento em Coligada, Controlada e Empreendimento Controlado.</li>
+ <li>NBC TA 240, Responsabilidade do Auditor em Relação a Fraude (IAASB ISA 240).</li>
+ <li>NBC TA 570 (R1), Continuidade Operacional (Going Concern).</li>
+ </ul>
+ </div>
+ <div class="ref-block" style="grid-column:1/-1">
+ <h4>Doutrina e Avaliação</h4>
+ <ul>
+ <li>EIZIRIK, Nelson. <i>A Lei das S.A. Comentada</i>. 3. ed. São Paulo: Quartier Latin, 2019.</li>
+ <li>IBGC. <i>Código das Melhores Práticas de Governança Corporativa</i>. 5. ed. São Paulo: IBGC, 2015.</li>
+ <li>DAMODARAN, Aswath. <i>Investment Valuation</i>. 3. ed. New York: Wiley, 2012. (dados: damodaran.com)</li>
+ <li>COPELAND, T.; KOLLER, T.; MURRIN, J. <i>Valuation: Measuring and Managing the Value of Companies</i>. 6. ed. Wiley, 2020.</li>
+ </ul>
+ </div>
+ </div>
 </section>
 
 <footer>
-  <div class="footer-grid">
-    <div class="fae-logo footer-logo" aria-label="FAE Centro Universitário">
-      <img src="LOGO%20FAE.png" alt="FAE" />
-    </div>
-    <div>
-      <b style="color:var(--text)">Lei 10.303/2001</b> · Reforma do Mercado de Capitais
-    </div>
-    <div style="color:var(--text-faint);font-size:12px">
-      Thiago Henrique · Rodrigo Miccos · Evelyn Betto · Gabrielly Paiva
-    </div>
-  </div>
+ <div class="footer-grid">
+ <div class="fae-logo footer-logo" aria-label="FAE Centro Universitário">
+ <img src="LOGO%20FAE.png" alt="FAE" />
+ </div>
+ <div>
+ <b style="color:var(--text)">Lei 10.303/2001</b> · Reforma do Mercado de Capitais
+ </div>
+ <div style="color:var(--text-faint);font-size:12px">
+ Thiago Henrique · Rodrigo Miccos · Evelyn Betto · Gabrielly Paiva
+ </div>
+ </div>
 </footer>
 
 <button class="back-top" id="backTop" aria-label="Voltar ao topo">↑</button>
@@ -2207,22 +2208,22 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
 <script>
 // Reveal on scroll
 const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in');
-      io.unobserve(e.target);
-    }
-  });
+ entries.forEach(e => {
+ if (e.isIntersecting) {
+ e.target.classList.add('in');
+ io.unobserve(e.target);
+ }
+ });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 // Card hover spotlight
 document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const r = card.getBoundingClientRect();
-    card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
-    card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
-  });
+ card.addEventListener('mousemove', (e) => {
+ const r = card.getBoundingClientRect();
+ card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+ card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+ });
 });
 
 // Mobile nav toggle
@@ -2232,35 +2233,35 @@ toggle?.addEventListener('click', () => links.classList.toggle('open'));
 
 // Smooth-scroll that respects the real nav height so target sections aren't hidden
 function scrollToHash(hash){
-  const target = document.querySelector(hash);
-  if (!target) return;
-  const navEl = document.querySelector('nav.topnav');
-  const navH = navEl ? navEl.getBoundingClientRect().height : 72;
-  const offset = navH + 24;
-  const rect = target.getBoundingClientRect();
-  const top = rect.top + window.scrollY - offset;
-  window.scrollTo({ top, behavior: 'smooth' });
+ const target = document.querySelector(hash);
+ if (!target) return;
+ const navEl = document.querySelector('nav.topnav');
+ const navH = navEl ? navEl.getBoundingClientRect().height : 72;
+ const offset = navH + 24;
+ const rect = target.getBoundingClientRect();
+ const top = rect.top + window.scrollY - offset;
+ window.scrollTo({ top, behavior: 'smooth' });
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', (e) => {
-    const hash = a.getAttribute('href');
-    if (!hash || hash === '#') return;
-    const target = document.querySelector(hash);
-    if (!target) return;
-    e.preventDefault();
-    links.classList.remove('open');
-    scrollToHash(hash);
-    history.pushState(null, '', hash);
-  });
+ a.addEventListener('click', (e) => {
+ const hash = a.getAttribute('href');
+ if (!hash || hash === '#') return;
+ const target = document.querySelector(hash);
+ if (!target) return;
+ e.preventDefault();
+ links.classList.remove('open');
+ scrollToHash(hash);
+ history.pushState(null, '', hash);
+ });
 });
 
 // Scroll progress bar
 const progressEl = document.querySelector('.scroll-progress');
 function updateProgress(){
-  const h = document.documentElement;
-  const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
-  if (progressEl) progressEl.style.width = (scrolled * 100) + '%';
+ const h = document.documentElement;
+ const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+ if (progressEl) progressEl.style.width = (scrolled * 100) + '%';
 }
 
 // Active link highlight + auto-scroll nav to active item
@@ -2268,48 +2269,48 @@ const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.topnav .links a');
 const navLinksContainer = document.getElementById('navLinks');
 function updateActive(){
-  let current = '';
-  const navOffset = (document.querySelector('nav.topnav')?.offsetHeight || 72) + 60;
-  sections.forEach(s => {
-    const top = s.offsetTop - navOffset;
-    if (window.scrollY >= top) current = s.id;
-  });
-  navLinks.forEach(a => {
-    const isActive = a.getAttribute('href') === '#' + current;
-    a.classList.toggle('active', isActive);
-    if (isActive && navLinksContainer && window.innerWidth > 980) {
-      const containerRect = navLinksContainer.getBoundingClientRect();
-      const linkRect = a.getBoundingClientRect();
-      if (linkRect.left < containerRect.left || linkRect.right > containerRect.right) {
-        navLinksContainer.scrollTo({
-          left: a.offsetLeft - navLinksContainer.offsetWidth / 2 + a.offsetWidth / 2,
-          behavior: 'smooth'
-        });
-      }
-    }
-  });
+ let current = '';
+ const navOffset = (document.querySelector('nav.topnav')?.offsetHeight || 72) + 60;
+ sections.forEach(s => {
+ const top = s.offsetTop - navOffset;
+ if (window.scrollY >= top) current = s.id;
+ });
+ navLinks.forEach(a => {
+ const isActive = a.getAttribute('href') === '#' + current;
+ a.classList.toggle('active', isActive);
+ if (isActive && navLinksContainer && window.innerWidth > 980) {
+ const containerRect = navLinksContainer.getBoundingClientRect();
+ const linkRect = a.getBoundingClientRect();
+ if (linkRect.left < containerRect.left || linkRect.right > containerRect.right) {
+ navLinksContainer.scrollTo({
+ left: a.offsetLeft - navLinksContainer.offsetWidth / 2 + a.offsetWidth / 2,
+ behavior: 'smooth'
+ });
+ }
+ }
+ });
 }
 
 // Back to top
 const backTop = document.getElementById('backTop');
 backTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 function updateBackTop(){
-  if (!backTop) return;
-  backTop.classList.toggle('show', window.scrollY > 600);
+ if (!backTop) return;
+ backTop.classList.toggle('show', window.scrollY > 600);
 }
 
 // Throttled scroll handler
 let ticking = false;
 window.addEventListener('scroll', () => {
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      updateProgress();
-      updateActive();
-      updateBackTop();
-      ticking = false;
-    });
-    ticking = true;
-  }
+ if (!ticking) {
+ requestAnimationFrame(() => {
+ updateProgress();
+ updateActive();
+ updateBackTop();
+ ticking = false;
+ });
+ ticking = true;
+ }
 });
 
 // Initial calls
