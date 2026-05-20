@@ -833,6 +833,122 @@ footer .footer-grid{
 /* Section anchor offset visual */
 section[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
 
+/* Contact page */
+.contact-page{
+ min-height:100vh;
+ display:flex;align-items:center;justify-content:center;
+ padding:120px 24px 80px;
+ max-width:1280px;
+ margin:0 auto;
+}
+.contact-card{
+ background:linear-gradient(180deg,rgba(34,211,238,0.04),rgba(5,8,15,0.4));
+ border:1px solid rgba(34,211,238,0.18);
+ border-radius:24px;
+ padding:56px 56px 48px;
+ max-width:560px;
+ width:100%;
+ text-align:center;
+ box-shadow:0 30px 80px -20px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.03);
+ position:relative;
+ overflow:hidden;
+}
+.contact-card::before{
+ content:'';position:absolute;
+ top:-100px;left:50%;transform:translateX(-50%);
+ width:400px;height:200px;
+ background:radial-gradient(ellipse at center,rgba(34,211,238,0.18),transparent 70%);
+ pointer-events:none;
+}
+.contact-logo{
+ display:flex;justify-content:center;
+ margin-bottom:32px;
+ position:relative;
+}
+.contact-logo img{
+ height:64px;width:auto;
+ filter:brightness(0) invert(1);
+ opacity:0.95;
+}
+.contact-tag{
+ font-family:'JetBrains Mono',monospace;
+ font-size:12px;color:var(--accent);
+ letter-spacing:.2em;
+ margin-bottom:18px;
+ position:relative;
+}
+.contact-name{
+ font-size:clamp(28px,4vw,38px);
+ font-weight:700;letter-spacing:-.02em;
+ line-height:1.1;
+ margin-bottom:10px;
+ background:linear-gradient(180deg,#fff 0%,rgba(255,255,255,0.7) 100%);
+ -webkit-background-clip:text;background-clip:text;
+ -webkit-text-fill-color:transparent;
+ position:relative;
+}
+.contact-role{
+ font-size:15px;color:var(--accent);
+ font-weight:500;letter-spacing:.04em;
+ margin-bottom:32px;
+ position:relative;
+}
+.contact-divider{
+ width:60px;height:2px;
+ background:linear-gradient(90deg,var(--accent),var(--accent-2));
+ margin:0 auto 32px;
+ border-radius:2px;
+ position:relative;
+}
+.contact-info{
+ display:flex;flex-direction:column;gap:14px;
+ position:relative;
+}
+.contact-link{
+ display:grid;
+ grid-template-columns:44px 1fr auto;
+ align-items:center;
+ gap:14px;
+ padding:16px 20px;
+ background:var(--surface);
+ border:1px solid var(--border);
+ border-radius:14px;
+ text-decoration:none;
+ color:var(--text);
+ transition:all .25s ease;
+ text-align:left;
+}
+.contact-link:hover{
+ background:rgba(34,211,238,0.06);
+ border-color:rgba(34,211,238,0.3);
+ transform:translateY(-1px);
+}
+.contact-icon{
+ width:44px;height:44px;
+ display:flex;align-items:center;justify-content:center;
+ background:rgba(34,211,238,0.1);
+ border-radius:10px;
+ color:var(--accent);
+}
+.contact-icon svg{width:20px;height:20px}
+.contact-label{
+ font-size:11.5px;color:var(--text-faint);
+ text-transform:uppercase;letter-spacing:.12em;
+ grid-column:2;
+}
+.contact-value{
+ font-size:15px;color:var(--text);
+ font-weight:500;
+ grid-column:2;
+ word-break:break-all;
+}
+.contact-link .contact-label + .contact-value{margin-top:2px}
+@media (max-width:600px){
+ .contact-card{padding:40px 24px 32px}
+ .contact-link{grid-template-columns:40px 1fr;padding:14px 16px}
+ .contact-icon{width:40px;height:40px}
+}
+
 /* Back to top */
 .back-top{
  position:fixed;
@@ -885,7 +1001,7 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
  <a href="#conclusao">Conclusão</a>
  <a href="#glossario">Glossário</a>
  <a href="#faq">FAQ</a>
- <a href="#referencias">Referências</a>
+ <a href="#contato">Contato</a>
  </div>
  <a href="#resumo" class="cta">Começar →</a>
  <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
@@ -906,25 +1022,7 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
  </p>
  <div class="actions">
  <a href="#resumo" class="btn-primary">Explorar apresentação →</a>
- <a href="#referencias" class="btn-ghost">Ver referências</a>
- </div>
-
- <div class="team-strip">
- <span class="label">Professor</span>
- <span style="color:var(--text)">Eduardo Negrão</span>
- <span style="opacity:.3">·</span>
- <span class="label">Alunos</span>
- <div class="names">
- <span>Thiago Henrique</span>
- <span>Rodrigo Miccos</span>
- <span>Evelyn Betto</span>
- <span>Gabrielly Paiva</span>
- </div>
- </div>
-
- <div class="scroll-indicator">
- <span>Scroll</span>
- <div class="line"></div>
+ <a href="#contato" class="btn-ghost">Contato</a>
  </div>
 </header>
 
@@ -1494,7 +1592,7 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
 <section id="auditoria">
  <div class="reveal">
  <div class="section-tag">05 · IMPACTOS NA AUDITORIA</div>
- <h2 class="section-title">Novos deveres<span class="accent">red flags</span> e CPCs conexos</h2>
+ <h2 class="section-title">Novos deveres, <span class="accent">red flags</span> e CPCs conexos</h2>
  <p class="section-lead">A lei reposicionou o auditor como garantidor da integridade do mercado, com obrigações legais de reportar à CVM, vedações de independência e rodízio obrigatório.</p>
  </div>
 
@@ -2141,50 +2239,31 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
  </div>
 </section>
 
-<!-- REFERÊNCIAS -->
-<section id="referencias">
- <div class="reveal">
- <div class="section-tag">REFERÊNCIAS</div>
- <h2 class="section-title">Bibliografia, normativas e <span class="accent">CPCs</span></h2>
+<!-- CONTATO -->
+<section id="contato" class="contact-page">
+ <div class="contact-card reveal">
+ <div class="contact-logo">
+ <img src="LOGO%20FAE.png" alt="FAE" />
  </div>
-
- <div class="ref-grid reveal">
- <div class="ref-block">
- <h4>Legislação</h4>
- <ul>
- <li>BRASIL. Lei nº 10.303, de 31 de outubro de 2001. Altera as Leis nº 6.404/1976 e 6.385/1976. Brasília: DOU, 2001.</li>
- <li>BRASIL. Lei nº 6.404, de 15 de dezembro de 1976. Lei das Sociedades por Ações (consolidada 2023).</li>
- <li>BRASIL. Lei nº 6.385, de 7 de dezembro de 1976. Mercado de Valores Mobiliários e CVM.</li>
- <li>BRASIL. Lei nº 12.846, de 1 de agosto de 2013. Lei Anticorrupção.</li>
- </ul>
- </div>
- <div class="ref-block">
- <h4>Normativos CVM</h4>
- <ul>
- <li>CVM. Instrução 358/2002, Divulgação de informações relevantes e insider trading.</li>
- <li>CVM. Instrução 361/2002, OPA: procedimentos e laudo de avaliação independente.</li>
- <li>CVM. Instrução 480/2009, Emissores: FRE, ITR e DFP.</li>
- <li>CVM. Resolução 80/2022, Auditores independentes (atualiza IN 308/1999).</li>
- </ul>
- </div>
- <div class="ref-block">
- <h4>CPCs &amp; NBC TAs</h4>
- <ul>
- <li>CPC 01 (R1), Redução ao Valor Recuperável de Ativos (IAS 36). Metodologia FCD.</li>
- <li>CPC 15 (R1), Combinações de Negócios (IFRS 3). Tag along e recesso pós-fusão.</li>
- <li>CPC 18 (R2), Investimento em Coligada, Controlada e Empreendimento Controlado.</li>
- <li>NBC TA 240, Responsabilidade do Auditor em Relação a Fraude (IAASB ISA 240).</li>
- <li>NBC TA 570 (R1), Continuidade Operacional (Going Concern).</li>
- </ul>
- </div>
- <div class="ref-block" style="grid-column:1/-1">
- <h4>Doutrina e Avaliação</h4>
- <ul>
- <li>EIZIRIK, Nelson. <i>A Lei das S.A. Comentada</i>. 3. ed. São Paulo: Quartier Latin, 2019.</li>
- <li>IBGC. <i>Código das Melhores Práticas de Governança Corporativa</i>. 5. ed. São Paulo: IBGC, 2015.</li>
- <li>DAMODARAN, Aswath. <i>Investment Valuation</i>. 3. ed. New York: Wiley, 2012. (dados: damodaran.com)</li>
- <li>COPELAND, T.; KOLLER, T.; MURRIN, J. <i>Valuation: Measuring and Managing the Value of Companies</i>. 6. ed. Wiley, 2020.</li>
- </ul>
+ <div class="contact-tag">CONTATO</div>
+ <h2 class="contact-name">Thiago Henrique Bento</h2>
+ <p class="contact-role">Financial Compliance</p>
+ <div class="contact-divider"></div>
+ <div class="contact-info">
+ <a href="tel:+5541995773467" class="contact-link">
+ <span class="contact-icon" aria-hidden="true">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+ </span>
+ <span class="contact-label">Telefone</span>
+ <span class="contact-value">(41) 99577-3467</span>
+ </a>
+ <a href="mailto:Thiago.bento@mail.fae.edu" class="contact-link">
+ <span class="contact-icon" aria-hidden="true">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+ </span>
+ <span class="contact-label">E-mail</span>
+ <span class="contact-value">Thiago.bento@mail.fae.edu</span>
+ </a>
  </div>
  </div>
 </section>
@@ -2198,7 +2277,7 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 24px)}
  <b style="color:var(--text)">Lei 10.303/2001</b> · Reforma do Mercado de Capitais
  </div>
  <div style="color:var(--text-faint);font-size:12px">
- Thiago Henrique · Rodrigo Miccos · Evelyn Betto · Gabrielly Paiva
+ Thiago Henrique Bento · Financial Compliance
  </div>
  </div>
 </footer>
